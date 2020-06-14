@@ -1,0 +1,111 @@
+{extend name='../../../application/dai/view/layout/base' /}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+<style>
+    .amount-box {
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 5px 0px;
+    }
+
+    .amount-box li {
+        display: inline-block;
+        width: 15%;
+        min-width: 70px;
+        text-align: center;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ebeef5;
+    }
+
+    .amount-box li span {
+        display: block;
+        padding: 0 15px;
+        line-height: 42px;
+    }
+
+    .amount-box li .amount-title {
+        border-bottom: 1px solid #ebeef5;
+    }
+</style>
+
+<div class="wrapper" style="overflow-y:auto !important;;">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('finance/index')}">财务管理</a></li>
+                <li class="active">申请提现</li>
+                <li style="color: #00b7ee;cursor: pointer" onclick="window.history.go(-1)">返回上一级</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+
+    <form class="form-inline  ajaxform" id="form" method="post" action="">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <tbody>
+                        <tr>
+
+                        </tr>
+                        <tr>
+                            <th>
+                                <font color="red">*</font>收款人姓名
+                            </th>
+                            <td><input class="form-control" type="text" id="cash_payee_name" name="cash_payee_name"
+                                    placeholder="请填写收款人姓名" required=""></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <font color="red">*</font>提现金额
+                            </th>
+                            <td><input class="form-control" type="text" id="cash_money" name="cash_money"
+                                    placeholder="请填写提现金额" required=""></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <font color="red">*</font>收款方式
+                            </th>
+                            <td><input class="form-control" type="text" id="cash_bank_name" name="cash_bank_name"
+                                    placeholder="请输入开户行名称或支付宝微信" required=""></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <font color="red">*</font>收款账户
+                            </th>
+                            <td><input class="form-control" type="text" id="cash_bank_no" name="cash_bank_no"
+                                    placeholder="请输入银行卡号或支付宝微信账号" required=""></td>
+                        </tr>
+                        <!-- <tr id="u1">
+                            <th>
+                                <font color="red">*</font>联系方式
+                            </th>
+                            <td><input class="form-control" type="text" id="tx_phone" name="tx_phone"
+                                    placeholder="请填写手机号" required=""></td>
+                        </tr> -->
+
+                        <tr>
+                            <th>
+                                <font color="red">*</font>提现密码
+                            </th>
+                            <td><input class="form-control" type="tx_mm" name="tx_mm" required=""></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success">提 现</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+{/block}

@@ -1,0 +1,40 @@
+{include file="public/header"}
+<div class="fed-part-layout fed-back-whits fed-part-height"{if$user_config.reg_phone_sms!=0||$user_config.reg_email_sms!=0} style="min-height:35rem"{/if}>
+	<div class="fed-user-login fed-part-core">
+		<div class="fed-list-head fed-part-rows fed-padding">
+			<h2 class="fed-font-xvii fed-text-center">会员注册</h2>
+		</div>
+		<form class="fed-user-form fed-user-width fed-part-rows" action="{:mac_url('user/reg')}" data-role="{:mac_url('user/reg_msg')}" data-jump="{:mac_url('user/login')}" data-user="{$_GET['uid']}">
+			<input class="fed-user-text fed-col-xs12" type="text" name="user_name" placeholder="请输入账号" />
+			<input class="fed-user-text fed-col-xs12" type="password" name="user_pwd" placeholder="请输入密码" maxlength="20" />
+			<input class="fed-user-text fed-col-xs12" type="password" name="user_pwd2" placeholder="再次输入密码" maxlength="20" />
+			{if$user_config.reg_phone_sms!=0}
+			<input type="hidden" name="ac" value="phone">
+			<input type="text" class="fed-user-text fed-col-xs12" name="to" placeholder="请输入手机号">
+			<input type="text" class="fed-user-text fed-col-xs8" name="code" placeholder="请输入手机验证码">
+			<a class="fed-user-bind fed-user-text fed-col-xs4 fed-text-right" href="javascript:;">获取验证码</a>
+			{elseif$user_config.reg_email_sms!=0}
+			<input type="hidden" name="ac" value="email">
+			<input type="text" class="fed-user-text fed-col-xs12" name="to" placeholder="请输入邮箱">
+			<input type="text" class="fed-user-text fed-col-xs8" name="code" placeholder="请输入邮箱验证码">
+			<a class="fed-user-bind fed-user-text fed-col-xs4 fed-text-right" href="javascript:;">获取验证码</a>
+			{/if}
+			{if$user_config.reg_verify!=0}
+			<input class="fed-user-text fed-col-xs8" type="tel" name="verify" placeholder="请输入验证码" maxlength="4" />
+			<img class="fed-user-code fed-user-text fed-col-xs4" height="45" src="{:mac_url('verify/index')}" onClick="this.src=this.src+'?'" title="看不清楚? 换一张！" />
+			{/if}
+			<span class="fed-user-tips fed-text-gules fed-padding-v fed-visible fed-col-xs12">　</span>
+			<a class="fed-subm-regis fed-user-submit fed-rims-info fed-btns-info fed-btns-green fed-col-xs12">注册</a>
+			<a class="fed-padding fed-col-xs3 fed-text-left" href="{:mac_url('user/findpass')}">忘记密码</a>
+			{if$GLOBALS['config']['connect']['weixin']['status']}
+			<a class="fed-padding{if$GLOBALS['config']['connect']['qq']['status']} fed-col-xs3{else} fed-col-xs6{/if} fed-text-center" href="{:mac_url('user/oauth')}?type=weixin">微信登录</a>
+			{/if}{if$GLOBALS['config']['connect']['qq']['status']}
+			<a class="fed-padding{if$GLOBALS['config']['connect']['weixin']['status']} fed-col-xs3{else} fed-col-xs6{/if} fed-text-center" href="{:mac_url('user/oauth')}?type=qq">QQ登录</a>
+			{/if}{if!$GLOBALS['config']['connect']['weixin']['status']&&!$GLOBALS['config']['connect']['qq']['status']}
+			<a class="fed-padding fed-col-xs6 fed-text-center" href="javascript:;">&nbsp;</a>
+			{/if}
+			<a class="fed-padding fed-col-xs3 fed-text-right" href="{:mac_url('user/login')}">立即登录</a>
+		</form>
+	</div>
+</div>
+{include file="public/footer"}

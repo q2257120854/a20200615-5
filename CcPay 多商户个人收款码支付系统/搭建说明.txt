@@ -1,0 +1,7 @@
+CcPay 多商户个人收款码支付系统
+
+数据库文件/data/ccpay.sql
+
+测试环境：Apache 2.4.41+php5.6需按照扩展memcache+memcached+redis 才能运行。
+
+后台：xxx.com/admin 账号：admin 密码：6666

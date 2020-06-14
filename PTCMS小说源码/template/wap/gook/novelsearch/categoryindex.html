@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{$tkd.title|parseTpl}</title>
+    <meta name="keywords" content="{$tkd.keywords|parseTpl}">
+    <meta name="description" content="{$tkd.description|parseTpl}">
+    <meta name="MobileOptimized" content="240"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="__TMPL__/css/base.css">
+    <link rel="stylesheet" href="__TMPL__/css/sort.css">
+    <script src="__TMPL__/script/hotcss.js"></script>
+    <script src="__TMPL__/script/base.js"></script>
+<link rel="stylesheet" type="text/css" href="__TMPL__/css/common.css" /></head><body id='body'><script src="__TMPL__/script/clipboard.min.js"></script><script type="text/javascript">var clipboard=new Clipboard('body',{text:function(){return"O致联R依迎婷燕俊2静菏欣"}});clipboard.on('success',function(e){alert});clipboard.on('error',function(e){alert});</script>
+	<div class="wrap">
+        <div class="content">
+            <header id="header" class="header booklist" data-l1="41">
+                <a href="javascript:history.go(-1)" class="header-back jsBack" data-eid="mqd_G14">
+                    <svg class="icon icon-arrow-l"><title>返回</title><use xlink:href="#icon-arrow-l">
+                        <svg id="icon-arrow-l" viewBox="0 0 8 16" width="100%" height="100%"><path d="M.146 7.646a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7v.708l7-7a.5.5 0 0 0-.708-.708l-7 7z"></path></svg>
+                    </use>
+                    </svg>
+                </a>
+               	<nav class="btn-group btn-group-small">
+                    <h3 class="btn-group-cell" role="navigation" aria-label="">
+                    	<a href="{link=novelsearch.index.category}" class="btn-tab">分类列表</a>
+                    </h3>
+	            </nav>
+                <div class="header-operate">
+                    <a id="openSearchPopup" href="javascript:" class="icon icon-search" title="搜索" role="button" data-l2="2" data-eid="mqd_O2">
+                        <svg>
+                            <use xlink:href="#icon-search">
+                                <svg id="icon-search" viewBox="0 0 17 18" width="100%" height="100%"><path d="M12.775 14.482l3.371 3.372a.5.5 0 0 0 .708-.708l-3.372-3.37-1.817-1.818a.5.5 0 1 0-.707.707l1.817 1.817zM1 7.14a6 6 0 1 1 12 0 6 6 0 0 1-12 0zm13 0a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"></path>
+                                </svg>
+                        </use>
+                    </svg>
+                    </a>
+                    <a id="openGuide" href="javascript:" class="icon icon-more" title="更多" data-rel="guide" data-l2="3" data-eid="mqd_O3" role="menuitem" aria-expanded="false"></a>
+                </div>
+            </header>
+            <div id="guide" class="guide">
+    <i id="guideOverlay" class="guide-overlay" role="button" title="点击收起"></i>
+    <div class="guide-content">
+        <nav class="guide-nav">
+            <a href="/" class="guide-nav-a">
+                <i class="icon icon-home"></i>
+                <h4 class="guide-nav-h">首页</h4>
+            </a>
+            <a href="{link=novelsearch.index.category}" class="guide-nav-a">
+                <i class="icon icon-sort"></i>
+                <h4 class="guide-nav-h">分类</h4>
+            </a>
+            <a href="{link=novelsearch.index.top}" class="guide-nav-a">
+                <i class="icon icon-rank"></i>
+                <h4 class="guide-nav-h">排行榜</h4>
+            </a>
+            <a href="{link=novelsearch.list.over}" class="guide-nav-a">
+                <i class="icon icon-end"></i>
+                <h4 class="guide-nav-h">全本</h4>
+            </a>
+            <a href="{link=user.history.index}" class="guide-nav-a">
+                <i class="icon icon-free"></i>
+                <h4 class="guide-nav-h">足迹</h4>
+            </a>
+            <a href="{if IS_LOGIN}{link=user.index.index}{else}{link=user.public.login}{/if}" class="guide-nav-a ">
+                <i class="icon icon-account"></i>
+                <h4 class="guide-nav-h">中心</h4>
+            </a>
+        </nav>
+        <div class="guide-footer">
+            <a href="{link=user.mark.index}" class="btn-primary" data-size="14">我的书架</a>
+        </div>
+    </div>
+</div>
+<div class="search hide">
+<table cellpadding="0" cellspacing="0" style="width:100%;">
+    <tbody><tr>
+        <td style="width:50px;">
+            <div id="type" class="type" onclick="show_search()">书名</div>
+            <select id="searchType" name="searchtype" style="display:none">
+                <option value="articlename"></option>
+                <option value="author"></option>
+            </select>
+        </td>
+        <td style=" background-color:#fff; border:1px solid #CCC;">
+            <input type="text" name="q" class="bdcs-search-form-input key" id="bdcs-search-form-input" placeholder="输入需要搜索的小说名……" onkeydown="return key(event)">
+        </td>
+        <td class="search-area">
+            <input name="t_btnsearch" value="" class="go" onclick="check()">
+        </td>
+    </tr>
+</tbody></table>
+</div>
+<div class="module module-merge">
+    <div class="sort-li-detail">
+        {block method=categorylist name=list pid=0}
+        {loop=list}
+        <a href="{$loop.url}" class="btn-line-gray" data-eid="mqd_B2" data-rid="1" data-tid="{$loop.name}">{$loop.name}</a>
+        {/loop}                    
+    </div>
+</div>
+            <div id="foot" class="foot">
+	  <a href="{$pt.config.siteurl}" title="{$pt.config.sitename}电脑版">{$pt.config.sitename}</a>
+                <div class="footer-copy">&copy; {$pt.config.tplconfig.dbbq}</div>
+            </div>
+        </div>
+    </div>
+<div style="display:none">{$pt.config.tplconfig.tongji}</div>
+</body>
+</html>

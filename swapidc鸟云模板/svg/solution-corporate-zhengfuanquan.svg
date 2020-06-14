@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>政府安全复制 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="57.0158453%" y1="68.2801514%" x2="50%" y2="31.7198486%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="政府安全复制-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-3" transform="translate(8.000000, 4.000000)">
+            <path d="M7,17 L42,17 C44.209139,17 46,18.790861 46,21 L46,39 C46,41.209139 44.209139,43 42,43 L7,43 C4.790861,43 3,41.209139 3,39 L3,21 C3,18.790861 4.790861,17 7,17 Z" id="矩形复制-5" fill="url(#linearGradient-1)"></path>
+            <path d="M24,5 L24,12 L24,-3.55271368e-15 L24,1 L30,1 L30,5 L24,5 Z M9,12 L39,12 L39,26 M9,26 L9,12 L9,26 Z M0,26 L49,26 L49,56 L0,56 L0,26 Z" id="形状" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M8.5,35 L8.5,35 C9.88071187,35 11,36.1192881 11,37.5 L11,56 L6,56 L6,37.5 C6,36.1192881 7.11928813,35 8.5,35 Z" id="矩形复制-7" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M24.5,35 L24.5,35 C25.8807119,35 27,36.1192881 27,37.5 L27,56 L22,56 L22,37.5 C22,36.1192881 23.1192881,35 24.5,35 Z" id="矩形复制-8" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M40.5,35 L40.5,35 C41.8807119,35 43,36.1192881 43,37.5 L43,56 L38,56 L38,37.5 C38,36.1192881 39.1192881,35 40.5,35 Z" id="矩形复制-9" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

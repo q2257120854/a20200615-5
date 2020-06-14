@@ -1,0 +1,29 @@
+{if$vfedcc['navs']['foot']}
+<div class="fed-tabr-info fed-back-whits fed-min-width fed-line-top fed-hide-sm">
+	<ul class="fed-part-rows">
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==1} fed-text-green{/if}" href="{$maccms.path}"><i class="fed-icon-font fed-icon-shouye"></i><span class="fed-font-xii">首页</span></a></li>
+		{if$vfedcc['navs']['arts']['state']}
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==20} fed-text-green{/if}" href="{$vfedcc['navs']['arts']['link']|mac_default=mac_url('art/index')}"><i class="fed-icon-font fed-icon-zixun"></i><span class="fed-font-xii">{$vfedcc['navs']['arts']['name']|mac_default='资讯'}</span></a></li>
+		{/if}{if$vfedcc['navs']['live']['state']}{if$vfedcc['navs']['live']['link']}
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==2} fed-text-green{/if}" href="{$vfedcc['navs']['live']['link']}"><i class="fed-icon-font fed-icon-zhibo"></i><span class="fed-font-xii">{$vfedcc['navs']['live']['name']|mac_default='直播'}</span></a></li>
+		{else}{maccms:type ids="parent" flag="vod"}{if stristr($vo['type_name'],'直播')==true}
+		<li class="fed-text-center"><a class="fed-visible{if$vo.type_id==$obj.type_id||$vo.type_id==$obj.type_1.type_id||$vo.type_id==$obj.parent.type_id} fed-text-green{/if}" href="{:mac_url_type($vo)}"><i class="fed-icon-font fed-icon-zhibo"></i><span class="fed-font-xii">{$vo.type_name|mac_filter_html}</span></a></li>
+		{/if}{/maccms:type}{/if}{/if}{if$vfedcc['navs']['song']['state']}
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==2} fed-text-green{/if}" href="{$vfedcc['navs']['song']['link']}"><i class="fed-icon-font fed-icon-yinyue"></i><span class="fed-font-xii">{$vfedcc['navs']['song']['name']|mac_default='音乐'}</span></a></li>
+		{/if}{if$vfedcc['navs']['topic']['state']}
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==30} fed-text-green{/if}" href="{$vfedcc['navs']['topic']['link']|mac_default=mac_url('topic/index')}"><i class="fed-icon-font fed-icon-zhuanti"></i><span class="fed-font-xii">{$vfedcc['navs']['topic']['name']|mac_default='专题'}</span></a></li>
+		{/if}{if$vfedcc['navs']['gbook']['state']}
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==4} fed-text-green{/if}" href="{$vfedcc['navs']['gbook']['link']|mac_default=mac_url('gbook/index')}"><i class="fed-icon-font fed-icon-liuyan"></i><span class="fed-font-xii">{$vfedcc['navs']['gbook']['name']|mac_default='留言'}</span></a></li>
+		{/if}{if$GLOBALS['config']['user']['status']}
+		<li class="fed-text-center"><a class="fed-visible{if$maccms.aid==6} fed-text-green{/if}" href="{if$user.user_id}{:mac_url('user/index')}{else}{:mac_url('user/login')}{/if}"><i class="fed-icon-font fed-icon-yonghu"></i><span class="fed-font-xii">我的</span></a></li>
+		{/if}
+	</ul>
+</div>
+{else}
+<style type="text/css">body{padding-bottom:0}</style>
+{/if}{if$vfedcc['advs']['fits']['state']==1||$vfedcc['advs']['fits']['state']==2&&$user.user_id==0}{if$vfedcc['advs']['home']['foot']}
+<div class="fed-tabr-advs fed-part-zero fed-back-whits">
+	<a class="fed-part-advs fed-text-center fed-font-xvi" href="javascript:;">×</a>
+	{$vfedcc['advs']['home']['foot']}
+</div>
+{/if}{/if}

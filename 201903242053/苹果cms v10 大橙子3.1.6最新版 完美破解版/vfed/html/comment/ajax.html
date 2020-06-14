@@ -1,0 +1,45 @@
+{include file="comment/input"}
+{maccms:comment num="10" paging="yes" half="3" order="desc" by="id"}{/maccms:comment}
+<ul class="fed-comm-list">
+	{if$__PAGING__.record_total|intval}
+	{maccms:foreach name="__LIST__" id="vo"}
+	<li class="fed-comm-each fed-part-rows fed-line-top fed-margin">
+		<img class="fed-comm-avat fed-part-roun" src="{php} echo mac_get_user_portrait($vo['user_id']); {/php}"/>
+		<div class="fed-comm-head">
+			<strong class="fed-text-line">{$vo.comment_name}</strong>
+			<span class="fed-part-tips">{$vo.comment_time|date='Y-m-d H:i:s',###}</span>
+		</div>
+		<div class="fed-comm-cont">
+			{$vo.comment_content|mac_em_replace}
+			<div class="fed-comm-action fed-text-right fed-font-xii">
+				<a class="fed-comm-repo" data-id="{$vo.comment_id}" href="javascript:;">举报</a>
+				<a class="fed-comm-digg" data-id="{$vo.comment_id}" data-mid="4" data-type="up" href="javascript:;">支持({$vo.comment_up})</a>
+				<a class="fed-comm-digg" data-id="{$vo.comment_id}" data-mid="4" data-type="down" href="javascript:;">反对({$vo.comment_down})</a>
+				<a class="fed-comm-rbtn" data-id="{$vo.comment_id}" href="javascript:;">回复</a>
+			</div>
+			{maccms:foreach name="$vo.sub" id="child"}
+			<div class="fed-comm-reply fed-back-ashen{if$key==0} fed-comm-tops{else} fed-line-top{/if}">
+				<img class="fed-comm-avat fed-part-roun" src="{php} echo mac_get_user_portrait($child['user_id']); {/php}"/>
+				<div class="fed-comm-head">
+					<strong class="fed-text-line">{$child.comment_name}</strong>
+					<span class="fed-part-tips">{$child.comment_time|mac_day}</span>
+				</div>
+				<div class="fed-comm-cont">
+					{$child.comment_content|mac_em_replace}
+					<div class="fed-comm-action fed-text-right fed-font-xii">
+						<a class="fed-comm-repo" data-id="{$child.comment_id}" href="javascript:;">举报</a>
+						<a class="fed-comm-digg" data-id="{$child.comment_id}" data-mid="4" data-type="up" href="javascript:;">支持(<span>{$child.comment_up}</span>)</a>
+						<a class="fed-comm-digg" data-id="{$child.comment_id}" data-mid="4" data-type="down" href="javascript:;">反对(<span>{$child.comment_down}</span>)</a>
+						<a class="fed-comm-rbtn" data-id="{$vo.comment_id}" href="javascript:;">回复</a>
+					</div>
+				</div>
+			</div>
+			{/maccms:foreach}
+		</div>
+	</li>
+	{/maccms:foreach}
+	{else}
+	<li class="fed-text-center fed-padding fed-margin">还没有人评论哎！</li>
+	{/if}
+</ul>
+{include file="module/paging"}

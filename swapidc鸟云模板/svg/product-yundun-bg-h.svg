@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>yundun安全-H</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="9.86116187%" y1="43.1303399%" x2="100%" y2="62.051953%" id="linearGradient-1">
+            <stop stop-color="#1E87F0" offset="0%"></stop>
+            <stop stop-color="#40BCF9" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="57.5938899%" y2="97.2654113%" id="linearGradient-2">
+            <stop stop-color="#3D1BFF" offset="0%"></stop>
+            <stop stop-color="#00A7E7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="yundun安全-H" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-2" transform="translate(0.000000, 10.000000)">
+            <g id="编组-4复制-4" fill="url(#linearGradient-1)">
+                <path d="M14.8740145,14.1340753 C17.3807937,5.95070254 24.9954663,0 34,0 C45.045695,0 54,8.954305 54,20 C54,31.045695 45.045695,40 34,40 L13,40 C5.82029825,40 0,34.1797017 0,27 C0,19.8202983 5.82029825,14 13,14 C13.6363871,14 14.2620941,14.0457273 14.8740145,14.1340753 Z" id="形状结合复制"></path>
+            </g>
+            <g id="编组" transform="translate(38.000000, 14.000000)" fill="url(#linearGradient-2)" fill-rule="nonzero">
+                <path d="M6.67352531,4.00022283 C3.84675908,5.99098024 2,9.27982327 2,13 C2,19.0751322 6.92486775,24 13,24 C15.7614237,24 18,21.7614237 18,19 C18,16.2385763 15.7614237,14 13,14 C9.13400675,14 6,10.8659932 6,7 C6,5.92649041 6.24165156,4.90942156 6.67352531,4.00022283 Z M13,2 C10.2385763,2 8,4.23857625 8,7 C8,9.76142375 10.2385763,12 13,12 C16.8659932,12 20,15.1340068 20,19 C20,20.0735096 19.7583484,21.0905784 19.3264747,21.9997772 C22.1532409,20.0090198 24,16.7201767 24,13 C24,6.92486775 19.0751322,2 13,2 Z M13,26 C5.82029825,26 0,20.1797017 0,13 C0,5.82029825 5.82029825,0 13,0 C20.1797017,0 26,5.82029825 26,13 C26,20.1797017 20.1797017,26 13,26 Z" id="形状结合"></path>
+            </g>
+        </g>
+    </g>
+</svg>

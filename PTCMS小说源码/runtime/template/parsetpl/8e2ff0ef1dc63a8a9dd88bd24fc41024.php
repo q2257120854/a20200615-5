@@ -1,0 +1,1 @@
+搜索“<?php echo $searchkey;?>”的结果_<?php echo $this->pt->config->get("sitename");?>

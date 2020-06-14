@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>修改密码_{$pt.config.sitename}</title>
+    <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__TMPL__/css/user.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="wrapper">
+    <!--header-->
+    <div class="header user-head">
+        <div class="site-logo"><a href="/"></a></div>
+        <div class="member-login">{if IS_LOGIN}<a href="{link=user.index.index}">{$userinfo.name}</a> | <a href="{link=user.public.logout}">退出</a>{else}<a class="islogin" href="{link=user.public.login}">登录/注册{/if}</div>
+    </div>
+    <!--header-->
+            <div class="member_center_block">
+        <div class="weui-cells__title">修改安全资料</div>
+        <div class="weui-cells weui-cells_form">
+            <form name='userinfoform' method='post' enctype="multipart/form-data" action='__SELF__'>
+                <input type='hidden' name='enews' value='EditSafeInfo'>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                    <div class="weui-cell__bd">{$userinfo.name}</div>
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">旧密码</label></div>
+                    <div class="weui-cell__bd"><input type="text" class="weui-input" name="password" placeholder="请输入原密码" size="38" maxlength='20'></div>
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">新密码</label></div>
+                    <div class="weui-cell__bd"><input type="password" class="weui-input" name="newpassword" placeholder="请输入新登陆密码" size="38" maxlength='20'></div>
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">确认密码</label></div>
+                    <div class="weui-cell__bd"><input type="password" class="weui-input" name="repassword" placeholder="请重复输入新登陆密码" size="38" maxlength='20'></div>
+                </div>
+
+                <div class="weui-btn-area">
+                    <button type="submit" class="weui-btn weui-btn_warn" id="showTooltips">修改资料</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- footer -->
+<div class="footer">
+    <div class="copyright">&copy; {$pt.config.tplconfig.dbbq}</div>
+</div>
+<!-- footer end -->
+</div>
+<script type="text/javascript" src="__TMPL__/script/icon.js"></script>
+<script type="text/javascript">
+    userLoginStatus();
+    function userLoginStatus() {
+        var isLoginEle = document.getElementsByClassName('member-login')[0];
+        if (!isLoginEle) return;
+        var xhr = xhrObj();
+        xhr.open('GET', '{link=user.public.login}');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                    isLoginEle.innerHTML = data.data;
+            }
+        };
+        xhr.send();
+    }
+    function xhrObj() {
+        var xhr;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest;
+        } else {
+            var ver = ["Microsoft.XMLHTTP", "Msxml2.XMLHTTP", "Msxml2.XMLHTTP.3.0", "Msxml2.XMLHTTP.5.0", "Msxml2.XMLHTTP.6.0"];
+            for (var i in ver) {
+                try {
+                    xhr = new ActiveXObject(ver[i]);
+                } catch (e) {
+                }
+            }
+        }
+        return xhr;
+    }
+</script>
+</body>
+</html>

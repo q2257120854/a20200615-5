@@ -1,0 +1,1 @@
+在线听<?php echo $novel['name'];?>,在线听<?php echo $novel['name'];?>最新章节,<?php echo $chapter['name'];?>,<?php echo $author['name'];?>,<?php echo $this->pt->config->get("sitename");?>

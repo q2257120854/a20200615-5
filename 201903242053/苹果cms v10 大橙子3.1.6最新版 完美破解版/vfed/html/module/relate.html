@@ -1,0 +1,95 @@
+{if$vfedcc['home']['actor']['state']}{maccms:actor num="1" name="'.$obj['vod_actor'].'" key="actors"}{/maccms:actor}{if$actors}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">相关明星</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url_actor_index()}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="'.$vfedcc['home']['actor']['value'].'" name="'.$obj['vod_actor'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['actor']['value']=='6'&&$key>4} fed-hide-sm fed-show-md-block{/if}">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+</div>
+{/if}{/if}{if$obj.vod_rel_art||$obj.art_rel_art}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">关联文章</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url_type($obj.type)}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:art num="4" rel="'.$obj['vod_rel_art'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-lg3{if$key>3} fed-hide-sm fed-show-lg-block{/if}">
+			{include file="basics/picture"}
+		</li>
+		{/maccms:art}
+	</ul>
+</div>
+{/if}{if$obj.vod_rel_vod||$obj.art_rel_vod}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">关联视频</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url_type($obj.type)}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod num="'.$vfedcc['rest']['play'].'" rel="'.$obj['vod_rel_vod'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['class']['value']=='6'&&$key>4} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+</div>
+{/if}{if$maccms.aid==24}
+{if$obj.art_rel_art==''}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">相关资讯</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url_type($obj.type)}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:art num="4" type="current" order="desc" by="hits_day"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3{if$key>3} fed-hide-sm fed-show-md-block{/if}">
+			{include file="basics/picture"}
+		</li>
+		{/maccms:art}
+	</ul>
+</div>
+{/if}
+{else}
+{if$obj.vod_rel_vod==''}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">相关热播</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{if$maccms.aid==13||$maccms.aid==23}{:mac_url_type('1')}{else}{:mac_url_type($obj.type)}{/if}">更多</a></li>
+		</ul>
+	</div>
+	{if stristr($obj['type_1']['type_name'],'直播')==true||stristr($obj['type']['type_name'],'直播')==true}
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:vod num="'.($vfedcc['rest']['play']==6?4:8).'" type="current" order="desc" by="hits_day"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3{if$vfedcc['rest']['play']=='6'&&$key>3} fed-hide-sm fed-show-md-block{elseif$vfedcc['rest']['play']=='12'&&$key>6} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/images"}
+		</li>
+		{/maccms:vod}
+	</ul>
+	{else}
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod num="'.$vfedcc['rest']['play'].'" type="current" order="desc" by="hits_day"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['class']['value']=='6'&&$key>4} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+	{/if}
+</div>
+{/if}
+{/if}

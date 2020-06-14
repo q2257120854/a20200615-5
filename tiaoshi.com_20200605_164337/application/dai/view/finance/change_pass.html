@@ -1,0 +1,82 @@
+{extend name='../../../application/dai/view/layout/base' /}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+<style>
+    .amount-box {
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 5px 0px;
+    }
+
+    .amount-box li {
+        display: inline-block;
+        width: 15%;
+        min-width: 70px;
+        text-align: center;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ebeef5;
+    }
+
+    .amount-box li span {
+        display: block;
+        padding: 0 15px;
+        line-height: 42px;
+    }
+
+    .amount-box li .amount-title {
+        border-bottom: 1px solid #ebeef5;
+    }
+</style>
+
+<div class="wrapper" style="overflow-y:auto !important;;">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{:url('finance/index')}">财务管理</a></li>
+                <li class="active">修改提现密码</li>
+                <li style="color: #00b7ee;cursor: pointer" onclick="window.history.go(-1)">返回上一级</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+
+    <form class="form-inline  ajaxform" id="form" method="post" action="">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="home">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <tbody><tr>
+
+                    </tr>
+                    <tr>
+                        <th><font color="red">*</font>账号</th>
+                        <td style="color: #00b7ee">{$user.user_name}</td>
+                    </tr>
+                    <tr>
+                        <th><font color="red">*</font>原提现密码</th>
+                        <td><input class="form-control" type="password" id="old_pass" name="old_pass" placeholder="初始密码为 888888" required=""></td>
+                    </tr>
+                    <tr>
+                        <th><font color="red">*</font>新提现密码</th>
+                        <td><input class="form-control" type="password" id="new_pass" name="new_pass" placeholder="新提现密码" required=""></td>
+                    </tr>
+                    <tr>
+                        <th><font color="red">*</font>重复新密码</th>
+                        <td><input class="form-control" type="password" id="re_pass" name="re_pass" placeholder="重复新密码" required=""></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-success" type="submit">修 改</button>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </form>
+
+</div>
+{/block}

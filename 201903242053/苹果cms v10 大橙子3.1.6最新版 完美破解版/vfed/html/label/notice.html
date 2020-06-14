@@ -1,0 +1,18 @@
+{maccms:art num="1" order="desc" by="time" level="3"}
+<div class="fed-tips-info fed-part-rows fed-back-whits">
+	<a class="fed-tips-close fed-text-muted" href="javascript:;">×</a>
+	<div class="fed-col-sm5 fed-hide-xs">
+		<a class="fed-list-pics fed-lazy fed-part-2by3" href="{$vo.art_jumpurl|mac_default='javascript:;'}" style="background-image: url({$vo.art_pic})"></a>
+	</div>
+	<div class="fed-col-xs12 fed-col-sm7 fed-padding-x">
+		<h2 class="fed-text-center fed-text-bold fed-padding">{$vo.art_name|mac_substring=10}</h2>
+		<span class="fed-text-center fed-text-muted fed-visible">{$vo.art_remarks}</span>
+		<div class="fed-padding">
+			{$vo.art_content|mac_url_content_img|mac_substring=250}
+		</div>
+		<div class="fed-text-center fed-padding">
+			<a class="fed-btns-info fed-tips-btns fed-back-green fed-padding-x fed-font-xvii fed-visible" href="javascript:;" data-href="{$vo.art_jumpurl}">{$vo.art_from|mac_default='确定'}</a>
+		</div>
+	</div>
+</div>
+{/maccms:art}

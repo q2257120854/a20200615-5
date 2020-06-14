@@ -1,0 +1,146 @@
+{if$maccms.aid==1}
+<title>{$vfedcc['seos']['index']['title']|mac_default=$maccms.site_name}</title>
+<meta name="keywords" content="{$vfedcc['seos']['index']['word']|mac_default=$maccms.site_keywords}" />
+<meta name="description" content="{$vfedcc['seos']['index']['info']|mac_default=$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url('index/index')}" />
+<meta itemprop="name" property="og:title" content="{$vfedcc['seos']['index']['title']|mac_default=$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['index']['info']|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==4}
+<title>留言板 - {$maccms.site_name}</title>
+<meta name="keywords" content="留言板,{$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url('gbook/index')}" />
+<meta itemprop="name" property="og:title" content="留言板 - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$maccms.site_description}" />
+{elseif$maccms.aid==6}
+<title>个人中心 - {$maccms.site_name}</title>
+<meta name="keywords" content="个人中心,{$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/index')}" />
+<meta itemprop="name" property="og:title" content="个人中心 - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$maccms.site_description}" />
+{elseif$maccms.aid==11}
+<title>{$obj.type_title|mac_default=$obj.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key|mac_default=$obj.type_name|mac_filter_html},{$maccms.site_name}" />
+<meta name="description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_type($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.type_title|mac_default=$obj.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==12}
+<title>{$param.year}{$param.area}{$param.class}{$obj.type_name|mac_filter_html}_第{$param.page}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key|mac_default=$maccms.site_keywords},{$maccms.site_name}" />
+<meta name="description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_type($obj,['area'=>$param.area,'lang'=>$param.lang,'year'=>$param.year],'show')}" />
+<meta itemprop="name" property="og:title" content="{$param.year}{$param.area}{$obj.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==13}
+<title>{$param.wd}{$param.actor}{$param.director}{$param.area}_搜索结果 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$param.wd},{$param.actor},{$param.director},{$param.area},{$maccms.site_name}" />
+<meta name="description" content="{$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url('vod/search',['wd'=>$param.wd])}" />
+<meta itemprop="name" property="og:title" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.year}_搜索结果 - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$maccms.site_description}" />
+{elseif$maccms.aid==14}
+<title>{$obj.vod_name|mac_filter_html|mac_default='404'}_{$obj.type.type_name|mac_filter_html}_{$vfedcc['seos']['vinfo']['title']|mac_default=$obj.type_1.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_actor},{$obj.vod_director},{$obj.vod_name|mac_filter_html},{$obj.type.type_name|mac_filter_html},{$vfedcc['seos']['vinfo']['word']|mac_default=$obj.type_1.type_name|mac_filter_html},{$maccms.site_name}" />
+<meta name="description" content="{$vfedcc['seos']['vinfo']['info']}{$obj.vod_blurb}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_vod_detail($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.vod_name|mac_filter_html}_{$obj.type.type_name|mac_filter_html}_{$vfedcc['seos']['vinfo']['title']|mac_default=$obj.type_1.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="type" property="og:type" content="videolist" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$obj.vod_pic|mac_url_img}" />
+<meta itemprop="class" property="og:video:class" content="{$obj.type.type_name|mac_filter_html}" />
+<meta itemprop="actor" property="og:video:actor" content="{$obj.vod_actor}" />
+<meta itemprop="uploadDate" property="og:video:date" content="{$obj.vod_time|date='Y-m-d',###}" />
+<meta itemprop="contentLocation" property="og:video:area" content="{$obj.vod_area}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['vinfo']['info']}{$obj.vod_blurb}" />
+{elseif$maccms.aid==15}
+<title>{$obj.vod_name|mac_filter_html|mac_default='404'}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}{$vfedcc['seos']['vplay']['title']|mac_default='在线播放'}_{$obj.type.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$vfedcc['seos']['vplay']['word']|mac_default='在线播放'},{$obj.vod_actor},{$obj.vod_director},{$obj.vod_name|mac_filter_html},{$obj.type.type_name|mac_filter_html},{$obj.type_1.type_name|mac_filter_html},{$maccms.site_name}" />
+<meta name="description" content="{$vfedcc['seos']['vplay']['info']|mac_default='在线播放'}{$obj.vod_blurb}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_vod_detail($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.vod_name|mac_filter_html}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}{$vfedcc['seos']['vplay']['title']|mac_default='在线播放'}_{$obj.type.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="type" property="og:type" content="video" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$obj.vod_pic|mac_url_img}" />
+<meta itemprop="class" property="og:video:class" content="{$obj.type.type_name|mac_filter_html}" />
+<meta itemprop="actor" property="og:video:actor" content="{$obj.vod_actor}" />
+<meta itemprop="uploadDate" property="og:video:date" content="{$obj.vod_time|date='Y-m-d',###}" />
+<meta itemprop="contentLocation" property="og:video:area" content="{$obj.vod_area}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['vplay']['info']|mac_default='在线播放'}{$obj.vod_blurb}" />
+{elseif$maccms.aid==16}
+<title>{$obj.vod_name|mac_filter_html|mac_default='404'}_{$obj['vod_down_list'][$param['sid']]['player_info']['show']}_{$obj.type.type_name|mac_filter_html}{$obj.type_1.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_actor},{$obj.vod_director},{$obj.vod_name|mac_filter_html},{$obj.type.type_name|mac_filter_html},{$obj.type_1.type_name|mac_filter_html},{$maccms.site_name}" />
+<meta name="description" content="{$obj.vod_blurb}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_vod_detail($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.vod_name|mac_filter_html}_{$obj['vod_down_list'][$param['sid']]['player_info']['show']}_{$obj.type.type_name|mac_filter_html}{$obj.type_1.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="type" property="og:type" content="download" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$obj.vod_pic|mac_url_img}" />
+<meta itemprop="class" property="og:video:class" content="{$obj.type.type_name|mac_filter_html}" />
+<meta itemprop="actor" property="og:video:actor" content="{$obj.vod_actor}" />
+<meta itemprop="uploadDate" property="og:video:date" content="{$obj.vod_time|date='Y-m-d',###}" />
+<meta itemprop="contentLocation" property="og:video:area" content="{$obj.vod_area}" />
+<meta itemprop="description" property="og:description" content="{$obj.vod_blurb}" />
+{elseif$maccms.aid==20}
+<title>{$vfedcc['seos']['artic']['title']|mac_default='资讯'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$vfedcc['seos']['artic']['word']|mac_default='资讯,'.$maccms.site_keywords}" />
+<meta name="description" content="{$vfedcc['seos']['artic']['info']|mac_default='24小时滚动报道国内、国际及社会新闻。每日编发新闻数以万计。'}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url('art/index')}" />
+<meta itemprop="name" property="og:title" content="{$vfedcc['seos']['artic']['title']|mac_default='资讯'} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['artic']['info']|mac_default='24小时滚动报道国内、国际及社会新闻。每日编发新闻数以万计。'}" />
+{elseif$maccms.aid==21}
+<title>{$obj.type_title|mac_default=$obj.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key|mac_default=$obj.type_name|mac_filter_html},{$maccms.site_name}" />
+<meta name="description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_type($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==24}
+<title>{$obj.art_name|mac_filter_html|mac_default='404'}_{$vfedcc['seos']['rinfo']['title']|mac_default='资讯'}_{$obj.type.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.art_tag|mac_default=$obj.type.type_name|mac_filter_html},{$vfedcc['seos']['rinfo']['word']|mac_default='资讯'},{$maccms.site_name}" />
+<meta name="description" content="{$vfedcc['seos']['rinfo']['info']|mac_default='资讯'}{$obj.art_blurb}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_art_detail($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.art_name|mac_filter_html}_{$vfedcc['seos']['rinfo']['title']|mac_default='资讯'}_{$obj.type.type_name|mac_filter_html} - {$maccms.site_name}" />
+<meta itemprop="type" property="og:type" content="article" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$obj.art_pic|mac_url_img}" />
+<meta itemprop="releaseDate" property="og:release_date" content="{$obj.art_time|date='Y-m-d',###}"/>
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['rinfo']['info']|mac_default='资讯'}{$obj.art_blurb}" />
+{elseif$maccms.aid==30}
+<title>{$vfedcc['seos']['topic']['title']|mac_default='专题首页'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$vfedcc['seos']['topic']['word']|mac_default='电影专题,电视剧专题,动漫专题,综艺专题'}" />
+<meta name="description" content="{$vfedcc['seos']['topic']['info']|mac_default=$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_topic_index()}" />
+<meta itemprop="name" property="og:title" content="{$vfedcc['seos']['topic']['title']|mac_default='专题首页'} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['topic']['info']|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==34}
+<title>{$obj.topic_title|mac_default=$obj.topic_name}_{$vfedcc['seos']['tinfo']['title']|mac_default='专题'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.topic_key|mac_default=$obj.topic_name},{$vfedcc['seos']['tinfo']['word']|mac_default='专题'},{$maccms.site_name}" />
+<meta name="description" content="{$vfedcc['seos']['tinfo']['info']|mac_default='专题'}{$obj.topic_des|mac_default=$obj.topic_blurb}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_topic_detail($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.topic_name}_{$vfedcc['seos']['tinfo']['title']|mac_default='专题'} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$obj.topic_pic|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['tinfo']['info']|mac_default='专题'}{$obj.topic_des|mac_default=$obj.topic_blurb}" />
+{elseif$maccms.aid==80}
+<title>{$vfedcc['seos']['actor']['title']|mac_default='明星首页'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$vfedcc['seos']['actor']['word']|mac_default='明星娱乐,八卦新闻,明星绯闻,影视资讯,音乐资讯,八卦爆料'}" />
+<meta name="description" content="{$vfedcc['seos']['actor']['info']|mac_default='明星资讯网为大家提供, 明星娱乐八卦新闻, 明星绯闻,影视资讯,音乐资讯,八卦爆料, 娱乐视频等'}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_topic_index()}" />
+<meta itemprop="name" property="og:title" content="{$vfedcc['seos']['actor']['title']|mac_default='明星首页'} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['actor']['info']|mac_default='明星资讯网为大家提供, 明星娱乐八卦新闻, 明星绯闻,影视资讯,音乐资讯,八卦爆料, 娱乐视频等'}" />
+{elseif$maccms.aid==84}
+<title>{$obj.actor_name}_{$vfedcc['seos']['ainfo']['title']|mac_default='个人资料'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.actor_key|mac_default=$obj.actor_name},{$vfedcc['seos']['ainfo']['word']|mac_default='明星'},{$maccms.site_name}" />
+<meta name="description" content="{$vfedcc['seos']['ainfo']['info']|mac_default='明星'}{$obj.actor_blurb|mac_default=$maccms.site_description}" />
+<meta itemprop="url" property="og:url" content="{$maccms.http_type}{$maccms.site_url}{:mac_url_actor_detail($obj)}" />
+<meta itemprop="name" property="og:title" content="{$obj.actor_name}_{$vfedcc['seos']['ainfo']['title']|mac_default='个人资料'} - {$maccms.site_name}" />
+<meta itemprop="image" property="og:image" content="{$maccms.http_type}{$maccms.site_url}{$obj.actor_pic|mac_url_img}" />
+<meta itemprop="description" property="og:description" content="{$vfedcc['seos']['ainfo']['info']|mac_default='明星'}{$obj.actor_blurb|mac_default=$maccms.site_description}" />
+{/if}

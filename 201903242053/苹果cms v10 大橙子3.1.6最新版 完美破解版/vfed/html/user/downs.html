@@ -1,0 +1,40 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">下载记录</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<form class="fed-user-form fed-user-info" action="{:mac_url('user/ulog_del')}">
+		<ul class="fed-padding-v fed-part-rows">
+			<li class="fed-padding-v fed-col-xs3 fed-col-md1 fed-part-rows">
+				<a class="fed-col-xs12 fed-rims-info fed-btns-info" onClick="fed.myuser.all('ids[]');">全选</a>
+			</li>
+			<li class="fed-padding-v fed-col-xs3 fed-col-md1 fed-part-rows">
+				<a class="fed-col-xs12 fed-rims-info fed-btns-info" onClick="fed.myuser.other('ids[]');">反选</a>
+			</li>
+			<li class="fed-padding-v fed-col-xs3 fed-col-md1 fed-part-rows">
+				<a class="fed-down-del fed-col-xs12 fed-rims-info fed-btns-info">删除</a>
+			</li>
+			<li class="fed-padding-v fed-col-xs3 fed-col-md1 fed-part-rows">
+				<a class="fed-down-clear fed-col-xs12 fed-rims-info fed-btns-info">清空</a>
+			</li>
+		</ul>
+		<ul class="fed-user-list fed-part-rows fed-line-top">
+			{volist name="list" id="vo"}
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs9 fed-col-sm6 fed-part-eone"><input class="fed-form-comp" name="ids[]" type="checkbox" value="{$vo.ulog_id}"><a target="_blank" href="{$vo.data.link}">[{$vo.data.type.type_name}] {$vo.data.name} [{$vo.ulog_rid}-{$vo.ulog_sid}-{$vo.ulog_nid}]</a></span>
+					<span class="fed-col-xs3 fed-col-sm3 fed-part-eone fed-hide-xs"><a target="_blank" href="{$vo.data.link}">重新观看</a></span>
+					<span class="fed-col-xs3 fed-col-sm3 fed-part-eone fed-text-right">消费积分:{$vo.ulog_points}</span>
+				</div>
+			</li>
+			{/volist}
+		</ul>
+		{include file="module/paging"}
+	</form>
+</div>
+{include file="public/footer"}

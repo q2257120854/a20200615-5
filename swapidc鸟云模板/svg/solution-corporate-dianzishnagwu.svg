@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>电子商务复制 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="33.978341%" y1="45.8709277%" x2="54.3667745%" y2="51.8337693%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="电子商务复制-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-4" transform="translate(1.000000, 9.000000)">
+            <rect id="矩形" fill="url(#linearGradient-1)" x="0" y="0" width="62" height="10" rx="1"></rect>
+            <path d="M51.8586259,28.1413741 L59.1012229,35.3103423 L52.0161588,42.2741057 L44.8345221,35.1654779 L40,40 L40,23 L57,23 L51.8586259,28.1413741 Z" id="形状结合" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M0,0 L62,0 L62,46 L0,46 L0,0 Z M36,46 L36,23 L0,23 L0,23" id="形状" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="编组-3" transform="translate(9.000000, 13.000000)">
+                <path d="M2,15.5 L2,7.1 C2,3.45492065 5.13400675,0.5 9,0.5 C12.8659932,0.5 16,3.45492065 16,7.1 L16,15.5" id="形状" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <circle id="椭圆形复制-3" fill="#FFFFFF" cx="2" cy="16" r="2"></circle>
+                <circle id="椭圆形复制-4" fill="#FFFFFF" cx="16" cy="16" r="2"></circle>
+            </g>
+            <circle id="椭圆形" fill="#FFFFFF" cx="5.5" cy="4.5" r="2.5"></circle>
+            <circle id="椭圆形复制" fill="#FFFFFF" cx="11.5" cy="4.5" r="2.5"></circle>
+            <circle id="椭圆形复制-2" fill="#FFFFFF" cx="17.5" cy="4.5" r="2.5"></circle>
+        </g>
+    </g>
+</svg>

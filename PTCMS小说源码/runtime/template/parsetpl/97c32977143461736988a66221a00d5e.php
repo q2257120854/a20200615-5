@@ -1,0 +1,1 @@
+<?php echo $this->pt->config->get("sitename");?>提供<?php echo $category['name'];?>小说《<?php echo $novel['name'];?>》最新章节阅读和<?php echo $novel['name'];?>TXT下载及zip打包下载，更新超级快，无病毒无木马，页面干净清爽，希望大家收藏!

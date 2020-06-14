@@ -1,0 +1,1 @@
+<?php echo $this->pt->config->get("sitename");?>提供《<?php echo $novel['name'];?>》最新章节《<?php echo $chapter['name'];?>》在线阅读及在线听书！

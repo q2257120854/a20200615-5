@@ -1,0 +1,13 @@
+{maccms:art num="1" order="desc" by="time" level="8" key="advert"}
+<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+	<a class="fed-list-pics fed-lazy fed-part-2by3" href="{$vo.art_jumpurl|mac_default=mac_url_art_detail($vo)}" data-original="{$vo.art_pic|mac_url_img}">
+		<span class="fed-list-play fed-hide-xs"></span>
+		<span class="fed-list-score fed-font-xii fed-back-green">{$vo.art_sub|mac_default='广告'}</span>
+		<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$vo.art_remarks|mac_default='吐血推荐'}</span>
+	</a>
+	<a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href="{$vo.art_jumpurl|mac_default=mac_url_art_detail($vo)}">{$vo.art_name|mac_filter_html}</a>
+	<span class="fed-list-desc fed-font-xii fed-visible fed-part-eone fed-text-muted fed-hide-xs fed-show-sm-block">
+	{$vo.art_from|mac_default='吐血推荐'}
+	</span>
+</li>
+{/maccms:art}

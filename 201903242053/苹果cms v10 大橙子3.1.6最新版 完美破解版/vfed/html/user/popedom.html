@@ -1,0 +1,39 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">我的权限</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<ul class="fed-user-list fed-part-rows fed-back-whits">
+		{volist name="type_tree" id="vo"}
+		<li class="fed-padding-x fed-part-rows fed-line-bottom">
+			<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+				<span class="fed-col-xs3 fed-col-sm3 fed-part-eone">{$vo.type_name}</span>
+				<span class="fed-col-xs8 fed-col-sm8 fed-part-eone">
+			{foreach name="$vo.popedom" id="v2"}{if condition="$v2 eq 1"}
+			{$key}<span class="fed-text-green fed-text-bold">√</span> {else} {$key}
+				<span class="fed-text-gules fed-text-bold">×</span> {/if}{/foreach}
+				</span>
+				<span class="fed-col-xs1 fed-col-sm1 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+			</div>
+		</li>
+		{volist name="vo.child" id="child"}
+		<li class="fed-padding-x fed-part-rows fed-line-bottom">
+			<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+				<span class="fed-col-xs3 fed-col-sm3 fed-part-eone">{$child.type_name}</span>
+				<span class="fed-col-xs8 fed-col-sm8 fed-part-eone">
+			{foreach name="$child.popedom" id="v2"}{if condition="$v2 eq 1"}
+			{$key}<span class="fed-text-green fed-text-bold">√</span> {else} {$key}
+				<span class="fed-text-gules fed-text-bold">×</span> {/if}{/foreach}
+				</span>
+				<span class="fed-col-xs1 fed-col-sm1 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+			</div>
+		</li>
+		{/volist}{/volist}
+	</ul>
+</div>
+{include file="public/footer"}

@@ -1,0 +1,850 @@
+---------------------------------------------------------------
+[ 2019-08-19T17:07:19+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/demo
+[运行时间：0.631811s] [吞吐率：1.58req/s] [内存消耗：358.47kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001121s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.026622s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'demo',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:23+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.133919s] [吞吐率：7.47req/s] [内存消耗：876.34kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000118s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002358s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000202s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:23+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.330526s] [吞吐率：3.03req/s] [内存消耗：569.74kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000123s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006870s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.014377s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:27+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/demo
+[运行时间：0.054797s] [吞吐率：18.25req/s] [内存消耗：226.09kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000080s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004097s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'demo',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:32+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.096969s] [吞吐率：10.31req/s] [内存消耗：350.16kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000094s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006571s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.006076s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:37+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.084367s] [吞吐率：11.85req/s] [内存消耗：350.82kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000092s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004072s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003869s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:38+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/demo
+[运行时间：0.050857s] [吞吐率：19.66req/s] [内存消耗：225.43kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000124s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002588s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'demo',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:07:38+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/demo
+[运行时间：0.014946s] [吞吐率：66.91req/s] [内存消耗：226.09kb] [文件加载：48]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000081s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001289s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'demo',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.baidu.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 baidu.sogo.uc.UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'k.cross.echosite.cn',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:08:08+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.102035s] [吞吐率：9.80req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000058s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006509s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.005207s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:08:08+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.066538s] [吞吐率：15.03req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000077s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006586s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.005188s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:08:09+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.028263s] [吞吐率：35.38req/s] [内存消耗：245.98kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000065s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001507s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '378',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1',
+  'appid' => 'gpu359695843932',
+  'attach' => '扩展字段',
+  'bank_code' => '911',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '201908191708054629539209',
+  'product_name' => '测试产品',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => 'f4be85d2d8ddbd3a513e1550bc0ad7f1',
+  'sign' => 'fe67320a4146e925de27ecc25f2d0fe8',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000144s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:10:29+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.063474s] [吞吐率：15.75req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000075s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003994s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '381',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段111',
+  'bank_code' => '902',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '201908191710133297171720',
+  'product_name' => '测试产品',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => '65e523c7d241153f4f45f41baed1f3f0',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003314s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:11:39+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.068827s] [吞吐率：14.53req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000076s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004403s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '379',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段',
+  'bank_code' => '911',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '2019081917112176565542159',
+  'product_name' => '测试产品',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => 'bbad8dc32869c648a6510ab43603c0b3',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003651s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:12:12+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.074485s] [吞吐率：13.43req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000073s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004298s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '379',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段',
+  'bank_code' => '903',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '2019081917112176565542159',
+  'product_name' => '测试产品',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => '7127b3284d06387049e014c9883c31af',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.004289s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:12:23+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.068118s] [吞吐率：14.68req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000076s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004140s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '385',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1888',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段',
+  'bank_code' => '903',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '2019081917112176565542159',
+  'product_name' => '测试产品885',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => '25fb111e5e89a83da8fd3fb4b4c0d0f4',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003510s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:12:33+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.071956s] [吞吐率：13.90req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000076s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004218s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '385',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1888',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段',
+  'bank_code' => '906',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '2019081917112176565542159',
+  'product_name' => '测试产品885',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => 'b98dc451420b7ce5199da98ad161c061',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003555s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:21:53+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.072155s] [吞吐率：13.86req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004170s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '378',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段',
+  'bank_code' => '912',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '201908191721278024410229',
+  'product_name' => '测试产品',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => '4ad9b9a60f125758c0fc24712b8be44c',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003878s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:21:53+08:00 ] 172.18.0.1 POST k.cross.echosite.cn/api/order/unified
+[运行时间：0.007136s] [吞吐率：140.14req/s] [内存消耗：244.61kb] [文件加载：54]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000065s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001567s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'order',
+    2 => 'unified',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '378',
+  'accept' => '*/*',
+  'host' => 'k.cross.echosite.cn',
+)
+[ info ] [ PARAM ] array (
+  'amount' => '1',
+  'appid' => 'gpu63591382902',
+  'attach' => '扩展字段',
+  'bank_code' => '912',
+  'notify_url' => 'http://k.cross.echosite.cn/demo/notify.php',
+  'order_no' => '201908191721278024410229',
+  'product_name' => '测试产品',
+  'return_url' => 'http://k.cross.echosite.cn/demo/return.php',
+  'secret' => '9bf688e84fa05b52b50886eeeeec3902 ',
+  'sign' => '4ad9b9a60f125758c0fc24712b8be44c',
+)
+[ info ] [ LANG ] /web/bt/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000135s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:23:42+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.074209s] [吞吐率：13.48req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.004171s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003663s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:58:28+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.096575s] [吞吐率：10.35req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000111s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.005900s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.006712s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T17:58:28+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.119725s] [吞吐率：8.35req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000056s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006869s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.006815s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T18:28:16+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.133152s] [吞吐率：7.51req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006997s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.006744s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-08-19T18:28:16+08:00 ] 172.18.0.1 GET k.cross.echosite.cn/
+[运行时间：0.102891s] [吞吐率：9.72req/s] [内存消耗：350.02kb] [文件加载：63]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000108s ]
+[ info ] [ CACHE ] INIT Redis
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006757s ]
+[ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'host' => 'k.cross.echosite.cn',
+  'content-length' => '0',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip,deflate',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.006736s ]
+[ info ] [ LANG ] /web/bt/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /web/bt/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /web/bt/public/../application/index/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,1 @@
+<?php echo $novel['name'];?>_<?php echo $chapter['name'];?>_<?php echo $author['name'];?>作品_<?php echo $category['name'];?>小说_在线听<?php echo $novel['name'];?>_在线听书_<?php echo $this->pt->config->get("sitename");?>

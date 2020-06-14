@@ -1,0 +1,54 @@
+<div class="fed-scre-list fed-part-layout fed-back-whits fed-part-rows">
+	<dl class="fed-col-sx12 fed-col-sm6 fed-col-md4">
+		<dt>{if$obj.childids||$obj.parent.childids}分类{else}类型{/if}</dt>
+		{if$obj.childids||$obj.parent.childids}
+		{maccms:type num="8" ids="current" order="asc" by="sort" flag="vod"}
+		<dd{if$key>8} class="fed-hide-sm"{/if}><a href="{:mac_url_type($vo,['area'=>$param.area,'year'=>$param.year,'class'=>$param.class],'show')}">{$vo.type_name|mac_filter_html}</a></dd>
+		{/maccms:type}
+		{elseif$obj.type_extend.class}
+		{maccms:foreach name=":explode(',',$obj.type_extend.class)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>$vo],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{elseif$obj.parent.type_extend.class}
+		{maccms:foreach name=":explode(',',$obj.parent.type_extend.class)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>$vo],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{else}
+		{maccms:foreach name=":explode(',',$maccms.vod_extend_class)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>$vo],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{/if}
+	</dl>
+	<dl class="fed-col-sx12 fed-col-sm6 fed-col-md4 fed-hide-sm fed-show-md-block">
+		<dt>年代</dt>
+		{if$obj.type_extend.year}
+		{maccms:foreach name=":explode(',',$obj.type_extend.year)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$vo,'class'=>$param.class],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{elseif$obj.parent.type_extend.year}
+		{maccms:foreach name=":explode(',',$obj.parent.type_extend.year)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$vo,'class'=>$param.class],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{else}
+		{maccms:foreach name=":explode(',',$maccms.vod_extend_year)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$vo,'class'=>$param.class],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{/if}
+	</dl>
+	<dl class="fed-col-sx12 fed-col-sm6 fed-col-md4">
+		<dt>地区</dt>
+		{if$obj.type_extend.area}
+		{maccms:foreach name=":explode(',',$obj.type_extend.area)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$vo,'year'=>$param.year,'class'=>$param.class],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{elseif$obj.parent.type_extend.area}
+		{maccms:foreach name=":explode(',',$obj.parent.type_extend.area)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$vo,'year'=>$param.year,'class'=>$param.class],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{else}
+		{maccms:foreach name=":explode(',',$maccms.vod_extend_area)"}
+		<dd{if$key>9} class="fed-hide-sm"{/if}><a href="{:mac_url_type($obj,['area'=>$vo,'year'=>$param.year,'class'=>$param.class],'show')}">{$vo}</a></dd>
+		{/maccms:foreach}
+		{/if}
+	</dl>
+</div>

@@ -1,0 +1,15 @@
+{include file="public/header"}
+{include file="module/notice"}
+{include file="basics/report"}
+<div class="fed-part-layout fed-back-whits" id="fed-comm-list">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">留言板</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more"><span class="fed-hide-xs">当前第&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">1</span>&nbsp;页，</span>共&nbsp;<span id="fed-count" class="fed-text-green fed-text-bold">0</span>&nbsp;条留言</span></li>
+		</ul>
+	</div>
+	<div class="fed-comm-list">
+		{include file="gbook/ajax"}
+	</div>
+</div>
+{include file="public/footer"}

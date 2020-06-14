@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="../common/head"}
+</head>
+<body>
+<div class="header">
+	<div class="layui-main">
+		<a class="logo" href="{$pt.config.siteurl}"><i class="iconfont icon-logo"></i>{$pt.config.sitename}</a>
+		<a class="history" href="{link=user.history.index}"><i class="layui-icon i_history"></i>阅读历史</a>
+		<ul class="nav">
+			<li ><a href="{$pt.config.siteurl}">首页</a></li>
+			<li ><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}">书库大全</a></li>
+			<li ><a href="{link='novelsearch.index.category'}">小说分类</a></li>
+			<li class="on"><a href="{link=novelsearch.index.top}">排行榜</a></li>
+			<li ><a href="{link='novelsearch.list.over'}">完本</a></li>
+		</ul>
+		<form action="{link='novelsearch.search.result'}" class="search">
+			<input type="text" name="searchkey" placeholder="请输入搜索内容！" autocomplete="off">
+			<button type="submit" class="layui-icon i_search"></button>
+		</form>
+	</div>
+</div>
+<div class="main">
+	<div class="layui-main">
+		<div class="box left w_260">
+			<div class="title part">
+				<h2>排行榜</h2>
+			</div>
+			<ul class="top">
+				<li><a href="/top/allvisit.html">总点击小说榜</a></li>
+				<li><a href="/top/monthvisit.html">月点击小说榜</a></li>
+				<li><a href="/top/weekvisit.html">周点击小说榜</a></li>
+				<li><a href="/top/dayvisit.html">日点击小说榜</a></li>
+				<li><a href="/top/votenum.html">总推荐小说榜</a></li>
+				<li><a href="/top/marknum.html">总收藏小说榜</a></li>
+				<li><a href="/top/downnum.html">总下载小说榜</a></li>
+				<li><a href="/top/lastupdate.html">最近更新榜</a></li>
+				<li><a href="/top/postdate.html">入库新书榜</a></li>
+			</ul>
+		</div>
+		<div class="right w_860">
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>总点击榜</p>
+					<a href="{link='novelsearch.list.top' type='allvisit'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="allvisit" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>推荐排行</p>
+					<a href="{link='novelsearch.list.top' type='votenum'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="votenum" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>收藏排行</p>
+					<a href="{link='novelsearch.list.top' type='marknum'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="marknum" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>月点击榜</p>
+					<a href="{link='novelsearch.list.top' type='monthvisit'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="monthvisit" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				   {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>周点击榜</p>
+					<a href="{link='novelsearch.list.top' type='weekvisit'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="weekvisit" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>日点击榜</p>
+					<a href="{link='novelsearch.list.top' type='dayvisit'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="dayvisit" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>下载排行</p>
+					<a href="{link='novelsearch.list.top' type='downnum'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="downnum" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>最近更新</p>
+					<a href="{link='novelsearch.list.top' type='lastupdate'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="lastupdate" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div class="box left w_265">
+				<div class="title lite">
+					<p>最新入库</p>
+					<a href="{link='novelsearch.list.top' type='postdate'}" class="more">更多 &gt;</a>
+				</div>
+				<ul class="list bg rank">
+				    {block method="novellist" name="list" sort="postdate" num=10}
+                    {section loop=$list limit=1}
+					<li class="on">
+						<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+						<i class="layui-bg-red">1</i>
+						<p class="bookname"><a href="{$loop.url.info}">{$loop.novel.name}</a></a></p>
+						<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+					    <p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+					    <p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+					</li>
+					{/section}
+				    {section loop=$list skip=1 limit=1}
+					<li><i class="layui-bg-orange">2</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				    {section loop=$list skip=2 limit=1}
+					<li><i class="layui-bg-blue">3</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+					{section loop=$list skip=3}
+					<li><i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i><a href="{$loop.url.info}">{$loop.novel.name}</a></li>
+					{/section}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="../common/footer"}
+</body>
+</html>

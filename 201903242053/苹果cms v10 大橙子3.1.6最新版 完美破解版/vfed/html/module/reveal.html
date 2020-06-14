@@ -1,0 +1,21 @@
+{if$vfedcc['home']['shop']['state']}
+<div class="fed-part-rows">
+	<div class="fed-vfed-info fed-part-rows">
+		{maccms:art num="'.$vfedcc['home']['shop']['value'].'" order="desc" by="time" level="6"}
+		<div class="fed-vfed-boxs fed-col-sm6 fed-col-md4{if$vfedcc['home']['hots']['value']=='3'&&$key>2} fed-hide-sm fed-show-md-block{/if}">
+			<div class="fed-part-layout fed-back-whits">
+				<h1 class="fed-padding fed-font-xvi fed-text-center fed-part-eone">{$vo.art_name|mac_filter_html}</h1>
+				<p class="fed-text-center fed-text-muted">{$vo.art_sub}</p>
+				<div class="fed-padding">
+					<a class="fed-list-pics fed-lazy fed-part-2by1 fed-part-rows" data-original="{$vo.art_pic|mac_url_img}"></a>
+				</div>
+				<div class="fed-vfed-btns fed-padding fed-text-center">
+					<a class="fed-btns-info fed-rims-info fed-btns-green" href="{:mac_url_art_detail($vo)}">查看详情</a>
+					<a class="fed-btns-info fed-rims-info" href="{$vo.art_jumpurl}" target="_blank">{$vo.art_from|mac_default='主题演示'}</a>
+				</div>
+			</div>
+		</div>
+		{/maccms:art}
+	</div>
+</div>
+{/if}

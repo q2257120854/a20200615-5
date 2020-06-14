@@ -1,0 +1,70 @@
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>会员中心_{$pt.config.sitename}</title>
+    <link href="//cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/user.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="wrapper">
+    <!--header-->
+    <div class="header user-head">
+        <div class="site-logo"><a href="/"></a></div>
+        <div class="member-login">{if IS_LOGIN}{$userinfo.name} | <a href="{link=user.public.logout}">退出</a>{else}<a class="islogin" href="{link=user.public.login}">登录/注册</a>{/if}</div>
+    </div>
+    <!--header-->
+            <div class="weui-cells memberhead usercp">
+        <div class="weui-cell">
+            <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <img src="/public/image/noavatar_middle.gif	" style="width: 80px;display: block">
+                <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">{$userinfo.marknum}</span>
+            </div>
+            <div class="weui-cell__bd">
+                <p class="username">{$userinfo.name}</p>
+                <p style="font-size: 13px;color: #888888;"><a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">普通会员</a></p>
+            </div>
+            <!--a href="/e/DoInfo/AddInfo.php?enews=MAddInfo" class="weui-btn weui-btn_mini weui-btn_warn">上传小说</a-->
+        </div>
+    </div>
+
+    <div class="weui-grids" style="border-bottom: 1px solid #d9d9d9;">
+        <a href="{link=user.mark.index}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_like.png" alt="我的书架"></div><p class="weui-grid__label">我的书架</p>
+        </a>
+        <a href="{link=user.history.index}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_novel.png" alt="最近阅读"></div><p class="weui-grid__label">最近阅读</p>
+        </a>
+        <a href="{link='page.index.detail' key='about'}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_center.png" alt="关于我们"></div><p class="weui-grid__label">关于我们</p>
+        </a>
+        <a href="{link='page.index.detail' key='privacy'}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_zone.png" alt="隐私条款"></div><p class="weui-grid__label">隐私条款</p>
+        </a>
+        <a href="{link='page.index.detail' key='disdaimer'}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_msg.png" alt="免责声明"></div><p class="weui-grid__label">免责声明</p>
+        </a>
+        <a href="{link='page.index.detail' key='contact'}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_comment.png" alt="联系我们"></div><p class="weui-grid__label">联系我们</p>
+        </a>
+        <a href="{link=user.info.pwd}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_password.png" alt="修改密码"></div><p class="weui-grid__label">修改密码</p>
+        </a>
+        <a href="{link=user.third.index}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_bind.png" alt="账号绑定"></div><p class="weui-grid__label">账号绑定</p>
+        </a>
+        <a href="{link=user.public.logout}" class="weui-grid">
+            <div class="weui-grid__icon"><img src="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/img/wap_logout.png" alt="退出登录"></div><p class="weui-grid__label">退出登录</p>
+        </a>
+    </div>
+    </div>
+
+    <!-- footer -->
+<div class="footer">
+    <div class="copyright">&copy; {$pt.config.tplconfig.banquan}</div>
+</div>
+<!-- footer end -->
+<script type="text/javascript" src="{$pt.config.resurl}__TMPL__/script/svg.js"></script>
+<script>var cnzz_s_tag =document.createElement('script');cnzz_s_tag.type ='text/javascript';cnzz_s_tag.async =true;cnzz_s_tag.charset ='utf-8';cnzz_s_tag.src ='//w.cnzz.com/c.php?id={$pt.config.tplconfig.tongji}&async=1';var root_s =document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);</script>
+</body>
+</html>

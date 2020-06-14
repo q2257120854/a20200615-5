@@ -1,0 +1,78 @@
+#welive_online, #welive_wrap {
+	position:fixed;
+	border-color:transparent;
+	right:60px;
+	bottom:0;
+	font:14px "Microsoft Yahei","\5b8b\4f53",Arial,Verdana;
+}
+
+#welive_online {
+	width:220px;
+	height:36px;
+	z-index:788888;
+	color:#fff;
+	overflow:hidden;
+}
+
+#welive_tg, #welive_close_btn {background-image:url(img/guests.png);background-repeat:no-repeat;cursor:pointer;}
+
+#welive_info {
+	width:160px;
+	height:30px;
+	white-space:nowrap;
+	overflow:hidden;
+	padding:6px 0 0 34px;
+	cursor:pointer;
+}
+
+#welive_info img {position:absolute;left:4px;top:5px;}
+#welive_tg {position:absolute;top:7px;right:4px;width:22px;height:20px;background-position:-176px 2px;}
+#welive_wrap {
+	width:340px;
+	height:500px;
+	z-index:800000;
+	display:none;
+	box-shadow: 0 0 10px #333333;
+	-moz-box-shadow: 0 0 10px #333333;
+	-webkit-box-shadow: 0 0 10px #333333;
+}
+
+#welive_drag, #welive_mouse_tracker, #welive_close {
+	-moz-opacity:0;
+	-khtml-opacity:0;
+	-webkit-opacity:0;
+	opacity:0;
+	-ms-filter:alpha(opacity=0);
+	filter:alpha(opacity=0);
+}
+
+#welive_drag {
+	position:absolute;
+	top:0;
+	width:100%;
+	height:40px;
+	z-index:800002;
+	cursor:move;
+}
+
+#welive_mouse_tracker {
+	position:fixed;
+	width:100%;
+	height:100%;
+	z-index:799999;
+	left:0;
+	top:0;
+	display:none;
+}
+
+#welive_close {position:absolute;z-index:-1;width:365px;height:100%;}
+#welive_close_btn {
+	position:absolute;
+	right:-25px;
+	width:20px;
+	height:20px;
+	background-position: -144px 0;
+}
+
+#welive_iwrap, #welive_iholder, #welive_iframe {width:100%;height:100%;padding:0;margin:0;}
+#welive_iframe {overflow:hidden;}

@@ -1,0 +1,62 @@
+{include file="public/header"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">内地明星</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url('actor/show',['area'=>'大陆,内地'])}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="12" area="大陆,内地" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+</div>
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">港台明星</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url('actor/show',['area'=>'香港,台湾,澳门'])}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="12" area="香港,台湾,澳门" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+</div>
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">日韩明星</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url('actor/show',['area'=>'韩国,日本,亚洲'])}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="12" area="韩国,日本,亚洲" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+</div>
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">欧美明星</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url('actor/show',['area'=>'美国,欧美,欧洲'])}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="12" area="美国,欧美,欧洲" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+</div>
+{include file="public/footer"}

@@ -1,0 +1,19 @@
+{maccms:type ids="parent" order="asc" by="sort" flag="art" id="vfed"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfed.type_name|mac_filter_html}</h2>
+		<ul class="fed-part-tips fed-padding">
+			{maccms:type parent="'.$vfed['type_id'].'" order="asc" by="sort" flag="art"}
+			<li class="fed-hide-xs">
+				<a href="{:mac_url_type($vo)}">{$vo.type_name|mac_filter_html}</a> /</li>
+			{/maccms:type}
+			<li>
+				<a class="fed-more" href="{:mac_url_type($vfed)}">更多</a>
+			</li>
+		</ul>
+	</div>
+	{maccms:art num="'.$vfedcc['rest']['arts'].'" type="'.$vfed['type_id'].'" order="desc" by="time"}
+	{include file="basics/inform"}
+	{/maccms:art}
+</div>
+{/maccms:type}

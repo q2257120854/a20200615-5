@@ -1,0 +1,53 @@
+{if$vfedcc['home']['slide']['state']}
+<div class="fed-swip-container fed-part-rows">
+	<ul class="fed-swip-wrapper fed-font-size">
+		{if$maccms.aid==1}
+		{maccms:art num="2" type="current" order="desc" by="time" level="7"}
+		<li class="fed-swip-slide fed-marg-top">
+			<a class="fed-list-pics fed-part-5by2 fed-swip-lazy" href="{$vo.art_jumpurl|mac_default=mac_url_art_detail($vo)}" data-background="{$vo.art_pic_slide|mac_default=$vo.art_pic|mac_url_img}">
+				<div class="fed-swip-title fed-text-white fed-part-eone">
+					<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.art_name|mac_filter_html}</span>
+					<span class="fed-part-eone fed-font-xii">{$vo.art_remarks|mac_default='吐血推荐'}</span>
+				</div>
+			</a>
+		</li>
+		{/maccms:art}
+		{maccms:vod num="'.$vfedcc['home']['slide']['value'].'" type="current" order="desc" by="time" level="5"}
+		<li class="fed-swip-slide fed-marg-top">
+			<a class="fed-list-pics fed-part-5by2 fed-swip-lazy" href="{:mac_url_vod_detail($vo)}" data-background="{$vo.vod_pic_slide|mac_default=$vo.vod_pic|mac_url_img}">
+				<div class="fed-swip-title fed-text-white fed-part-eone">
+					<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.vod_name|mac_filter_html}</span>
+					<span class="fed-part-eone fed-font-xii">{$vo.vod_remarks|mac_default=$vo.vod_area.$vo.type.type_name|mac_filter_html}</span>
+				</div>
+			</a>
+		</li>
+		{/maccms:vod}
+		{elseif$maccms.aid==10||$maccms.aid==11}
+		{maccms:vod num="'.$vfedcc['home']['slide']['value'].'" type="current" order="desc" by="time" level="5"}
+		<li class="fed-swip-slide fed-marg-top">
+			<a class="fed-list-pics fed-part-5by2 fed-swip-lazy" href="{:mac_url_vod_detail($vo)}" data-background="{$vo.vod_pic_slide|mac_default=$vo.vod_pic|mac_url_img}">
+				<div class="fed-swip-title fed-text-white fed-part-eone">
+					<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.vod_name|mac_filter_html}</span>
+					<span class="fed-part-eone fed-font-xii">{$vo.vod_remarks|mac_default=$vo.vod_area.$vo.type.type_name|mac_filter_html}</span>
+				</div>
+			</a>
+		</li>
+		{/maccms:vod}
+		{elseif$maccms.aid==20||$maccms.aid==21}
+		{maccms:art num="'.$vfedcc['home']['slide']['value'].'" type="current" order="desc" by="time" level="5"}
+		<li class="fed-swip-slide fed-marg-top">
+			<a class="fed-list-pics fed-part-5by2 fed-swip-lazy" href="{:mac_url_art_detail($vo)}" data-background="{$vo.art_pic_slide|mac_default=$vo.art_pic|mac_url_img}">
+				<div class="fed-swip-title fed-text-white fed-part-eone">
+					<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.art_name|mac_filter_html}</span>
+					<span class="fed-part-eone fed-font-xii">{$vo.art_remarks|mac_default='内详'}</span>
+				</div>
+			</a>
+		</li>
+		{/maccms:art}
+		{/if}
+	</ul>
+	<div class="fed-swip-pagin fed-font-size fed-text-right"></div>
+	<a class="fed-swip-next fed-text-white fed-text-center fed-hide-xs fed-icon-font fed-icon-you" href="javascript:;"></a>
+	<a class="fed-swip-prev fed-text-white fed-text-center fed-hide-xs fed-icon-font fed-icon-zuo" href="javascript:;"></a>
+</div>
+{/if}

@@ -1,0 +1,36 @@
+{include file="public/header"}
+{include file="module/banner"}
+{include file="module/mobile"}
+{if$obj.childids}
+{maccms:type ids="current" order="asc" by="sort"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vo.type_name|mac_filter_html}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li>
+				<a class="fed-more" href="{:mac_url_type($vo)}">更多</a>
+			</li>
+		</ul>
+	</div>
+	{maccms:art num="10" type="'.$vo['type_id'].'" order="desc" by="time"}
+	{include file="basics/inform"}
+	{/maccms:art}
+</div>
+{/maccms:type}
+{else}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$obj.type_name}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li>
+				<a class="fed-more" href="{:mac_url_type($obj.parent)}">返回</a>
+			</li>
+		</ul>
+	</div>
+	{maccms:art num="10" paging="yes" half="3" type="current" order="desc" by="time"}
+	{include file="basics/inform"}
+	{/maccms:art}
+	{include file="module/paging"}
+</div>
+{/if}
+{include file="public/footer"}

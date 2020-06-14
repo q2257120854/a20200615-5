@@ -1,0 +1,78 @@
+.donation_thumbnail {
+    margin-bottom:25px;
+    text-align: center;
+    font-size: 0
+}
+
+    .donation_thumbnail .secTitle {
+        font-size: 25px;margin-top: 20px;
+    }
+
+    .donation_thumbnail .thumbRow {
+        display: inline-block;
+        vertical-align: top;
+        width: 33.33%
+    }
+
+        .donation_thumbnail .thumbRow .nakedGirl {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 168px;
+            margin: 30px 10px 20px
+        }
+
+        .donation_thumbnail .thumbRow.left .nakedGirl {
+            background-image: url(../images/01.gif)
+        }
+
+        .donation_thumbnail .thumbRow.middle .nakedGirl {
+            background-image: url(../images/02.gif)
+        }
+
+        .donation_thumbnail .thumbRow.right .nakedGirl {
+            background-image: url(../images/03.gif)
+        }
+
+        .donation_thumbnail .thumbRow p {
+            font-size: 18px
+        }
+.donation_info{padding:5px;border-top: 1px solid #efefef;
+    padding-top: 20px;}
+.donation_info p{color: #666;}
+.donation_info p.titlebox{font-size:18px;}
+.vipclass{padding: 10px;}
+.vipclass p{font-size: 16px;color: #007bff;}
+.vipclass p img{max-width: 100%; height: auto; margin-bottom: 20px; border: 1px solid #eaeaea; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); border-radius: 4px;}
+@media (max-width: 576px) {
+ .donation_descrip, .donation_thumbnail {
+        padding: 0 10px
+    }
+
+    .donation_thumbnail {
+        margin-bottom: 30px
+    }
+
+        .donation_thumbnail .secTitle {
+            margin-bottom: 25px;
+            font-size: 20px; margin-top: 10px;
+        }
+
+        .donation_thumbnail .thumbRow {
+            display: block;
+            width: 100%
+        }
+
+            .donation_thumbnail .thumbRow .nakedGirl {
+                margin: 0
+            }
+
+            .donation_thumbnail .thumbRow p {
+                margin-top: 20px
+            }
+
+            .donation_thumbnail .thumbRow:not(:last-of-type) {
+                margin-bottom: 25px
+            }
+
+}

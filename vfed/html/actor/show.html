@@ -1,0 +1,18 @@
+{include file="public/header"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$param.area}明星</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more"><span class="fed-hide-xs">当前第&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">1</span>&nbsp;页，</span>共&nbsp;<span id="fed-count" class="fed-text-green fed-text-bold">0</span>&nbsp;个明星</span></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="48" paging="yes" pageurl="actor/show" half="3" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+	{include file="module/paging"}
+</div>
+{include file="public/footer"}

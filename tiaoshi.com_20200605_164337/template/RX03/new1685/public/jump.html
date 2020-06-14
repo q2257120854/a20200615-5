@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>系统提示......</title>
+<link rel="stylesheet" href="__STATIC__/css/home.css">
+<style>
+        body{background:#F9FAFD;color:#818181;}
+    </style>
+</head>
+<body>
+<div class="mac_msg_jump">
+  <div class="msg_jump_tit">亲爱的：</div>
+  <div class="title"></div>
+  <div class="msg_jump_tit">您{$msg}</div>
+  <div class="jump"> 小蜜将带您进入登录页面 <a id="href" href="<?php echo($url);?>">跳转</a> <br/>
+    等待时间： <b id="wait"><?php echo($wait);?></b> </div>
+  <br/>
+  <br/>
+  <div class="title">
+    <h2><a id="href" href="<?php echo($url);?>">长时间未进入登录页面点我进入哟^_^</a></h2>
+  </div>
+</div>
+<script type="text/javascript">
+    (function(){
+        var wait = document.getElementById('wait'),
+                href = document.getElementById('href').href;
+        var interval = setInterval(function(){
+            var time = --wait.innerHTML;
+            if(time <= 0) {
+                location.href = href;
+                clearInterval(interval);
+            };
+        }, 1000);
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+</div></div>{include file="basics/colors"}{include file="basics/global"}{include file="basics/quicks"}
+<script src="<?php echo $maccms['path_tpl']; ?>asset/js/player.js"></script>
+<div class="fed-foot-info fed-part-layout fed-back-whits">
+	<div class="fed-part-case">
+		<p class="fed-text-center fed-text-black">{$vfedcc['main']['foot']}</p>
+		<p class="fed-text-center fed-text-black">{$maccms.site_tj}</p>
+		<p class="fed-text-center fed-text-black fed-foot-maps fed-font-size">
+			<a class="fed-font-xiv" href="{:mac_url('rss/index')}" target="_blank">RSS订阅</a>
+			<span class="fed-font-xiv">&nbsp;-&nbsp;</span>
+			<a class="fed-font-xiv" href="{:mac_url('rss/baidu')}" target="_blank">百度蜘蛛</a>
+			<span class="fed-font-xiv">&nbsp;-&nbsp;</span>
+			<a class="fed-font-xiv" href="{:mac_url('rss/google')}" target="_blank">谷歌地图</a>
+			<span class="fed-font-xiv">&nbsp;-&nbsp;</span>
+			<a class="fed-font-xiv" href="{:mac_url('rss/sm')}" target="_blank">神马爬虫</a>
+			<span class="fed-font-xiv fed-hide-xs">&nbsp;-&nbsp;</span>
+			<a class="fed-font-xiv fed-hide-xs" href="{:mac_url('rss/sogou')}" target="_blank">搜狗蜘蛛</a>
+			<span class="fed-font-xiv fed-hide-xs">&nbsp;-&nbsp;</span>
+			<a class="fed-font-xiv fed-hide-xs" href="{:mac_url('rss/so')}" target="_blank">奇虎地图</a>
+			<span class="fed-font-xiv fed-hide-xs">&nbsp;-&nbsp;</span>
+			<a class="fed-font-xiv fed-hide-xs" href="{:mac_url('rss/bing')}" target="_blank">必应爬虫</a>
+		</p>
+		{if$maccms.site_email}
+		<p class="fed-text-center fed-text-black">{$maccms.site_email}&nbsp;&nbsp;&nbsp;{$maccms.site_icp}</p>
+		{/if}
+		<p class="fed-text-center fed-text-black">&copy;&nbsp;{:date('Y')}&nbsp;{$maccms.site_url}&nbsp;Theme&nbsp;by&nbsp;<a class="fed-font-xiv" href="//www.13bk.cn/" target="_blank">{$vfedcc['main']['copy']|mac_default='vfed&nbsp;'.$version}</a></p>
+	</div>
+</div>
+</body>
+</html>

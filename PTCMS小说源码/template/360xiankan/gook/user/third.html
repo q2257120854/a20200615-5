@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>登录绑定_{$pt.config.sitename}</title>
+    <link href="//cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/user.css?v=1" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="wrapper">
+    <!--header-->
+    <div class="header user-head">
+        <div class="site-logo"><a href="/"></a></div>
+        <div class="member-login">{if IS_LOGIN}<a href="{link=user.index.index}">{$userinfo.name}</a> | <a href="{link=user.public.logout}">退出</a>{else}<a class="islogin" href="{link=user.public.login}">登录/注册{/if}</div>
+    </div>
+    <!--header-->
+            <div class="weui-cells__title">绑定账号</div>
+  
+      <div class="weui-cells">
+          <div class="weui-cell">
+              <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                  <img src="//static.2uxs.com/wap/v{$pt.config.tplconfig.demo}/img/wap_qq.png" style="width: 50px;display: block">
+              </div>
+              <div class="weui-cell__bd">
+                  <p>QQ登录</p>
+				   {if ($userinfo.qqid)}
+				  <p style="font-size: 13px;color: #888888;">已绑定</p>
+				  {else}
+                  <p style="font-size: 13px;color: #888888;">未绑定</p>
+				  {/if}
+              </div>
+              <div class="weui-cell__ft" style="font-size: 0">
+			      {if ($userinfo.qqid)}
+				  <span style="vertical-align:middle;"><a class="weui-btn weui-btn_mini weui-btn_default" href="{link=user.third.unbind type=qq}">取消绑定</a></span>
+				  {else}
+                  <span style="vertical-align:middle;"><a class="weui-btn weui-btn_mini weui-btn_default" href="{link=user.third.bind type=qq}">立即绑定</a></span>
+				  {/if}
+              </div>
+          </div>
+      </div>
+
+      </div>
+
+    <!-- footer -->
+<div class="footer">
+    <div class="copyright">&copy; {$pt.config.tplconfig.banquan}</div>
+</div>
+<!-- footer end -->
+</div>
+<script type="text/javascript" src="{$pt.config.resurl}__TMPL__/script/svg.js"></script>
+<script>var cnzz_s_tag =document.createElement('script');cnzz_s_tag.type ='text/javascript';cnzz_s_tag.async =true;cnzz_s_tag.charset ='utf-8';cnzz_s_tag.src ='//w.cnzz.com/c.php?id={$pt.config.tplconfig.tongji}&async=1';var root_s =document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);</script>
+</body>
+</html>

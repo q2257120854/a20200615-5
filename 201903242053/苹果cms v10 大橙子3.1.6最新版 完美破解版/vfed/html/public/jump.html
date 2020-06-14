@@ -1,0 +1,19 @@
+{include file="public/header"}
+<div class="fed-part-layout fed-back-whits fed-part-height">
+	<div class="fed-jump-info fed-part-core" data-msg="{$msg}">
+		<h3 class="fed-font-xviii"><span>提示</span>{$msg}</h3>
+		<div class="fed-jump-list fed-part-rows">
+			<div class="fed-jump-tips fed-col-xs6">
+				<h4 class="fed-text-black fed-font-xviii">可能原因：</h4>
+				<p>找不到请求的页面</p><p>输入的网址不正确</p><p>网络信号差</p>
+			</div>
+			<div class="fed-jump-tips fed-col-xs6">
+				<h4 class="fed-text-black fed-font-xviii">可以尝试：</h4>
+				<p><a href="{:mac_url('index/index')}">打开网站首页</a></p>
+				<?php if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])){ $url = mac_url('index/index'); } ?>
+				<p><a id="href" href="{$url}">自动跳转(<span>3</span>)</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="public/footer"}

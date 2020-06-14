@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>网站维护中...</title>
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="/template/vfed/asset/css/close.css" />
+<script src="/template/vfed/asset/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="/template/vfed/asset/js/attach.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="fed-main-info">
+	<h2>网站维护中，请稍后访问</h2>
+	<ul class="fed-time-down" endtime="{if(strstr($close_tip,'请稍后')==true)}{:date('Y-m-d',strtotime('+1 day')).' '.'00:00:00'}{else}{$close_tip|mac_default=date('Y-m-d',strtotime('+1 day')).' '.'00:00:00'}{/if}"></ul>
+</div>
+<div class="fed-foot-info">
+	<script type="text/javascript">
+	document.write('Copyright ' + new Date().getFullYear() + ' ' + location.hostname + ' Inc.');
+	</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000110s ]
+[ info ] [ LOG ] INIT File
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001649s ]
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ LANG ] /www/wwwroot/zzz.sfpfg.cn/thinkphp/lang/zh-cn.php
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2020-02-15T00:49:25+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002182s ]
+[ 2020-02-15T00:49:25+08:00 ][ error ] [0]forkOneWorker fail[/www/wwwroot/zzz.sfpfg.cn/socket/vendor/workerman/workerman/Worker.php:1457]
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000093s ]
+[ info ] [ LOG ] INIT File
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002170s ]
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ LANG ] /www/wwwroot/zzz.sfpfg.cn/thinkphp/lang/zh-cn.php
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2020-02-15T01:00:16+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002218s ]
+[ 2020-02-15T01:00:17+08:00 ][ info ] [ DB ] INIT mysql

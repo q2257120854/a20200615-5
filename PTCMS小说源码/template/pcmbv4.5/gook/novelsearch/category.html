@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="../common/head"}
+</head>
+<body>
+<div class="header">
+	<div class="layui-main">
+		<a class="logo" href="{$pt.config.siteurl}"><i class="iconfont icon-logo"></i>{$pt.config.sitename}</a>
+		<a class="history" href="{link=user.history.index}"><i class="layui-icon i_history"></i>阅读历史</a>
+		<ul class="nav">
+			<li ><a href="{$pt.config.siteurl}">首页</a></li>
+			<li class="on"><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}">书库大全</a></li>
+			<li ><a href="{link='novelsearch.index.category'}">小说分类</a></li>
+			<li ><a href="{link=novelsearch.index.top}">排行榜</a></li>
+			<li ><a href="{link='novelsearch.list.over'}">完本</a></li>
+		</ul>
+		<form action="{link='novelsearch.search.result'}" class="search">
+			<input type="text" name="searchkey" placeholder="请输入搜索内容！" autocomplete="off">
+			<button type="submit" class="layui-icon i_search"></button>
+		</form>
+	</div>
+</div>
+<div class="main">
+	<div class="layui-main">
+		<div class="box left w_260">
+			<ul class="filter">
+				<li>
+					<dl>
+						<dt>分类：</dt>
+						{block method="categorylist" name="list" pid=0}
+                        {section loop="list"}
+						<dd {if $category.key == $loop.key}class="on"{/if}><a href="{link='novelsearch.list.category' key=$loop.key chapternum=$chapternum isover=$isover order=$order page=$page}">{$loop.name}</a></dd>
+						{/section}
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>状态：</dt>
+						<dd {if $isover == 0}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=0 order=$order page=$page}">全部</a></dd>
+						<dd {if $isover == 1}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=1 order=$order page=$page}">连载中</a></dd>
+						<dd {if $isover == 2}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=2 order=$order page=$page}">已完本</a></dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>章节：</dt>
+						<ds {if $chapternum == 0}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum='0' isover=$isover order=$order page=$page}">全部</a></ds>
+						<ds {if $chapternum == 1}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum='1' isover=$isover order=$order page=$page}">500章以下</a></ds>
+						<ds {if $chapternum == 2}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum='2' isover=$isover order=$order page=$page}">500章-1000章</a></ds>
+						<ds {if $chapternum == 3}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum='3' isover=$isover order=$order page=$page}">1000章以上</a></ds>
+					</dl>
+				</li>
+			</ul>
+		</div>
+		<div class="box right w_840">
+			<ul class="order">
+				<li>排序</li>
+				<li {if $order == allvisit}class="on"{/if}{if $order == monthvisit}class="on"{/if}{if $order == weekvisit}class="on"{/if}{if $order == dayvisit}class="on"{/if}>
+					<dl>
+						<dt>{if $order == votenum}点击{/if}{if $order == marknum}点击{/if}{if $order == lastupdate}点击{/if}{if $order == postdate}点击{/if}{if $order == allvisit}总点击{/if}{if $order == monthvisit}月点击{/if}{if $order == weekvisit}周点击{/if}{if $order == dayvisit}日点击{/if}<i class="layui-icon"></i></dt>
+						<dd><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=allvisit page=$page}">总点击</a></dd>
+						<dd><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=monthvisit page=$page}">月点击</a></dd>
+						<dd><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=weekvisit page=$page}">周点击</a></dd>
+						<dd><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=dayvisit page=$page}">日点击</a></dd>
+					</dl>
+				</li>
+				<li {if $order == votenum}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=votenum page=$page}">推荐</a></li>
+				<li {if $order == marknum}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=marknum page=$page}">收藏</a></li>
+				<li {if $order == lastupdate}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=lastupdate page=$page}">最新</a></li>
+				<li {if $order == postdate}class="on"{/if}><a href="{link='novelsearch.list.category' key=$category.key chapternum=$chapternum isover=$isover order=postdate page=$page}">入库</a></li>
+				<li class="right"><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}"><i class="layui-icon i_refresh"></i> 重置</a></li>
+			</ul>
+			<ul class="library">
+			    {loop=categorylist}
+				<li>
+					<a class="bookimg" href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+					<a class="bookname" href="{$loop.url.info}">{$loop.novel.name}</a>
+					<span class="layui-badge layui-bg-blue">{$loop.novel.isover|default="连载中","已完结"}</span>
+					<p>作者：<a class="author" href="{$loop.author.url}">{$loop.author.name}</a><i>|</i><a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a><i>|</i>{$loop.last.time|cntime}</p>
+					<p class="intro">{$loop.novel.intro|mb_substr=0,60,'utf-8'}</p>
+					<a class="chapter" href="{$loop.last.url}">{$loop.last.name}</a>
+				</li>
+				{/loop}
+			</ul>
+			<div class="clear"></div>
+			<div class="page">
+			    {block method="page" name="pagelist" totalnum=$totalnum page=$page pagesize=$pagesize maxpage=0 section=3}
+				{if $pagelist.page == 1}
+				<em class="layui-disabled">首页</em>
+				<em class="layui-disabled">上一页</em>
+				{else}
+				<a href="{$pageurl|str_replace='__PAGE__',$pagelist.first.num,@}">首页</a>
+                <a href="{$pageurl|str_replace='__PAGE__',$pagelist.first.num,@}">上一页</a>
+                {/if}
+                {loop=$pagelist.num}
+                {if $loop.status}				
+				<em class="on">{$loop.num}</em>
+                {else}				
+				<a href="{$pageurl|str_replace='__PAGE__',$loop.num,@}">{$loop.num}</a>
+                {/if}
+                {/loop}		
+				<a href="{$pageurl|str_replace='__PAGE__',$pagelist.next.num,@}">下一页</a>	
+				<a href="{$pageurl|str_replace='__PAGE__',$pagelist.last.num,@}">尾页</a>		
+			</div>
+		</div>
+	</div>
+</div>
+{include file="../common/footer"}
+</body>
+</html>

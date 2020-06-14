@@ -1,0 +1,15 @@
+{if$vfedcc['home']['note']['state']}
+{if$maccms.aid==1}{maccms:art num="1" order="desc" by="time" level="1"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-padding">
+		{if$vfedcc['home']['note']['value']}{$vo.art_content|mac_url_content_img}{else}<marquee>{$vo.art_content|mac_url_content_img}</marquee>{/if}
+	</div>
+</div>
+{/maccms:art}{else}{maccms:art num="1" order="desc" by="time" level="2"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-padding">
+		{$vo.art_content|mac_url_content_img}
+	</div>
+</div>
+{/maccms:art}{/if}
+{/if}

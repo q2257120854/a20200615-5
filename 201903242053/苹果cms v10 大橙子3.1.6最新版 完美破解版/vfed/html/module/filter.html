@@ -1,0 +1,70 @@
+<div class="fed-casc-info fed-part-layout fed-back-whits fed-part-rows">
+	<div class="fed-casc-list fed-part-rows">
+		<dl>
+			<dt>频道</dt>
+			{maccms:type ids="parent" order="asc" by="sort" flag="vod"}
+			<dd><a{if$vo.type_id==$obj.type_id||$vo.type_id==$obj.parent.type_id} class="fed-this fed-text-green"{/if} href="{:mac_url_type($vo,[],'show')}">{$vo.type_name|mac_filter_html}</a></dd>
+			{/maccms:type}
+		</dl>
+		<dl>
+			<dt>{if$obj.childids||$obj.parent.childids}分类{else}类型{/if}</dt>
+			{if$obj.childids||$obj.parent.childids}
+			<dd><a{if$vo.parent.type_id==$obj.parent.type_id} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj.parent,['area'=>$param.area,'year'=>$param.year,'class'=>$param.class,'by'=>$param.by],'show')}">全部</a></dd>
+			{else}
+			<dd><a{if$param.class==''} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>'','by'=>$param.by],'show')}">全部</a></dd>
+			{/if}{if$obj.childids||$obj.parent.childids}
+			{maccms:type ids="current" order="asc" by="sort" flag="vod"}
+			<dd><a{if$vo.type_id==$obj.type_id} class="fed-this fed-text-green"{/if} href="{:mac_url_type($vo,['area'=>$param.area,'year'=>$param.year,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo.type_name|mac_filter_html}</a></dd>
+			{/maccms:type}
+			{elseif$obj.type_extend.class}
+			{maccms:foreach name=":explode(',',$obj.type_extend.class)"}
+			<dd><a{if$param.class==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>$vo],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{elseif$obj.parent.type_extend.class}
+			<dd><a{if$param.class==''} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>'','by'=>$param.by],'show')}">全部</a></dd>
+			{maccms:foreach name=":explode(',',$obj.parent.type_extend.class)"}
+			<dd><a{if$param.class==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>$vo],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{else}
+			<dd><a{if$param.class==''} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>'','by'=>$param.by],'show')}">全部</a></dd>
+			{maccms:foreach name=":explode(',',$maccms.vod_extend_class)"}
+			<dd><a{if$param.class==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$param.year,'class'=>$vo],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{/if}
+		</dl>
+		<dl>
+			<dt>地区</dt>
+			<dd><a{if$param.area==''} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>'','year'=>$param.year,'class'=>$param.class,'by'=>$param.by],'show')}">全部</a></dd>
+			{if$obj.type_extend.area}
+			{maccms:foreach name=":explode(',',$obj.type_extend.area)"}
+			<dd><a{if$param.area==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$vo,'year'=>$param.year,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{elseif$obj.parent.type_extend.area}
+			{maccms:foreach name=":explode(',',$obj.parent.type_extend.area)"}
+			<dd><a{if$param.area==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$vo,'year'=>$param.year,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{else}
+			{maccms:foreach name=":explode(',',$maccms.vod_extend_area)"}
+			<dd><a{if$param.area==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$vo,'year'=>$param.year,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{/if}
+		</dl>
+		<dl>
+			<dt>年代</dt>
+			<dd><a{if$param.year==''} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>'','class'=>$param.class,'by'=>$param.by],'show')}">全部</a></dd>
+			{if$obj.type_extend.year}
+			{maccms:foreach name=":explode(',',$obj.type_extend.year)"}
+			<dd><a{if$param.year==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$vo,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{elseif$obj.parent.type_extend.year}
+			{maccms:foreach name=":explode(',',$obj.parent.type_extend.year)"}
+			<dd><a{if$param.year==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$vo,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{else}
+			{maccms:foreach name=":explode(',',$maccms.vod_extend_year)"}
+			<dd><a{if$param.year==$vo} class="fed-this fed-text-green"{/if} href="{:mac_url_type($obj,['area'=>$param.area,'year'=>$vo,'class'=>$param.class,'by'=>$param.by],'show')}">{$vo}</a></dd>
+			{/maccms:foreach}
+			{/if}
+		</dl>
+	</div>
+</div>

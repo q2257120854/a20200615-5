@@ -1,0 +1,45 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">微信在线充值</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="javascript:;" onclick="window.history.back(-1);">返回</a>
+			</li>
+		</ul>
+	</div>
+	<form method="post" target="_blank" action="{:mac_url('user/gopay')}" data-info="{:mac_url('user/order_info')}" data-role="{:mac_url('user/index')}" data-code="{$order.order_id}">
+		<ul class="fed-user-list fed-part-rows fed-back-whits">
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">订单编号</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone">{$order.order_code}</span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">订单金额</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone">{$order.order_price}元</span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">微信扫码</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><img src="http://paysdk.weixin.qq.com/example/qrcode.php?data={$payment.code_url|urlencode}" width="150" height="150"/></span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+
+			<li class="fed-padding-x fed-part-rows">
+				<span class="fed-col-xs4 fed-col-sm3 fed-part-eone fed-hide-xs">&nbsp;</span>
+				<input class="fed-col-xs7 fed-col-sm6 fed-rims-info fed-btns-info fed-btns-green fed-col-xs12" type="submit" value="确认" />
+			</li>
+		</ul>
+	</form>
+</div>
+{include file="public/footer"}
+<script type="text/javascript">
+fed.myuser.chat();
+</script>

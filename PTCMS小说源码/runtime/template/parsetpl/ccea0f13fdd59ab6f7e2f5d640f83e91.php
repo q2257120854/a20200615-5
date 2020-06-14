@@ -1,0 +1,1 @@
+搜索最新最快原创小说,搜索您最喜爱的小说,尽在<?php echo $this->pt->config->get("sitename");?>！

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-title" content="{$maccms.site_name}" />
+<script src="<?php echo $maccms['path_tpl']; ?>asset/js/player.js"></script>
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{:mac_url('rss/index')}" />
+<!--[if lt IE 9]><script type="text/javascript">window.location.href = '{:mac_url("map/index")}';</script><![endif]-->
+<?php $version = parse_ini_file(substr($maccms['path_tpl'], strlen($maccms['path'])).'info.ini'); $version = stristr('127.0.0|192.168', substr($_SERVER['HTTP_HOST'], 0, 7)) == true ? time() : $version['version']; ?>
+<?php $vfedcc = file_exists('application/extra/vfedcc.php') ? require('application/extra/vfedcc.php') : require(substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/fed/vfedcc.php'); ?>
+<link href="{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" rel="apple-touch-icon-precomposed" />
+<link href="{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" rel="shortcut icon" type="image/ico" />
+<link rel="stylesheet" type="text/css" href="{$maccms.path_tpl}asset/css/style.css?v={$version}" />
+{if$_COOKIE['fed_color']}
+<link rel="stylesheet" type="text/css" href="{$maccms.path_tpl}asset/css/{$_COOKIE['fed_color']}.css?v={$version}" id="fed-colo-color" />
+{elseif$vfedcc['rest']['theme']['skin']}
+<link rel="stylesheet" type="text/css" href="{$maccms.path_tpl}asset/css/{$vfedcc['rest']['theme']['skin']}.css?v={$version}" id="fed-colo-color" />
+{/if}{if$vfedcc['main']['lazy']}
+<style type="text/css">.fed-list-pics{background-image:url("{$vfedcc['main']['lazy']|mac_url_img}");background-position: 50% 50%;background-size: cover}</style>
+{/if}{if$vfedcc['main']['bigs']}
+<style type="text/css">.fed-swip-lazy{background-image:url("{$vfedcc['main']['bigs']|mac_url_img}");background-position: 50% 50%;background-size: cover}</style>
+{/if}{if$vfedcc['main']['back']}
+<style type="text/css">body{background-image:url("{$vfedcc['main']['back']|mac_url_img}");background-attachment: fixed;background-repeat: no-repeat;background-position: top;background-size: auto 100vh;background-size: 101% 101%;}</style>
+{/if}{if$vfedcc['main']['wane']['state']}
+<style type="text/css">.fed-swip-title,.fed-list-pics,.fed-part-layout,.fed-list-info .fed-list-remarks,.fed-list-info .fed-list-play{border-radius:{$vfedcc['main']['wane']['value']}}</style>
+{/if}{include file="basics/seokey"}{include file="basics/themes"}{$vfedcc['main']['meta']}
+</head>
+<body class="fed-min-width">

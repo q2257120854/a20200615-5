@@ -1,0 +1,1 @@
+<?php echo $author['name'];?>作品集_<?php echo $author['name'];?>作品下载_<?php echo $this->pt->config->get("sitename");?>

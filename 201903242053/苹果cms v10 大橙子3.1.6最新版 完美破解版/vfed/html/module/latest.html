@@ -1,0 +1,23 @@
+{if$vfedcc['home']['video']['state']}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfedcc['home']['video']['title']|mac_default='最近更新'}</h2>
+		<ul class="fed-part-tips fed-padding">
+			{if$vfedcc['home']['hots']['state']}
+			<li><a class="fed-more fed-margin-o" href="{:mac_url('label/rank')}">影视排行榜</a></li>
+			{else}
+			<li>今日更新&nbsp;<span class="fed-text-green">{:mac_data_count($obj.type_id,'today','vod')}</span>&nbsp;部&nbsp;&nbsp;共&nbsp;<span class="fed-text-green">{:mac_data_count($obj.type_id,'all','vod')}&nbsp;</span>部</li>
+			{/if}
+			<li><a class="fed-more" href="{:mac_url('label/news')}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{include file="basics/advert"}
+		{maccms:vod num="'.($vfedcc['home']['video']['value']-$advert).'" type="current" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['video']['value']=='6'&&$key>(4-$advert)} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+</div>
+{/if}

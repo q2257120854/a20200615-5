@@ -1,0 +1,2 @@
+!function(){r=window.location.href,t=document.referrer;var o="https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif";t?(o+="?r="+encodeURIComponent(document.referrer),r&&(o+="&l="+r)):r&&(o+="?l="+r);var i=new Image;i.src=o}(window);
+var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?4aefc725479ad1f4749738fc46b7e319";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s)})();

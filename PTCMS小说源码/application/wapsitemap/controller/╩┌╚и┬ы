@@ -1,0 +1,5 @@
+<?php
+$authDomain = 'qinting.net';
+if(substr($_SERVER[HTTP_HOST], - strlen($authDomain))!= $authDomain){
+    exit('<script>alert("您的域名未被授权禁止访问");</script>');
+}?>

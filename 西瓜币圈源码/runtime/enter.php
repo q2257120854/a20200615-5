@@ -1,0 +1,1 @@
+<?php return array('site_enter'=>'http://max.cityshopper.com.cn','gotosite'=>'http://max.cityshopper.com.cn');

@@ -1,0 +1,18 @@
+{if$vfedcc['home']['news']['state']}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfedcc['home']['news']['title']|mac_default='最新资讯'}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li>今日更新&nbsp;<span class="fed-text-green">{:mac_data_count($obj.type_id,'today','art')}</span>&nbsp;篇&nbsp;&nbsp;共&nbsp;<span class="fed-text-green">{:mac_data_count($obj.type_id,'all','art')}&nbsp;</span>篇</li>
+			<li><a class="fed-more" href="{:mac_url('art/index')}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:art num="'.$vfedcc['home']['news']['value'].'" type="current" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3{if$vfedcc['home']['news']['value']=='4'&&$key>3} fed-hide-sm fed-show-md-block{elseif$vfedcc['home']['news']['value']=='8'&&$key>6} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/picture"}
+		</li>
+		{/maccms:art}
+	</ul>
+</div>
+{/if}

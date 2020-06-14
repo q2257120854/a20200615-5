@@ -1,0 +1,324 @@
+<div id="goodsList" class="donation-wrapper">
+							<div class="donation-box">
+								<div class="pepay_login li-donation-in svipBox">
+									<div class="icon-donate-svalue cn"></div>
+									<div class="icon-donate-30 cn"></div>
+									<div class="redtag-greatvalue cn"></div>
+									<div class="donation-time">Vip体验/天</div>
+									<div class="donation-cost">
+										<span class="ntSymbol">￥</span>1<span class="priceSlash">/</span>
+										<span class="GBuyText">1天</span>
+									</div>
+									<p>24小时试用体验价</p>
+									<p>一包香烟的价格即可建立信任！</p>
+									<div onclick="ShowPayType(this)" class="btn-donation upgrade">
+										<span>升级</span>
+									</div>
+								</div>
+								<div class="con-donation-list" style="display: none;">
+									<ul class="donation-list-lev1 client-pc">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1,'juhe','icbc')">微信wap【PC】</span>
+										</li>
+										{/if}
+
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(20,'weipay','zweixin')">weipay【PC】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1,'wherewx')">微信【推荐】</span>
+										</li>
+
+										<!---->
+										<!---->
+									</ul>
+									<ul class="donation-list-lev1 client-mobile" style="display: none;">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1,'juhe','wxwap')">微信wap【wap】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(20,'weipay','zweixin')">weipay【wap】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+									</ul>
+									<div class="text-ssl">
+										<p>如果有任何疑问，点击<a href="javascript:GoToChat();"
+												style="cursor: pointer; color: rgb(0, 255, 255);">[在线咨询]</a>，联系在线客服</p>
+									</div>
+								</div>
+							</div>
+							<div class="donation-box">
+								<div class="pepay_login li-donation-in svipBox">
+									<div class="icon-donate-svalue cn"></div>
+									<div class="icon-donate-30 cn"></div>
+									<div class="redtag-greatvalue cn"></div>
+									<div class="donation-time">Vip会员/月</div>
+									<div class="donation-cost">
+										<span class="ntSymbol">￥</span>1.2<span class="priceSlash">/</span>
+										<span class="GBuyText">1个月</span>
+									</div>
+									<p>1个月无限观看弹性方案</p>
+									<p>想要拥有极速不是梦想</p>
+									<div onclick="ShowPayType(this)" class="btn-donation upgrade">
+										<span>升级</span>
+									</div>
+								</div>
+								<div class="con-donation-list" style="display: none;">
+									<ul class="donation-list-lev1 client-pc">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.2,'juhe')">微信wap【推荐】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.2,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1.2,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1.2,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+										<!---->
+									</ul>
+									<ul class="donation-list-lev1 client-mobile" style="display: none;">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.2,'juhe')">微信wap【推荐1.2】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.2,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1.2,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1.2,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+									</ul>
+									<div class="text-ssl">
+										<p>如果有任何疑问，点击<a href="javascript:GoToChat();"
+												style="cursor: pointer; color: rgb(0, 255, 255);">[在线咨询]</a>，联系在线客服</p>
+									</div>
+								</div>
+							</div>
+							<div class="donation-box">
+								<div class="pepay_login li-donation-in svipBox">
+									<div class="icon-donate-svalue cn"></div>
+									<div class="icon-donate-30 cn"></div>
+									<div class="redtag-greatvalue cn"></div>
+									<div class="donation-time">Vip会员/季</div>
+									<div class="donation-cost">
+										<span class="ntSymbol">￥</span>1.3<span class="priceSlash">/</span>
+										<span class="GBuyText">3个月</span>
+									</div>
+									<p>3个月无限观看季度速成</p>
+									<p>让你修炼成手枪达人</p>
+									<div onclick="ShowPayType(this)" class="btn-donation upgrade">
+										<span>升级</span>
+									</div>
+								</div>
+								<div class="con-donation-list" style="display: none;">
+									<ul class="donation-list-lev1 client-pc">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.3,'juhe')">微信wap【推荐】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.3,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1.3,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1.3,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+										<!---->
+									</ul>
+									<ul class="donation-list-lev1 client-mobile" style="display: none;">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.3,'juhe')">微信wap【推荐1.3】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.3,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1.3,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1.3,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+									</ul>
+									<div class="text-ssl">
+										<p>如果有任何疑问，点击<a href="javascript:GoToChat();"
+												style="cursor: pointer; color: rgb(0, 255, 255);">[在线咨询]</a>，联系在线客服</p>
+									</div>
+								</div>
+							</div>
+							<div class="donation-box">
+								<div class="pepay_login li-donation-in svipBox">
+									<div class="icon-donate-svalue cn"></div>
+									<div class="icon-donate-30 cn"></div>
+									<div class="redtag-greatvalue cn"></div>
+									<div class="donation-time">Vip会员/年</div>
+									<div class="donation-cost">
+										<span class="ntSymbol">￥</span>1.5<span class="priceSlash">/</span>
+										<span class="GBuyText">12个月</span>
+									</div>
+									<p>12个月无限观看适合持久不断的你</p>
+									<p>一号在手天下我有</p>
+									<div onclick="ShowPayType(this)" class="btn-donation upgrade">
+										<span>升级</span>
+									</div>
+								</div>
+								<div class="con-donation-list" style="display: none;">
+									<ul class="donation-list-lev1 client-pc">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.5,'juhe')">微信wap【推荐】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.5,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1.5,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1.5,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+										<!---->
+									</ul>
+									<ul class="donation-list-lev1 client-mobile" style="display: none;">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.5,'juhe')">微信wap【推荐1.5】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(1.5,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(1.5,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(1.5,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+									</ul>
+									<div class="text-ssl">
+										<p>如果有任何疑问，点击<a href="javascript:GoToChat();"
+												style="cursor: pointer; color: rgb(0, 255, 255);">[在线咨询]</a>，联系在线客服</p>
+									</div>
+								</div>
+							</div>
+							<div class="donation-box">
+								<div class="pepay_login li-donation-in svipBox">
+									<div class="icon-donate-svalue cn"></div>
+									<div class="icon-donate-30 cn"></div>
+									<div class="redtag-greatvalue cn"></div>
+									<div class="donation-time">Vip会员/终生</div>
+									<div class="donation-cost">
+										<span class="ntSymbol">￥</span>518<span class="priceSlash">/</span>
+										<span class="GBuyText">终生</span>
+									</div>
+									<p>终身会员！无限观看！</p>
+									<p>一号在手天下我有</p>
+									<div onclick="ShowPayType(this)" class="btn-donation upgrade">
+										<span>升级</span>
+									</div>
+								</div>
+								<div class="con-donation-list" style="display: none;">
+									<ul class="donation-list-lev1 client-pc">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(518,'juhe','wxwap')">微信wap【推荐】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(518,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(518,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(518,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+										<!---->
+									</ul>
+									<ul class="donation-list-lev1 client-mobile" style="display: none;">
+										{if$config['juhe']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(518,'juhe')">微信wap【推荐518】</span>
+										</li>
+										{/if}
+										{if$config['weipay']['appid']!=''}
+										<li>
+											<span onclick="CratePayGoods(518,'weipay','zweixin')">weipay【推荐】</span>
+										</li>
+										{/if}
+										<li>
+											<span onclick="CratePayGoods(518,'whereali')">支付宝【推荐】</span>
+										</li>
+										<!---->
+										<li>
+											<span onclick="CratePayGoods(5181,'wherewx')">微信【推荐】</span>
+										</li>
+										<!---->
+									</ul>
+									<div class="text-ssl">
+										<p>如果有任何疑问，点击<a href="javascript:GoToChat();"
+												style="cursor: pointer; color: rgb(0, 255, 255);">[在线咨询]</a>，联系在线客服</p>
+									</div>
+								</div>
+							</div>
+						</div>

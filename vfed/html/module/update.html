@@ -1,0 +1,17 @@
+{maccms:art num="1" level="4"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">推荐资讯</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-more">今日更新&nbsp;<span class="fed-text-green">{:mac_data_count($obj.type_id,'today','art')}</span>&nbsp;篇&nbsp;&nbsp;共&nbsp;<span class="fed-text-green">{:mac_data_count($obj.type_id,'all','art')}&nbsp;</span>篇</li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:art num="4" type="current" order="desc" by="time" level="4"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3{if$key>3} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/picture"}
+		</li>
+		{/maccms:art}
+	</ul>
+</div>
+{/maccms:art}

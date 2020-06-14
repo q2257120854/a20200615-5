@@ -1,0 +1,1 @@
+小说排行榜,网络小说排行榜,<?php echo $this->pt->config->get("sitename");?>

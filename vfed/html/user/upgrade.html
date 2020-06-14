@@ -1,0 +1,60 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">升级会员</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<form class="fed-user-form fed-user-info fed-part-rows" action="{:mac_url('user/upgrade')}">
+		<ul class="fed-user-list fed-part-rows fed-back-whits">
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">所属会员组</span>
+					<span class="fed-col-xs6 fed-col-sm6 fed-part-eone">{$obj.group.group_name}</span>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">升级会员组</span>
+					<span class="fed-col-xs6 fed-col-sm6 fed-part-eone">选择以下进行购买升级</span>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			{volist name="group_list" id="vo"}{if condition="$vo.group_id gt 2"}
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">{$vo.group_name}</span>
+					<a class="fed-subm-group fed-col-xs6 fed-col-sm6 fed-part-eone" href="javascript:;" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_day}" data-long="day">包天：{$vo.group_points_day}积分</a>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">{$vo.group_name}</span>
+					<a class="fed-subm-group fed-col-xs6 fed-col-sm6 fed-part-eone" href="javascript:;" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_week}" data-long="week">包周：{$vo.group_points_week}积分</a>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">{$vo.group_name}</span>
+					<a class="fed-subm-group fed-col-xs6 fed-col-sm6 fed-part-eone" href="javascript:;" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_month}" data-long="month">包月：{$vo.group_points_month}积分</a>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">{$vo.group_name}</span>
+					<a class="fed-subm-group fed-col-xs6 fed-col-sm6 fed-part-eone" href="javascript:;" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_year}" data-long="year">包年：{$vo.group_points_year}积分</a>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			{/if}{/volist}
+		</ul>
+	</form>
+</div>
+{include file="public/footer"}

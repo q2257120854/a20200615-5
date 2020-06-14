@@ -1,0 +1,28 @@
+<ul class="fed-part-rows">
+	{maccms:gbook num="'.$GLOBALS['config']['gbook']['pagesize'].'" paging="yes" half="3" order="desc" by="id"}
+	<li class="fed-comm-each fed-part-rows fed-line-top fed-margin">
+		<img class="fed-comm-avat fed-part-roun" src="{:mac_get_user_portrait($vo['user_id'])}" />
+		<div class="fed-comm-head">
+			<strong class="fed-text-line">{$vo.gbook_name}</strong>
+			<span class="fed-part-tips">{$vo.gbook_time|mac_day}</span>
+		</div>
+		<div class="fed-comm-cont">
+			{$vo.gbook_content}{if$vo.gbook_reply}
+			<div class="fed-comm-reply fed-back-ashen fed-comm-tops">
+				<img class="fed-comm-avat fed-part-roun" src="{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" />
+				<div class="fed-comm-head">
+					<strong class="fed-text-line"><font color="red">管理员</font></strong>
+					<span class="fed-part-tips">{$vo.gbook_reply_time|mac_day}</span>
+				</div>
+				<div class="fed-comm-cont">
+					{$vo.gbook_reply}
+				</div>
+			</div>
+			{/if}
+		</div>
+	</li>
+	{/maccms:gbook}{if$__PAGING__.record_total==0}
+	<li class="fed-text-center fed-text-black fed-padding fed-margin">还没有人留言哎！</li>
+	{/if}
+</ul>
+{include file="module/paging"}

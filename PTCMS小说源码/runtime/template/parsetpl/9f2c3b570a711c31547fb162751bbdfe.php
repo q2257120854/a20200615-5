@@ -1,0 +1,1 @@
+小说分类,<?php echo $this->pt->config->get("sitename");?>

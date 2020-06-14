@@ -1,0 +1,42 @@
+<dl class="fed-deta-info{if$maccms.aid==13} fed-deta-padding fed-line-top{/if} fed-margin fed-part-rows fed-part-over">
+	<dt class="fed-deta-images fed-list-info fed-col-xs3">
+		<a class="fed-list-pics fed-lazy fed-part-2by3" href="{:mac_url_vod_detail($obj)}" data-original="{$obj.vod_pic|mac_url_img}"{if$maccms.aid==15} style="background-image: url({$obj.vod_pic|mac_url_img});"{/if}>
+			<span class="fed-list-play fed-hide-xs"></span>
+			{if$obj.vod_score>0}
+			<span class="fed-list-score fed-font-xii fed-back-green">{$obj.vod_score}</span>
+			{/if}
+			<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$obj.vod_remarks|mac_default=$obj.vod_hits.'播放'}</span>
+		</a>
+	</dt>
+	<dd class="fed-deta-content fed-col-xs7 fed-col-sm8 fed-col-md10">
+		<h1 class="fed-part-eone fed-font-xvi"><a href="{:mac_url_vod_detail($obj)}"{if$obj.vod_color} style="color:#{$obj.vod_color}!important"{/if}>{:str_replace($param['wd'],'<span class="fed-text-green fed-text-bold">'.$param['wd'].'</span>',mac_filter_html($obj['vod_name']))}</a></h1>
+		<ul class="fed-part-rows">
+			<li class="fed-col-xs12 fed-col-md6 fed-part-eone"><span class="fed-text-muted">主演：</span>{$obj.vod_actor|mac_url_create='actor','vod','search'}</li>
+			<li class="fed-col-xs12 fed-col-md6 fed-part-eone"><span class="fed-text-muted">导演：</span>{$obj.vod_director|mac_url_create='director','vod','search'}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">分类：</span><a href="{:mac_url_type($obj.type)}" target="_blank">{$obj.type.type_name|mac_filter_html}</a></li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">地区：</span>{$obj.vod_area|mac_url_create='area','vod','search'}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">年份：</span>{$obj.vod_year|mac_url_create='year','vod','search'}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">更新：</span>{$obj.vod_time|date='m.d',###}</li>
+			<li class="fed-col-xs12 fed-hide fed-show-md-block">
+				<div class="fed-part-esan">
+					<span class="fed-text-muted">简介：</span>{$obj.vod_content|mac_filter_html|mac_substring=150|mac_default='暂无简介'}
+				</div>
+			</li>
+		</ul>
+	</dd>
+	<dd class="fed-deta-button fed-col-xs7 fed-col-sm8 fed-part-rows">
+		{if$maccms.aid==13||$maccms.aid==15||$maccms.aid==16}
+		<a class="fed-deta-play fed-rims-info fed-btns-info fed-btns-green fed-col-xs4" href="{:mac_url_vod_detail($obj)}">查看详情</a>
+		{/if}{php}$count=1;{/php}
+		{maccms:foreach name="obj.vod_play_list" key="play"}
+		{if$maccms.aid!=15&&$count==1}
+		<a class="{if$maccms.aid==16}fed-deta-down{else}fed-deta-play{/if} fed-rims-info fed-btns-info fed-btns-green fed-col-xs4" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>1])}">{if$maccms.aid!=16}立即{/if}播放</a>
+		{/if}{php}$count++;{/php}
+		{/maccms:foreach}{php}$count=1;{/php}
+		{maccms:foreach name="obj.vod_down_list"}
+		{if$maccms.aid!=16&&$count==1}
+		<a class="{if$play==''}fed-deta-play{else}fed-deta-down{/if} fed-rims-info fed-btns-info fed-btns-green fed-col-xs4" href="{:mac_url_vod_down($obj,['sid'=>$vo.sid,'nid'=>1])}">{if$play==''}立即{/if}下载</a>
+		{/if}{php}$count++;{/php}
+		{/maccms:foreach}
+	</dd>
+</dl>

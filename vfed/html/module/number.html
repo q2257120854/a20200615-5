@@ -1,0 +1,42 @@
+{if$vfedcc['home']['small']['state']}
+<div class="fed-list-home fed-part-layout fed-back-whits fed-part-rows">
+	<div class="fed-padding fed-col-sx12 fed-col-md5">
+		<div class="fed-swip-container fed-part-rows">
+			<ul class="fed-swip-wrapper fed-font-size">
+				{maccms:link num="2" order="asc" by="sort" type="pic"}
+				<li class="fed-swip-slide">
+					<a class="fed-list-pics fed-part-3by2 fed-swip-lazy" href="{$vo.link_url}" data-background="{$vo.link_logo}" target="_blank">
+						<div class="fed-swip-title fed-text-white fed-part-eone">
+							<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.link_name}</span>
+							<span class="fed-part-eone fed-font-xii">吐血推荐</span>
+						</div>
+					</a>
+				</li>
+				{/maccms:link}
+				{maccms:vod num="'.$vfedcc['home']['small']['value'].'" type="current" order="desc" by="time" level="5"}
+				<li class="fed-swip-slide">
+					<a class="fed-list-pics fed-part-3by2 fed-swip-lazy" href="{:mac_url_vod_detail($vo)}" data-background="{$vo.vod_pic_slide|mac_default=$vo.vod_pic|mac_url_img}">
+						<div class="fed-swip-title fed-text-white fed-part-eone">
+							<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.vod_name|mac_filter_html}</span>
+							<span class="fed-part-eone fed-font-xii">{$vo.vod_remarks|mac_default=$vo.vod_hits.'播放'}</span>
+						</div>
+					</a>
+				</li>
+				{/maccms:vod}
+			</ul>
+			<div class="fed-swip-pagin fed-font-size fed-text-right"></div>
+			<a class="fed-swip-next fed-text-white fed-text-center fed-hide-xs fed-icon-font fed-icon-you" href="javascript:;"></a>
+			<a class="fed-swip-prev fed-text-white fed-text-center fed-hide-xs fed-icon-font fed-icon-zuo" href="javascript:;"></a>
+		</div>
+	</div>
+	<div class="fed-col-sx12 fed-col-md7">
+		<ul class="fed-list-info fed-list-img fed-part-rows">
+			{maccms:vod num="6" type="current" order="desc" by="time" level="3"}
+			<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md4">
+				{include file="basics/direct"}
+			</li>
+			{/maccms:vod}
+		</ul>
+	</div>
+</div>
+{/if}

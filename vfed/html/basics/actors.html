@@ -1,0 +1,29 @@
+<dl class="fed-deta-info{if$maccms.aid==83} fed-deta-padding fed-line-top{/if} fed-margin fed-part-rows fed-part-over">
+	<dt class="fed-deta-images fed-list-info fed-col-xs3">
+		<a class="fed-list-pics fed-lazy fed-part-2by3" href="{:mac_url_actor_detail($obj)}" data-original="{$obj.actor_pic|mac_url_img}"{if$maccms.aid==15} style="background-image: url({$obj.actor_pic|mac_url_img});"{/if}>
+			<span class="fed-list-play fed-hide-xs"></span>
+			{if$obj.actor_score>0}
+			<span class="fed-list-score fed-font-xii fed-back-green">{$obj.actor_score}</span>
+			{/if}
+			<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$obj.actor_remarks|mac_default=$obj.actor_starsign}</span>
+		</a>
+	</dt>
+	<dd class="fed-deta-content fed-col-xs7 fed-col-sm8 fed-col-md10">
+		<h1 class="fed-part-eone fed-font-xvi"><a href="{:mac_url_actor_detail($obj)}"{if$obj.actor_color} style="color:#{$obj.actor_color}!important"{/if}>{:str_replace($param['wd'],'<span class="fed-text-green fed-text-bold">'.$param['wd'].'</span>',mac_filter_html($obj['actor_name']))}</a></h1>
+		<ul class="fed-part-rows">
+			<li class="fed-col-xs12 fed-col-md6 fed-part-eone"><span class="fed-text-muted">身高：</span>{$obj.actor_height}</li>
+			<li class="fed-col-xs12 fed-col-md6 fed-part-eone"><span class="fed-text-muted">体重：</span>{$obj.actor_weight}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">星座：</span>{$obj.actor_starsign}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">血型：</span>{$obj.actor_blood}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">地区：</span>{$obj.actor_area}</li>
+			<li class="fed-col-xs6 fed-col-md3 fed-part-eone"><span class="fed-text-muted">人气：</span>{$obj.actor_hits}</li>
+			<li class="fed-col-xs12 fed-hide fed-show-md-block">
+				<div class="fed-part-esan">
+					<span class="fed-text-muted">简介：</span>{$obj.actor_content|mac_filter_html|mac_default='暂无简介'}
+				</div>
+			</li>
+			<li class="fed-col-xs12 fed-part-eone"><span class="fed-text-muted">代表作品：</span>{$obj.actor_works}</li>
+			<li class="fed-col-xs12 fed-part-eone"><span class="fed-text-muted">生日：</span>{$obj.actor_birthday}</li>
+		</ul>
+	</dd>
+</dl>

@@ -1,0 +1,16 @@
+<script type="text/javascript">
+if(document.cookie.match(new RegExp('(^| )fed_color=([^;]*)(;|$)')) != null) {
+	var color = document.cookie.match(new RegExp('(^| )fed_color=([^;]*)(;|$)'));
+	if(color[2] == 'white') {
+		var elementid = document.getElementById('fed-colo-color');
+		if(elementid) elementid.parentNode.removeChild(elementid);
+	} else if(!document.getElementById('fed-colo-color')) {
+		var style = document.createElement('link');
+		style.type = 'text/css';
+		style.rel = 'stylesheet';
+		style.id = 'fed-colo-color';
+		style.href = '{$maccms.path_tpl}asset/css/' + unescape(color[2]) + '.css?v={$version}';
+		document.getElementsByTagName('head').item(0).appendChild(style);
+	} else document.getElementById('fed-colo-color').href = '{$maccms.path_tpl}asset/css/' + unescape(color[2]) + '.css?v={$version}';
+}
+</script>

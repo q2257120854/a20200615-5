@@ -1,0 +1,1 @@
+小说排行榜_<?php echo $this->pt->config->get("sitename");?>

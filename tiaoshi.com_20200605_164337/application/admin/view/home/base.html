@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="zh_ch">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+    {block name='seo'}
+    <title>后台管理系统</title>
+    {/block}
+    <link href="/static/dai/css/style.css" rel="stylesheet">
+    <!--<link href="/static/dai/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="/static/dai/css/style-responsive.css" rel="stylesheet">
+    
+    <script src="/static/dai/js/jquery.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/static/dai/js/html5shiv.js"></script>
+    <script src="/static/dai/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+<style>
+  	.sticky-header .main-content {
+     padding-top: 0px; 
+}
+.main-content {
+     margin-left: 0px;
+    background: #eff0f4;
+    min-height: 1000px;
+}
+    .amount-box {
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 5px 0px;
+    }
+
+    .amount-box li {
+        display: inline-block;
+        width: 15%;
+        min-width: 70px;
+        text-align: center;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ebeef5;
+    }
+    .amount-box li span{
+        display: block;
+        padding: 0 15px;
+        line-height: 42px;
+    }
+    .amount-box li .amount-title{
+        border-bottom: 1px solid #ebeef5;
+    }
+</style>
+<section>
+    
+
+      
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        
+        
+
+{block name='main'}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="/index/agent/index.html">代理管理</a></li>
+                <li class="active">代理列表</li>
+                <li class="active">代理列表</li>
+            </ul>
+            <p style="padding: 10px 0;font-size: 20px;background: #fff;padding-left: 5px;text-align: center"><b style="color: #00b7ee">{$user.user_name}</b> 的直推数据</p>
+            <!--breadcrumbs end -->
+            <ul class="amount-box">
+                <li>
+                    <span class="amount-title">今日注册量</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">总注册量</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日充值订单数</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">总充值订单数</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日充值额</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">总充值额</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日安卓注册数</span>
+                    <span class="amount-count">0</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日IOS注册数</span>
+                    <span class="amount-count">0</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <header class="panel-heading col-xs-12">
+        <form class="form-inline" action="">
+            <div class="form-group">
+                <input type="text" name="account" class="form-control" value="" placeholder="账号">
+                <input type="text" name="phone" class="form-control" value="" placeholder="手机号">
+                <input type="text" name="start" id="start" autocomplete="off" class="form-control" value="" placeholder="开始时间">
+                <input type="text" name="end" id="end" autocomplete="off" class="form-control" value="" placeholder="结束时间">
+                <select name="order" class="form-control">
+                    <option value="0" >时间倒序</option>
+                    <option value="1" >时间正序</option>
+                </select>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </header>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <tr>
+                    <th>编号</th>
+                                        <th>代理账号</th>
+                    <th>手机号</th>
+                    <th>直属代理量</th>
+                    <th>直属用户量</th>
+                    <th>提成比例</th>
+                                        <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                            </table>
+            <div class="page">
+                            </div>
+        </div>
+
+    </div>
+</div>
+{/block}
+{block name='footer'}
+<!--body wrapper end-->
+<script src="/static/dai/js/laydate/laydate.js"></script>
+<script src="/static/layui/layui.all.js"></script>
+<script type="text/javascript">
+    laydate.render({
+        elem: '#start'
+        , type: 'datetime'
+    });
+    laydate.render({
+        elem: '#end'
+        , type: 'datetime'
+    });
+
+    /*用户-删除*/
+    function member_del(obj,id){
+        layer.confirm('确认要执行该操作吗？',function(){
+            //发异步删除数据
+            $.post("url(agent/agent_del)",{id:id},function (data) {
+                if (data.code == 200) {
+                    layer.msg(data.msg,{icon:6,time:1000},function () {
+                        window.location.reload();
+                    });
+                }else{
+                    layer.msg(data.msg,{icon:5,time:1500});
+                }
+            })
+        });
+    }
+</script>
+
+       
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+            <form class="form-horizontal form-post change_pass_form" action="/index/agent/change_pass.html" method="post">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label  class="col-lg-2 col-sm-2 control-label">原密码</label>
+                    <div class="col-lg-10">
+                        <input type="password" name="pass_old" class="form-control"  placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-lg-2 col-sm-2 control-label">新密码</label>
+                    <div class="col-lg-10">
+                        <input type="password" name="pass_new" class="form-control"  placeholder="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-lg-2 col-sm-2 control-label">确认密码</label>
+                    <div class="col-lg-10">
+                        <input type="password" name="pass_sure" class="form-control"  placeholder="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                <button class="btn btn-primary change_pass" type="button">提交</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- modal -->
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="/static/dai/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="/static/dai/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/static/dai/js/bootstrap.min.js"></script>
+<script src="/static/dai/js/modernizr.min.js"></script>
+<script src="/static/dai/js/jquery.nicescroll.js"></script>
+
+
+
+<!--common scripts for all pages-->
+<script src="/static/dai/js/scripts.js"></script>
+<script src="/static/dai/js/common.js"></script>
+
+<script>
+    $(".change_pass").click(function () {
+        var pass_old = $("[name=pass_old]").val();
+        var pass_new = $("[name=pass_new]").val();
+        var pass_sure = $("[name=pass_sure]").val();
+        if(pass_old == "" || pass_new ==""){
+            layer.msg('密码不能为空!');
+            return false;
+        }
+
+        if(pass_new != pass_sure){
+            layer.msg('两次密码不一致!');
+            return false;
+        }
+        $.post("{:url('agent/change_pass')}",{pass_old:pass_old,pass_new:pass_new,pass_sure:pass_sure},function (res) {
+            if(res.code == 200){
+                layer.msg(res.msg,{icon:6,time:1500},function () {
+                    window.location.reload();
+                })
+            }else{
+                layer.msg(res.msg);
+                return false;
+            }
+        })
+    });
+
+function get_msg(){
+    var total = $("#msg_total").text();
+    var recharge = $("#recharging").text();
+    var cash = $("#cashing").text();
+
+    // $.ajax({
+    //     url: "/index/index/get_msg.html",
+    //     // data: ,
+    //     type:'POST',
+    //     dataType: "json",
+    //     success:function(data){
+    //         var new_total = data.recharge+data.withdrawals
+    //         $("#msg_total").text(new_total);
+    //         $("#recharging").text(data.recharge);
+    //         $("#cashing").text(data.withdrawals);
+            
+    //     }
+    // })
+
+    setTimeout(function(){get_msg()}, 30000);
+}
+</script>
+
+</body>
+</html>
+{/block}

@@ -1,0 +1,54 @@
+	.bt-box{
+		width:200px;
+		height: 50px;
+		margin: 50px auto;
+		position: relative;
+	}
+	.bt-box .bg-1{background:#62aeff;}
+	.bt-box .bg-2{background:#fd933a;}
+	.bt-box .bg-3{background:#a851fa;}
+	.bt-box .xiaoA{
+		display:block;
+		width:200px;
+		height:50px;
+		position: absolute;
+		z-index: 2;
+		color: white;
+		font: 17px/50px Helvetica, Verdana, sans-serif;
+		text-decoration: none;
+		text-align: center;
+	}
+	.bt-box .xiaoA, .bt-box-p {
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		  
+		-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+		-moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+		box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+		}
+	.bt-box .bt-box-p{
+		  background: #222 ;
+		  display: block;
+		  height: 40px;
+		  width: 180px; 
+		  margin: 0 0 0 10px;
+		  text-align: center;
+		  font: 12px/45px Helvetica, Verdana, sans-serif;
+		  color:#fff;
+		  position: absolute;
+		  z-index: 1;
+		  transition: margin 0.5s ease;
+		}
+	.bt-box:hover .bottom {
+		  margin: 40px 0 0 10px;
+		}
+	.bt-box:hover .top {
+		  margin: -30px 0 0 10px;
+		  line-height: 35px;
+		}
+	.bt-box .xiaoA:hover {
+			color: #fff;
+			background: #2f7fd5;
+			text-decoration: none;
+		}	

@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>{$tkd.title|parseTpl}手机版</title>
+    <meta name="keywords" content="{$tkd.keywords|parseTpl}">
+    <meta name="description" content="{$tkd.description|parseTpl}">
+    <meta name="applicable-device" content="mobile"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/css/ptm.min.css" />
+    <link rel="stylesheet" type="text/css" href="__TMPL__/css/skin.min.css" />
+    <link href="__TMPL__/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+{if IS_LOGIN}  
+<header class="ptm-bar ptm-bar-nav  ptm-fix">
+    <a class="ptm-pull-left" href="{link=novelsearch.index.index}">
+        <span class="ptm-iconfont fa fa-home" style="font-size:22px;"></span>
+    </a>
+    <div class="ptm-title"> 小说搜索</div>
+    <a class="ptm-pull-right" href="{link=user.index.index}">
+        <span class="ptm-iconfont  fa fa-user"></span>
+    </a>
+</header>
+{else}
+<header class="ptm-bar ptm-bar-nav  ptm-fix">
+    <a class="ptm-pull-left" href="{link=novelsearch.index.index}">
+        <span class="ptm-iconfont fa fa-home" style="font-size:22px;"></span>
+    </a>
+    <div class="ptm-title"> 小说搜索</div>
+    <a class="ptm-pull-right" href="{link=user.public.login}">
+        <span class="ptm-iconfont  fa fa-user"></span>
+    </a>
+</header>
+{/if}
+<section class="ptm-content ptm-card" style="margin-top:60px;">
+         <div class="ptm-card-content">
+         <form class="searchbox fl" action="/search.html">
+             <input name="searchtype" type="hidden" value="novelname"/>
+             <div class="ptm-col-xs-9">
+                 <input type="search" name="searchkey" placeholder="请输入您要搜索的小说" autocomplete="off" style="margin-bottom:0">
+             </div>
+             <div class="ptm-col-xs-3">
+                 <button class="ptm-btn ptm-btn-primary" style="width:100%;font-size:18px;padding-top:8px;padding-bottom:8px">搜 索</button>
+             </div>
+         </form>
+         </div>
+    <dl class="pt-search-list ptm-clearfix searchhistory">
+        <dt>搜索历史</dt>
+    </dl>
+    <dl class="pt-search-list ptm-clearfix">
+        <dt>大家都在搜</dt>
+        {block method="novellist" name="list" order="allvisit" num=10}
+        {section loop=$list}
+        <dd><a href="{$loop.url.info}" class="ptm-text-cut"><span class="pt-icon"><i {if $i.order<4}class="start"{/if}>{$i.order}</i></span>{$loop.novel.name}</a></dd>
+        {/section}
+    </dl>
+</section>
+{include file="../common/footer"}
+<script type="text/javascript" src="__TMPL__/script/search.min.js"></script>
+<script type="text/javascript">
+    var basesearchurl='{link=novelsearch.search.result}?searchkey=';
+    $(function(){
+        $ptm.search.init($('[name=searchkey]'));
+    })
+</script>
+</body>
+</html>

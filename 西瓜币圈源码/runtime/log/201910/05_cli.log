@@ -1,0 +1,172 @@
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000122s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002465s ]
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T13:12:46+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002805s ]
+[ 2019-10-05T13:12:46+08:00 ][ error ] [0]setsid fail[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Worker.php:1130]
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000106s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002196s ]
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T13:13:07+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002315s ]
+[ 2019-10-05T13:13:07+08:00 ][ error ] [0]forkOneWorker fail[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Worker.php:1457]
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000108s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002438s ]
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T13:18:07+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003245s ]
+[ 2019-10-05T13:18:07+08:00 ][ error ] [0]setsid fail[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Worker.php:1130]
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000106s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002405s ]
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'stop',
+  ),
+)
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T21:21:07+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003127s ]
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000113s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002548s ]
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'str',
+  ),
+)
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T21:21:11+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003161s ]
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000107s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002352s ]
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T21:21:16+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003124s ]
+[ 2019-10-05T21:21:16+08:00 ][ error ] [0]forkOneWorker fail[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Worker.php:1457]
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000108s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002492s ]
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T21:23:55+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003140s ]
+[ 2019-10-05T21:23:55+08:00 ][ error ] [0]forkOneWorker fail[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Worker.php:1457]
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000108s ]
+[ info ] [ LOG ] INIT File
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002459s ]
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ LANG ] /www/wwwroot/apk.cityshopper.com.cn/thinkphp/lang/zh-cn.php
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-10-05T21:24:11+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.003140s ]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]
+[ 2019-10-05T21:24:11+08:00 ][ error ] [2]pcntl_signal_dispatch() has been disabled for security reasons[/www/wwwroot/apk.cityshopper.com.cn/socket/vendor/workerman/workerman/Events/Select.php:268]

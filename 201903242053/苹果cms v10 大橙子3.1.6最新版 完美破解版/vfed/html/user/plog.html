@@ -1,0 +1,33 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">积分记录</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<form class="fed-user-form fed-user-info" action="{:mac_url('user/ulog_del')}">
+		<ul class="fed-user-list fed-part-rows">
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs3 fed-col-sm2 fed-part-eone">来源</span>
+					<span class="fed-col-xs3 fed-col-sm4 fed-part-eone">积分</span>
+					<span class="fed-col-xs6 fed-col-sm6 fed-part-eone fed-text-right">时间</span>
+				</div>
+			</li>
+			{volist name="list" id="vo"}
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs3 fed-col-sm2 fed-part-eone">{$vo.plog_type|mac_get_plog_type_text}</span>
+					<span class="fed-col-xs3 fed-col-sm4 fed-part-eone">{if condition="in_array($vo.plog_type,[1,2,3,4])"}+{else/}-{/if}{$vo.plog_points}</span>
+					<span class="fed-col-xs6 fed-col-sm6 fed-part-eone fed-text-right">{$vo.plog_time|mac_day}</span>
+				</div>
+			</li>
+			{/volist}
+		</ul>
+		{include file="module/paging"}
+	</form>
+</div>
+{include file="public/footer"}

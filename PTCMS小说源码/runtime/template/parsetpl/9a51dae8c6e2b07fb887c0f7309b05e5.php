@@ -1,0 +1,1 @@
+<?php echo $this->pt->config->get("sitename");?>专注于<?php echo $author['name'];?>作品在线阅读,提供最全的<?php echo $author['name'];?>小说作品并保持最快的更新,方便大家愉快地阅读<?php echo $author['name'];?>小说作品！

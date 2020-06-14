@@ -1,0 +1,21 @@
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.010691s ]
+[ info ] [ LOG ] INIT File
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ CACHE ] INIT Redis
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.013522s ]
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ LANG ] /web/bt/thinkphp/lang/zh-cn.php
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ BIND ] 'socket/Bqworker'
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'socket',
+    1 => 'Bqworker',
+    2 => 'start',
+  ),
+)
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ HEADER ] array (
+)
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ PARAM ] array (
+)
+[ 2019-08-21T14:12:40+08:00 ][ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008935s ]
+[ 2019-08-21T14:12:41+08:00 ][ info ] [ DB ] INIT mysql

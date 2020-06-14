@@ -1,0 +1,30 @@
+<div class="layui-tab-item">
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  <legend>where微信支付设置</legend>
+  </fieldset>
+  <div class="layui-form-item">
+    <label class="layui-form-label">Where微信支付开关：</label>
+    <div class="layui-input-inline w400">
+      <input type="radio" name="pay[wherewx][kaiguan]"  value="1" title="开" {if condition="$config['pay']['wherewx']['kaiguan'] eq 1"}checked{/if}>
+      <input type="radio" name="pay[wherewx][kaiguan]"  value="0" title="关" {if condition="$config['pay']['wherewx']['kaiguan'] eq 0"}checked{/if}>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">支付商家编号：</label>
+    <div class="layui-input-inline w400">
+      <input type="text" name="pay[wherewx][appid]" placeholder="" value="{$config['pay']['wherewx']['appid']}" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">支付商家密钥：</label>
+    <div class="layui-input-inline w400">
+      <input type="text" name="pay[wherewx][appkey]" placeholder="" value="{$config['pay']['wherewx']['appkey']}" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">网关提交地址：</label>
+    <div class="layui-input-inline w400">
+      <input type="text" name="pay[wherewx][act]" placeholder="" value="{$config['pay']['wherewx']['act']}" class="layui-input">
+    </div>
+  </div>
+</div>

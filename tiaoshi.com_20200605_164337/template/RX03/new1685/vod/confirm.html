@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>会员权限</title>
+<link rel="stylesheet" href="__STATIC__/css/home.css">
+<style>
+		body{background:#F9FAFD;color:#818181;}
+		.text a{  padding: 10px 16px;
+			font-size: 18px;
+			line-height: 1.3333333;
+			border-radius: 6px; color: #fff;  background-color: #5cb85c;  border-color: #4cae4c;  }
+	</style>
+<script src="{$maccms.path}static/js/jquery.js"></script>
+<script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+<script src="{$maccms.path}static/js/home.js"></script>
+<link href="http://slcss.cmwqd.com/template/RX03/html/style/css/orang-tishi.css" rel="stylesheet" type="text/css" />
+<style>
+body{background:#000;font-size:30px}.breath-light{margin:250px auto auto auto;height:auto;width:80%;border-radius:3px;background:#fff;padding:50px;color:#333;text-align:center;box-shadow:0 0 60px #FFF;-webkit-animation:breath 5s;animation:breath 5s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}@-webkit-keyframes breath{0%{opacity:.5}60%{opacity:1}100%{opacity:.5}}@-o-keyframes breath{0%{opacity:.5}60%{opacity:1}100%{opacity:.5}}@-moz-keyframes breath{0%{opacity:.5}60%{opacity:1}100%{opacity:.5}}@keyframes breath{0%{opacity:.5}60%{opacity:1}100%{opacity:.5}}
+</style>
+</head>
+<body>
+<div class="breath-light">
+  <h3><strong>系统提示: <br/>
+    </strong></h3>
+  <div class="text">
+    <!--需要花费积分提示-->
+    <p> {if condition="$user.group.group_id eq 1"}
+    <h3><strong>尊敬的贵宾,您还未登录!</strong></h3>
+    <h2><a href="/index.php/user/login.html" class="mac_user" style="font-size:42px">马上登录</a></h2>
+    {else/}
+    <h3><strong>VIP用户畅享本站十万AV！每日50~100部更新!</strong></h3>
+    <br />
+    <br />
+    <h2><a href="{:url('user/buy')}" target="_blank" style="font-size:42px">升级VIP解锁全站十万影片</a></h2>
+    <br />
+    <br />
+    <h2><a href="/index.php/vod/type/id/20.html" style="font-size:42px">欣赏试看影片</a></h2>
+    <!-- <h3><strong>普通用户{$popedom.msg}</strong></h3>
+    <h2><a href="javascript:;" style="font-size:42px" onClick="MAC.User.BuyPopedom(this)" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}" data-mid="1" data-type="{if condition="$obj.player_info.flag eq 'play'"}4{else/}5{/if}">确认支付</a>-->
+    </h2>
+    {/if}
+    </p>
+    <div class="donation_thumbnail">
+      <p class="secTitle">十周年庆典,会员价疯狂打折中!</p>
+      <div class="thumbRow left">
+        <div class="nakedGirl"></div>
+        <p>每天更新，大大满足</p>
+      </div>
+      <div class="thumbRow middle">
+        <div class="nakedGirl"></div>
+        <p>精品直送，当日同步</p>
+      </div>
+      <div class="thumbRow right">
+        <div class="nakedGirl"></div>
+        <p>各类视频，极度畅享</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

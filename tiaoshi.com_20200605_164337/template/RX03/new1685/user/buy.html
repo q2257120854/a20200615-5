@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Cache-Control" content="max-age=60" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="apple-mobile-web-app-title" content="{$maccms.site_name}" />
+	<title>充值中心 - 个人中心 - {$maccms.site_name}</title>
+	<meta name="keywords" content="个人中心,{$maccms.site_keywords}" />
+	<meta name="description" content="{$maccms.site_description}" />
+	<!-- Favicon Icon -->
+	<link rel="icon" type="image/png" href="{$maccms.path_tpl}html/style/images/favicon.png" />
+	<!-- Bootstrap core CSS-->
+	<link href="{$maccms.path_tpl}html/style/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Custom fonts for this template-->
+	<link href="{$maccms.path_tpl}html/style/css/all.min.css" rel="stylesheet" type="text/css" />
+	<link href="{$maccms.path_tpl}css/home.css" rel="stylesheet" type="text/css" />
+	<!-- Custom styles for this template-->
+	<link href="{$maccms.path_tpl}html/style/css/osahan.css" rel="stylesheet" />
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{$maccms.path_tpl}html/style/css/owl.carousel.css" />
+	<link rel="stylesheet" href="{$maccms.path_tpl}html/style/css/owl.theme.css" />
+	<link href="{$maccms.path_tpl}html/style/css/sweetalert.css" rel="stylesheet" type="text/css" />
+	<script src="{$maccms.path_tpl}html/style/js/sweetalert.min.js" type="text/javascript"></script>
+	<script src="{$maccms.path_tpl}html/style/js/jquery.min.js"></script>
+	<script src="{$maccms.path_tpl}html/style/js/jquery.lazyload.min.js"></script>
+	{include file="user/include"}
+	<style>
+		.sidebar .nav-item .dropdown-menu {
+			top: -100% !important;
+		}
+
+		.shadow_border {
+			border: 1px solid #000;
+			padding: 60px;
+			width: 100px;
+			-webkit-border-radius: 8px;
+			-moz-border-radius: 8px;
+			border-radius: 8px;
+			-webkit-box-shadow: #666 0 0 10px;
+			-moz-box-shadow: #666 0 0 10px;
+			box-shadow: #666 0 0 10px;
+		}
+
+
+		.shadow_font {
+			text-shadow: #f00 3px 3px 3px;
+		}
+
+		.nav_new {
+			position: fixed;
+
+			z-index: 99;
+			width: 100%;
+		}
+
+		.ui-fix-top {
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0
+		}
+
+		.ui-wrapper {
+			margin-top: 58px;
+		}
+
+		.ui-slide-block-pc,
+		.ui-slide-block-pc-down2 {
+			background: linear-gradient(123deg, #ff516b 0%, #8876ea 100%);
+			display: none;
+			/*position: sticky;*/
+			position: fixed;
+			z-index: 100;
+			margin-left: 14.1rem;
+			border-bottom: 5px solid #ffbfef;
+			border-right: 5px solid #ffbfef;
+			/*border-left:5px solid #ffbfef;*/
+		}
+
+
+		.ui-slide-block-pc td,
+		.ui-slide-block-pc-down2 td {
+			width: 120px;
+			font-size: 14px;
+			line-height: 25px !important;
+		}
+
+		.ui-slide-block-pc-down {
+			background: linear-gradient(123deg, #69dccc 0%, #5b4baf 100%);
+			display: none;
+			/*position: sticky;*/
+			position: fixed;
+			z-index: 100;
+			margin-left: 14.1rem;
+			border-bottom: 5px solid #a8f7ee;
+			border-right: 5px solid #a8f7ee;
+			/*border-left:5px solid #ffbfef;*/
+		}
+
+		.ui-slide-block-pc-down td {
+			width: 120px;
+			font-size: 14px;
+			line-height: 25px !important;
+		}
+
+		.ui-slide-block {
+			background: linear-gradient(123deg, #ff516b 0%, #8876ea 100%);
+			display: none;
+			position: sticky;
+			position: fixed;
+			z-index: 100;
+		}
+
+		.no-border {
+			border-top: 0 solid #dee2e6 !important;
+		}
+	</style>
+</head>
+
+<body id="page-top" class="fed-min-width">
+	{include file="user/head"}
+  
+	<div class="fed-main-info fed-min-width">
+		<div class="fed-part-case">
+			<div class="fed-user-head fed-margin-top fed-back-whits">
+				<div class="fed-list-pics fed-lazy fed-part-5by2 fed-part-rows"
+					style="background:url({$maccms.path_tpl}html/style/images/user.jpg);">
+					<div class="fed-part-core fed-text-center">
+						<div class="fed-user-image" data-role="{:mac_url('user/portrait')}">
+							<img class="face fed-user-avat fed-part-roun"
+								src="{$obj.user_portrait|mac_default='static/images/touxiang.png'|mac_url_img}?v={:time()}" />
+						</div>
+						<span class="fed-visible fed-text-white fed-padding">{$obj.user_name}</span>
+					</div>
+				</div>
+				<div class="fed-padding fed-part-rows fed-back-whits fed-hide-md">
+					<ul class="fed-user-brief fed-part-rows fed-back-whits">
+						<li class="fed-padding-x fed-text-center fed-col-xs4">
+							<span class="fed-visible fed-text-gules">{$obj.user_points}</span>
+							<span class="fed-visible">我的积分</span>
+						</li>
+						<li class="fed-padding-x fed-text-center fed-line-left fed-col-xs4">
+							<span class="fed-visible fed-text-gules">{$obj.group.group_name}</span>
+							<span class="fed-visible">我的等级</span>
+						</li>
+						<li class="fed-padding-x fed-text-center fed-line-left fed-col-xs4">
+							<span class="fed-visible fed-text-gules">{$obj.user_extend}</span>
+							<span class="fed-visible">推广次数</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="fed-part-rows">
+				<div class="fed-main-right fed-col-xs12 fed-col-md8 fed-col-lg9">
+					<div class="fed-part-layout fed-back-whits">
+						<style>
+							.donation_thumbnail .thumbRow.left .nakedGirl {
+								background-image: url('/template/RX03/img/thumb1_left.gif');
+							}
+
+							.donation_thumbnail .thumbRow.middle .nakedGirl {
+								background-image: url('/template/RX03/img/thumb1_middle.gif');
+							}
+
+							.donation_thumbnail .thumbRow.right .nakedGirl {
+								background-image: url('/template/RX03/img/thumb1_right.gif');
+							}
+
+							.fed-col-lg9 {
+								width: 100%;
+							}
+						</style>
+						<div class="donation_intro">
+							<p class="titleBig">全亚洲唯一『国产+主播+极品』全场看到爽</p>
+							<p class="titleMid">最佳选择，已有
+								<span id="currentMembership">1,086,795</span>
+								会员安心认证</p>
+							<div class="featureContent">
+								<div class="featureList cameraLi">
+									<span class="itemIcon"></span>
+									<span class="itemDescrip">线上看、G点看随你选</span>
+								</div>
+								<div class="featureList fileLi">
+									<span class="itemIcon"></span>
+									<span class="itemDescrip">每日不停更</span>
+								</div>
+								<div class="featureList femaleLi">
+									<span class="itemIcon"></span>
+									<span class="itemDescrip">极品资源+稀缺资源</span>
+								</div>
+								<div class="featureList videoLi">
+									<span class="itemIcon"></span>
+									<span class="itemDescrip">十万+部影片</span>
+								</div>
+							</div>
+						</div>
+						{include file="user/zhifu"}
+						<div class="donation_thumbnail">
+							<p class="secTitle">升级VIP 好片天天看到爽</p>
+							<div class="thumbRow left">
+								<div class="nakedGirl"></div>
+								<p>天天更新，大大满足</p>
+							</div>
+							<div class="thumbRow middle">
+								<div class="nakedGirl"></div>
+								<p>主播直送，当日同步！</p>
+							</div>
+							<div class="thumbRow right">
+								<div class="nakedGirl"></div>
+								<p>全亚独家，爽度爆表！</p>
+							</div>
+						</div>
+						<div class="donation_descrip">
+							<div class="secTitle">
+								<p>贴心说明</p>
+							</div>
+							<div class="leftBox">
+								<p class="boxTitle">一分钟快速升级</p>
+								<div class="payment_step">
+									<span class="stepNum">1</span>
+									<span class="paymentInfo">选择优惠方案</span>
+									<span class="paymentArrow">&gt;</span>
+									<span class="stepNum">2</span>
+									<span class="paymentInfo">选择付费方式</span>
+									<span class="paymentArrow">&gt;</span>
+									<span class="stepNum">3</span>
+									<span class="paymentInfo">完成付款</span>
+								</div>
+								<p>本站提供－ 支付宝/微信支付等方式来升级VIP或购买Ｇ点，帐单不会有任何情色/成人相关字样，请安心购买。</p>
+								<p>安全加密－ 含羞草对于会员交易信息，采用最高级别加密技术，请放心消费，安全无虞。</p>
+							</div>
+							<div class="rightBox">
+								<p class="boxTitle">附加说明</p>
+								<p>* 升级VIP由系统自动完成，升级后立享福利，无需人工验证。</p>
+								<p>*「VIP」虽拥有多种福利，但与一般会员一样必须遵守我站规定。</p>
+								<p>*「VIP」到期后会自动转回为体验会员。</p>
+								<p>*「VIP」付款周期有天、月、季、半年、年5种。</p>
+								<p>* 有关本网站相关问题请来信至 hanxiucao6@gmail.com。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{include file="public/foot"}
+	<script>
+		var client = {};
+		// 是否为移动端
+		client.isMobile = /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(navigator.userAgent);
+		// 移动端类型
+		client.isiPad = /iPad/i.test(navigator.userAgent); // ipad
+		client.isiPhone = /iPhone|iPod/i.test(navigator.userAgent); // iphone
+		client.isAndroid = /Android/i.test(navigator.userAgent); // android
+		client.isIOS = /\(i[^;]+;( U;)? CPU.+Mac OS X/i.test(navigator.userAgent) // IOS
+		client.isWechat = /MicroMessenger/i.test(navigator.userAgent); // wechat
+		client.isQQ = /QQ/i.test(navigator.userAgent); // QQ
+		client.isWeibo = /Weibo/i.test(navigator.userAgent);
+		// weibo
+		// 浏览器类型
+		client.isQQBro = /MQQBrowser/i.test(navigator.userAgent) // QQ浏览器
+		client.isUCBro = /UCBrowser/i.test(navigator.userAgent) // UC浏览器
+		client.isChrome = /Chrome\/([\d\.]+)/i.test(navigator.userAgent) // Chrome
+		client.isFireFox = /Firefox\/([\d\.]+)/i.test(navigator.userAgent) // FireFox
+		client.isIE = navigator.userAgent.indexOf("compatible") > -1 && navigator.userAgent.indexOf("MSIE") > -1 && !isOpera // IE
+		client.isSafari = /Safari/i.test(navigator.userAgent) // Safari
+		client.isOpera = /Opera/i.test(navigator.userAgent) // Opera
+		client.isMaxthon = navigator.userAgent.indexOf("Maxthon") > -1 // 遨游broswer
+
+		if (!client.isWechat && !client.isQQ && !client.isWeibo) {
+			var domain = document.location.origin + document.location.pathname;
+			if (window.parent.length > 0)
+				top.location.href = domain + (UserInfo.AgentID > 0 ? "?AgentID=" + UserInfo.AgentID : "");
+
+		}
+
+		if (client.isIOS || client.isAndroid) {
+			$(".client-pc").hide();
+			$(".client-mobile").show();
+		}
+		function ShowPayType(obj) {
+			var panel = $(obj).parent().next();
+			if (panel.css("display") == "none")
+				panel.css("display", "block");
+			else
+				panel.css("display", "none");
+
+		}
+		function Post(url, params) {
+			var form = $("<form method='post'></form>");
+			form.attr({ "action": url });
+			for (pa in params) {
+				var input = $("<input type='hidden'>");
+				input.attr({ "name": pa });
+				input.val(params[pa]);
+				form.append(input);
+			}
+			$("html").append(form);
+			form.submit();
+		}
+
+		function CratePayGoods(price, payment, type = 1) {
+
+			Post("{:url('user/gopay2')}", {
+				price: price,
+				payment: payment,
+				paytype: type
+			});
+
+		}
+	</script>
+	<script>
+		$('#btn_submit_card').click(function () {
+			var that = $(this);
+			var no = $('input[name="card_no"]').val();
+			if (no == '') {
+				alert('请输入充值卡');
+				return;
+			}
+			if (confirm('确定要使用充值卡充值吗')) {
+				$.ajax({
+					url: "{:mac_url('user/buy')}",
+					type: "post",
+					dataType: "json",
+					data: {
+						card_no: no,
+						flag: 'card'
+					},
+					beforeSend: function () {
+						$("#btn_submit_card").val("loading...");
+					},
+					success: function (r) {
+						alert(r.msg);
+						if (r.code == 1) {
+							location.href = "{:mac_url('user/index')}";
+						}
+
+					},
+					complete: function () {
+						$("#btn_submit_card").val("提交");
+					}
+				});
+			}
+		});
+
+		$(".face").imageUpload({
+			formAction: "{:url('user/portrait')}",
+			inputFileName: 'file',
+			browseButtonValue: '',
+			browseButtonClass: 'btn btn-default btn-xs fed-user-alter fed-part-roun fed-icon-font fed-icon-xiugai',
+			automaticUpload: true,
+			hideDeleteButton: true,
+			hover: true
+		})
+		$(".jQuery-image-upload-controls").mouseenter(function () {
+			$(".jQuery-image-upload-controls").css("display", "block");
+		});
+		$(".jQuery-image-upload-controls").mouseleave(function () {
+			$(".jQuery-image-upload-controls").css("display", "none");
+		});
+		$(".face").on("imageUpload.uploadFailed", function (ev, err) {
+			alert(err);
+		});
+	</script>
+	<script src="{$maccms.path_tpl}html/style/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="{$maccms.path_tpl}html/style/js/jquery.easing.min.js"></script>
+	<!-- Owl Carousel -->
+	<script src="{$maccms.path_tpl}html/style/js/owl.carousel.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="{$maccms.path_tpl}html/style/js/custom.js"></script>
+	<script>
+		$(document).on('click', '#sidebarTogglePc', function (e) {
+			e.preventDefault();
+			$("#block-slide-pc").slideToggle("fast")
+			if ($("#block-slide-pc-down").is(":visible")) {
+				$("#block-slide-pc-down").slideToggle("fast")
+			}
+
+
+			// $("#block-slide-pc-down").slideToggle("fast")
+		});
+		$(document).on('click', '#sidebarTogglePcDown', function (e) {
+			e.preventDefault();
+			$("#block-slide-pc-down").slideToggle("fast")
+			if ($("#block-slide-pc").is(":visible")) {
+				$("#block-slide-pc").slideToggle("fast")
+			}
+
+
+			// $("#block-slide-pc").slideToggle("fast")
+		});
+		$(document).on('click', '#sidebarTogglePcLeft', function (e) {
+			e.preventDefault();
+			$("#block-slide-pc").slideToggle("fast")
+			if ($("#block-slide-pc-down").is(":visible")) {
+				$("#block-slide-pc-down").slideToggle("fast")
+			}
+
+		});
+		$(document).on('click', '#sidebarTogglePcLeftDown', function (e) {
+			e.preventDefault();
+			$("#block-slide-pc-down").slideToggle("fast")
+			if ($("#block-slide-pc").is(":visible")) {
+				$("#block-slide-pc").slideToggle("fast")
+			}
+
+		});
+
+
+		$(document).ready(function () {
+			$("img.lazy").lazyload({ effect: "fadeIn", threshold: 500 });
+			$("img.lazy1").lazyload({ effect: "fadeIn", threshold: 500 });
+
+		});
+	</script>
+	<script>
+		function open_new_window(full_link) {
+			window.open('javascript:window.name;', '<script>location.replace("' + full_link + '")<\/script>');
+		}
+		if (client.isIOS || client.isAndroid) {
+			$(".client-pc").hide();
+			$(".client-mobile").show();
+		}
+	</script>
+</body>
+
+</html>

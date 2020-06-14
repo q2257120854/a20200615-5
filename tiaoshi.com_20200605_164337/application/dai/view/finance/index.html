@@ -1,0 +1,70 @@
+{extend name='../../../application/dai/view/layout/base' /}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{url('finace/index')}">团队管理</a></li>
+                <li class="active">用户信息</li>
+                <li style="color: #00b7ee;cursor: pointer" onclick="window.history.go(-1)">返回上一级</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <tr>
+                    <th>ID</th>
+                    <th>账号</th>
+                    <th>手机</th>
+                    <th>剩余佣金</th>
+                    <th>提现中佣金</th>
+                    <th>我的推广</th>
+                    <th>提现密码</th>
+                    <th>注册时间</th>
+                </tr>
+                <tr>
+                    <td>{$user.user_id}</td>
+                    <td>{$user.user_name}</td>
+                    <td>{$user.user_phone}</td>
+                    <td>
+                        {$dai.dai_yj} <a class="btn btn-sm btn-warning" type="button"
+                            href="javascript:how_much('{$dai.dai_yj}');">申请提现</a>
+                    </td>
+                    <td>
+                        <b style="color: red">{$dai.dai_txz}</b> <a class="btn btn-sm btn-warning" type="button"
+                            href="{:url('finance/record')}">查看</a>
+                    </td>
+                    <td><a class="btn btn-sm btn-success" type="button" href="{:url('index/promote')}">推广链接</a></td>
+                    <td>
+                        <a class="btn btn-sm layui-btn-normal" style="color: #fff" type="button"
+                            href="{:url('finance/change_pass')}">修改</a>
+                    </td>
+                    <td>{:date('Y-m-d H:i:s', $user.user_reg_time)}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--body wrapper end-->
+<script type="application/javascript">
+    function how_much(cms) {
+        if (cms <= 0) {
+            layer.msg('当前余额不能提现！');
+            return;
+        }
+      	if (cms < 100) {
+            layer.msg('最低100起提！');
+            return;
+        }
+        location.href = "{:url('finance/withdrawal')}";
+    }
+</script>
+{/block}

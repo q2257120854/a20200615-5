@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        />
+        <title>
+            {$tkd.title|parseTpl}手机版
+        </title>
+        <meta name="keywords" content="{$tkd.keywords|parseTpl}">
+        <meta name="description" content="{$tkd.description|parseTpl}">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="applicable-device" content="pc,mobile" />
+        <link rel="stylesheet" href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/sprite-xunshuwang.css?v={$pt.config.tplconfig.runtime}01" />
+    </head>    
+    <body>
+        <div class="content">
+            <div class="header">
+                <a href="/" class="header-back jsBack">
+                    <svg class="icon icon-arrow-l">
+                        <use xlink:href="#icon-arrow-l">
+                        </use>
+                    </svg>
+                    主页
+                </a>
+                <div class="header-operate">
+                    <a href="{if IS_LOGIN}{link=user.index.index}{else}{link=user.public.login}{/if}"
+                    class="icon icon-person" title="用户登录">
+                        <svg class="jsGuestWrapper">
+                            <use xlink:href="#icon-person">
+                            </use>
+                        </svg>
+                    </a>
+                    <a href="javascript:" id="toggle-search" class="icon icon-search" title="搜索">
+                        <svg>
+                            <use xlink:href="#icon-search">
+                            </use>
+                        </svg>
+                    </a>
+                    <a id="toggle-nav" href="javascript:;" class="icon icon-more" title="分类"></a>
+                </div>
+            </div>
+            <div class="nav" id="nav-switch" style="display: none;">
+                <ul>
+                    {block method="categorylist" name="list" pid=0} {section loop="list" skip=1
+                    limit=12}
+                    <li>
+                        <a href="/sort/{$loop.key}_0_0_0_1.html" title="{$loop.name}">
+                            {$loop.name}
+                        </a>
+                    </li>
+                    {/section}
+                </ul>
+            </div>
+            <div class="search-container" id="search-block" style="display: none">
+                <form action="{link='novelsearch.search.result'}" class="search-guide"
+                method="post">
+                    <input type="search" placeholder="输入关键字搜索" name="searchkey" id="">
+                    <button type="submit">
+                    </button>
+                </form>
+            </div>
+            <div class="home-nav">
+                <a href="/" class="guide-nav-a" title=" 首 页">
+                    <i class="icon icon-home">
+                    </i>
+                    <h4 class="guide-nav-h">
+                        首 页
+                    </h4>
+                </a>
+                <a href="{link=novelsearch.index.category}" class="guide-nav-a" title="小说分类">
+                    <i class="icon icon-sort">
+                    </i>
+                    <h4 class="guide-nav-h">
+                        分 类
+                    </h4>
+                </a>
+                <a href="{link=novelsearch.index.top}" class="guide-nav-a" title="小说排行榜">
+                    <i class="icon icon-rank">
+                    </i>
+                    <h4 class="guide-nav-h">
+                        排 行
+                    </h4>
+                </a>
+                <a href="{link=novelsearch.list.over}" class="guide-nav-a" title=" 全本小说">
+                    <i class="icon icon-end">
+                    </i>
+                    <h4 class="guide-nav-h">
+                        全 本
+                    </h4>
+                </a>
+                <a href="/top/lastupdate.html" class="guide-nav-a" title=" 最新小说">
+                    <i class="icon icon icon-newbook">
+                    </i>
+                    <h4 class="guide-nav-h">
+                        最 新
+                    </h4>
+                </a>
+            </div>
+        </div>
+        {include file="../a/paihang"}
+        <div class="module">
+            <div class="module-header booklist-module">
+                <div class="module-header-l">
+                    <h3 class="module-title">
+                        分类大全
+                    </h3>
+                  <span>总<b>{block method="categorylist" name="list" pid=0 num=1}{section loop="list" skip=0 limit=1}{$loop.num}{/section}</b>本</span>
+                </div>
+            </div>
+            <ol class="book-ol book-ol-normal">
+                {block method="categorylist" name="list" pid=0 num=1} 
+                {section loop="list" skip=1 limit=2}
+                <li class="book-li-msg book-back">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} 
+                        {section loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}" class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section} {block method="categorylist" name="list" pid=0 num=1} {section
+                loop="list" skip=3 limit=2}
+                <li class="book-li-msg">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} {section
+                        loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}"
+                        class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section} {block method="categorylist" name="list" pid=0 num=1} {section
+                loop="list" skip=5 limit=2}
+                <li class="book-li-msg book-back">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} {section
+                        loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}"
+                        class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section} {block method="categorylist" name="list" pid=0 num=1} {section
+                loop="list" skip=7 limit=2}
+                <li class="book-li-msg">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} {section
+                        loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}"
+                        class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section} {block method="categorylist" name="list" pid=0 num=1} {section
+                loop="list" skip=9 limit=2}
+                <li class="book-li-msg book-back">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} {section
+                        loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}"
+                        class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section} {block method="categorylist" name="list" pid=0 num=1} {section
+                loop="list" skip=11 limit=2}
+                <li class="book-li-msg">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} {section
+                        loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}"
+                        class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section} {block method="categorylist" name="list" pid=0 num=1} {section
+                loop="list" skip=13 limit=2}
+                <li class="book-li-msg book-back">
+                    <a href="/sort/{$loop.key}_0_0_0_1.html" class="book-sort" title="{$loop.name}">
+                        {block method="novellist" name="records" category=$loop.id num=1} {section
+                        loop=$records item=record}
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$record.novel.cover}"
+                        class="book-pic" alt="{$record.novel.name}">
+                        {/section}
+                        <div class="book-cell">
+                            <div class="book-title-x">
+                                <h4 class="book-title">
+                                    {$loop.name}
+                                </h4>
+                            </div>
+                            <p class="book-tags">
+                                <em>
+                                    {$loop.num}本
+                                </em>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {/section}
+            </ol>
+        </div>
+        {include file="../common/footer1"}
+    </body>
+
+</html>

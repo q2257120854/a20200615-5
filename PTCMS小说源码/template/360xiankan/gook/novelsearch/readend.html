@@ -1,0 +1,15 @@
+
+			<ul class="ul-odr">
+                {block method="chapterlist" name=list novelid=$novel.id}
+                {section loop="list"}			
+                <li><a href="{$loop.url_read}"><span>{$loop.name}</span><i class="icon icon-free">阅读</i></a></li>
+               {/section}
+			</ul>
+            
+			<ul class="ul-rvt">
+                {block method="chapterlist" name=list novelid=$novel.id sort=desc}
+                {section loop="list"}			
+                <li><a href="{$loop.url_read}"><span>{$loop.name}</span><i class="icon icon-free">阅读</i></a></li>
+               {/section}
+			</ul>
+

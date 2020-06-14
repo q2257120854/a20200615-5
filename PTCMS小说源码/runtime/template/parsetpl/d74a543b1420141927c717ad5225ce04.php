@@ -1,0 +1,1 @@
+<?php echo $novel['name'];?>最新章节,<?php echo $novel['name'];?> <?php echo $sitename;?>

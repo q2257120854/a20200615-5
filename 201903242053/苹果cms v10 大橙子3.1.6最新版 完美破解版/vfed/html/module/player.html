@@ -1,0 +1,139 @@
+{if$maccms.aid==15}{if$vfedcc['advs']['fits']['state']==1||$vfedcc['advs']['fits']['state']==2&&$user.user_id==0}{$vfedcc['advs']['play']['head']}{/if}
+<div class="fed-play-info fed-part-rows fed-back-whits fed-marg-top">
+	<div class="fed-play-player fed-rage-head fed-part-rows fed-back-black" style="padding-top:{$vfedcc['play']['high']['pgao']|mac_default='56.25%'}">
+		<style type="text/css">@media(max-width:47.9375rem){.fed-play-player{padding-top:{$vfedcc['play']['high']['wgao']|mac_default='56.25%'}!important}}</style>
+		<div class="fed-play-loader fed-part-full"><span class="fed-part-core fed-font-xvi fed-text-white fed-text-center">{$vfedcc['play']['tips']|mac_default='正在加载...'}</span></div>
+		{php}$vods=require('application/extra/vodserver.php');$pars=$vfedcc['play']['parse'];$play=$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['url'];{/php}
+		{maccms:foreach name="$vods"}{php}
+		if(stristr($play,$vo['tip'])==true){ $pars=stristr($vo['des'],'//')==true?$vo['des']:$maccms['path_tpl'].$vo['des'];break; }
+		{/php}{/maccms:foreach}
+		<iframe id="fed-play-iframe" class="fed-play-iframe fed-part-full" frameborder="0" scrolling="no" allowfullscreen="true"
+			data-lock="{$obj.vod_copyright}"
+			data-pass="{$vfedcc['play']['pass']}"
+			data-auto="{$vfedcc['play']['auto']}"
+			data-seek="{$obj.vod_author|mac_default='0'}"
+			data-code="{$popedom.code|mac_default='1'}"
+			data-trys="{$GLOBALS['config']['user']['trysee']}"
+			data-advs="{$vfedcc['play']['advs']['state']}"
+			data-link="{$vfedcc['play']['advs']['link']}"
+			data-time="{$vfedcc['play']['advs']['time']|mac_default='5'}"
+			data-chat="{$vfedcc['play']['code']['state']}"
+			data-word="{:chr(rand(65,90)).chr(rand(65,90)).chr(rand(97,122)).base64_encode($GLOBALS['config']['weixin']['gjcm1'])}"
+			data-stat="{$obj['vod_play_list'][$param['sid']]['player_info']['ps']}"
+			data-pars="{$obj['vod_play_list'][$param['sid']]['server_info']['des']|mac_default=mac_default($obj['vod_play_list'][$param['sid']]['player_info']['parse'],$pars)}"
+			data-play="{$vfedcc['play']['pass']?chr(rand(65,90)).chr(rand(65,90)).chr(rand(97,122)).base64_encode($play):$play}"
+			data-next="{if$obj['vod_play_list'][$param['sid']]['player_info']['des']=='自动连播'&&$param.nid!=$obj['vod_play_list'][$param['sid']]['url_count']}{$maccms.http_type}{$_SERVER['HTTP_HOST']}{$obj.player_info.link_next}{/if}"></iframe>
+		{if$vfedcc['play']['code']['state']}
+		<div class="fed-chat-info fed-back-black fed-play-box fed-back-whits{if$_COOKIE['fed_wechat']} fed-hidden{else} fed-visible{/if}">
+			<div class="fed-part-core fed-part-rows fed-play-chat">
+				<div class="fed-col-xs5">
+					<img class="fed-padding" src="{$vfedcc['play']['code']['value']|mac_url_img}" width="100%"/>
+				</div>
+				<div class="fed-col-xs7">
+					<li class="fed-padding fed-text-center fed-font-xii fed-part-eone">扫描二维码,回复<font color="red">{$GLOBALS['config']['weixin']['gjc1']}</font>,获取口令</li>
+					<li class="fed-padding fed-text-center fed-font-xii fed-part-eone fed-play-foll">欢迎关注微信公众号</li>
+					<li class="fed-padding"><input class="fed-form-info fed-rims-info fed-chat-input fed-event" data-user="{$user.user_id}" type="text" placeholder="请输入口令" maxlength="60" /></li>
+					<li class="fed-padding"><a class="fed-btns-info fed-rims-info fed-visible fed-btns-green fed-chat-submit fed-event" href="javascript:;">确认</a></li>
+				</div>
+			</div>
+		</div>
+		{elseif$vfedcc['play']['advs']['state']==1||$vfedcc['play']['advs']['state']==2&&$user.user_id==0}
+		<div class="fed-play-tips fed-hidden">{$vfedcc['play']['advs']['tips']|mac_default='广告倒计时'}&nbsp;<span class="fed-text-white">{$vfedcc['play']['advs']['time']|mac_default='5'}</span></div>
+		{/if}{if$vfedcc['advs']['fits']['state']==1||$vfedcc['advs']['fits']['state']==2&&$user.user_id==0}
+		<div class="fed-play-advs">
+			<a class="fed-part-advs fed-text-center fed-font-xvi" href="javascript:;">×</a>
+            {$vfedcc['advs']['play']['inne']}
+		</div>
+		{/if}{if$obj.vod_copyright}
+		<div class="fed-play-confirm fed-back-black fed-play-pays fed-play-box fed-back-whits fed-event">
+			<div class="fed-part-core">
+				<h2 class="fed-text-center fed-font-xvi">{$vfedcc['play']['copy']|mac_default='应版权方要求！本片相关资源已关闭！请谅解'}</h2>
+			</div>
+		</div>
+		{/if}{if$vfedcc['play']['apis']}
+		<div class="fed-play-parse fed-play-box fed-hidden fed-conceal fed-back-whits">
+			<h2 class="fed-text-center fed-play-top fed-font-xvi">如有无法播放请切换视频解析接口</h2>
+			{php}$vods=array_slice(array_reverse($vods),0,12);{/php}
+			<ul class="fed-part-layout fed-part-rows">
+				{maccms:foreach name="$vods"}
+				<li class="fed-padding fed-col-xs3">
+					<a class="fed-btns-info fed-rims-info fed-visible" data-api="{:stristr($vo['des'], '//') == true ? $vo['des'] : $maccms['path_tpl'] . $vo['des']}" href="javascript:;">{$vo.show}</a>
+				</li>
+				{/maccms:foreach}
+			</ul>
+		</div>
+		{/if}
+		<div class="fed-play-confirm fed-back-black fed-play-pays fed-play-box fed-back-whits fed-event{if$popedom.code!=1&&$popedom.code!=''} fed-visible{else} fed-hidden{/if}">
+			<div class="fed-part-core">
+				{if$obj.vod_points_play==0}
+				<h2 class="fed-text-center fed-font-xvi">{if$GLOBALS['config']['user']['trysee']}试看{$GLOBALS['config']['user']['trysee']}分钟结束，完整观看本影片需要升级会员组，请升级后观看。{else}{$popedom.msg}{/if}</h2>
+				<p class="fed-text-center">提示：购买VIP会员组，享受超级权限，谢谢支持。</p>
+				<div class="fed-text-center">
+					{if$user.group.group_id==1}
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin" href="{:mac_url('user/reg')}">用户注册</a>
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin fed-back-green fed-navs-login" href="javascript:;">立即登录</a>
+					{else}
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin" href="{:mac_url('user/index')}" target="_blank">会员中心</a>
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin fed-back-green" href="{:mac_url('user/upgrade')}" target="_blank">马上升级</a>
+					{/if}
+				</div>
+            	{else}
+				<h2 class="fed-text-center fed-font-xvi">{if$GLOBALS['config']['user']['trysee']}试看{$GLOBALS['config']['user']['trysee']}分钟结束，完整观看本影片需要花费{$obj.vod_points_play}积分，请支付后观看。{else}{$popedom.msg}{/if}</h2>
+				<p class="fed-text-center">一次支付，永久观看，不重复扣费，谢谢支持。</p>
+				<div class="fed-text-center">
+					{if$user.group.group_id==1}
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin" href="{:mac_url('user/reg')}">用户注册</a>
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin fed-back-green fed-navs-login" href="javascript:;">立即登录</a>
+					{else}
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin" href="{:mac_url('user/buy')}" target="_blank">马上充值</a>
+					<a class="fed-btns-info fed-rims-info fed-visible fed-padding fed-margin fed-back-green" href="javascript:;" onclick="fed.myuser.power(this,'{if$obj.player_info.flag=="play"}播放{else}下载{/if}')" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}" data-type="{if$obj.player_info.flag=='play'}4{else}5{/if}">确认购买</a>
+					{/if}
+				</div>
+				{/if}
+			</div>
+		</div>
+	</div>
+	<div class="fed-play-title fed-part-rows">
+		{if$vfedcc['advs']['fits']['state']==1||$vfedcc['advs']['fits']['state']==2&&$user.user_id==0}{if$vfedcc['advs']['play']['foot']}<ul class="fed-play-boxs fed-part-rows">{$vfedcc['advs']['play']['foot']}</ul>{/if}{/if}
+		<ul class="fed-play-boxs fed-padding fed-part-rows fed-col-xs12 fed-col-md6">
+			<li class="fed-padding{if$vfedcc['play']['danmu']} fed-col-xs5{else} fed-col-xs12{/if}">
+				<span class="fed-play-text fed-visible fed-font-xvi fed-part-eone">{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}</span>
+			</li>
+			{if$vfedcc['play']['danmu']}
+			<li class="fed-padding fed-col-xs4"><input class="fed-form-info fed-rims-info fed-rage-input fed-event" data-user="{$user.user_id}" data-name="{$user.user_name}" type="text" placeholder="一起吐槽吧！" maxlength="60" /></li>
+			<li class="fed-padding fed-col-xs1">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-rage-switch fed-event" href="javascript:;">{if$_COOKIE['fed_danmu']}关{else}开{/if}</a>
+			</li>
+			<li class="fed-padding fed-col-xs2">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-btns-green fed-rage-common fed-rage-submit fed-event" href="javascript:;">发送</a>
+			</li>
+			{/if}
+		</ul>
+		<ul class="fed-play-boxs fed-padding fed-part-rows fed-col-xs12 fed-col-md6">
+			{if$vfedcc['play']['apis']}
+			<li class="fed-padding fed-col-xs2">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-play-cuts fed-event" href="javascript:;">接口</a>
+			</li>
+			{/if}{if$GLOBALS['config']['user']['status']}
+			<li class="fed-padding{if$vfedcc['rest']['share']['state']} fed-col-xs2{else} fed-col-xs3{/if}">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-play-favo fed-event" href="javascript:;">收藏</a>
+			</li>
+			{/if}
+			<li class="fed-padding{if$vfedcc['rest']['share']['state']} fed-col-xs2{else} fed-col-xs3{/if}">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-play-reno fed-event" href="javascript:;" onclick="location.reload()">刷新</a>
+			</li>
+			{if$vfedcc['rest']['share']['state']}
+			<li class="fed-padding fed-col-xs2">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-play-share fed-event" href="javascript:;">分享</a>
+			</li>
+			{/if}
+			<li class="fed-padding{if$vfedcc['play']['apis']} fed-col-xs2{else} fed-col-xs3{/if}{if$GLOBALS['config']['user']['status']} fed-col-xs2{else} fed-col-xs3{/if}">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-play-prev{if$param.nid==1} fed-btns-disad{/if}" href="{$obj.player_info.link_pre}">上集</a>
+			</li>
+			<li class="fed-padding{if$vfedcc['play']['apis']} fed-col-xs2{else} fed-col-xs3{/if}{if$GLOBALS['config']['user']['status']} fed-col-xs2{else} fed-col-xs3{/if}">
+				<a class="fed-btns-info fed-rims-info fed-visible fed-play-next{if$param.nid==$obj['vod_play_list'][$param['sid']]['url_count']} fed-btns-disad{/if}" href="{$obj.player_info.link_next}">下集</a>
+			</li>
+		</ul>
+	</div>
+</div>
+{/if}

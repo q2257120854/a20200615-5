@@ -1,0 +1,61 @@
+{if$vfedcc['home']['class']['state']}
+{maccms:type num="'.$vfedcc['home']['class']['class'].'" ids="parent" order="asc" by="sort" flag="vod" id="vfed"}
+<div class="fed-list-home fed-part-layout fed-back-whits fed-part-rows">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfed.type_name|mac_filter_html}</h2>
+		<ul class="fed-part-tips fed-padding">
+			{maccms:type num="8" parent="'.$vfed['type_id'].'" order="asc" by="sort" flag="vod"}
+			<li class="fed-hide-xs"><a href="{:mac_url_type($vo)}">{$vo.type_name|mac_filter_html}</a> /</li>
+			{/maccms:type}
+			<li><a class="fed-more" href="{:mac_url_type($vfed)}">更多</a></li>
+		</ul>
+	</div>
+	{maccms:vod num="1" type="'.$vfed['type_id'].'" level="4" key="slide"}{/maccms:vod}{if$slide}
+	<div class="fed-padding fed-col-sx12 fed-col-md5">
+		{include file="module/slides"}
+		{include file="basics/charts"}
+	</div>
+	<div class="fed-col-sx12 fed-col-md7">
+		{if stristr($vfed['type_name'],'直播')==true}
+		<ul class="fed-list-info fed-list-img fed-part-rows">
+			{maccms:vod num="6" type="'.$vfed['type_id'].'" order="desc" by="time"}
+			<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md4">
+			{include file="basics/direct"}
+			</li>
+			{/maccms:vod}
+		</ul>
+		{else}
+		<ul class="fed-list-info fed-part-rows">
+			{maccms:vod num="8" type="'.$vfed['type_id'].'" order="desc" by="time"}
+			<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md3{if$key>6} fed-hide-xs{/if}">
+			{include file="basics/listing"}
+			</li>
+			{/maccms:vod}
+		</ul>
+		{/if}
+	</div>
+	{else}
+	<div class="fed-part-rows">
+		{if stristr($vfed['type_name'],'直播')==true}
+		<ul class="fed-list-info fed-list-img fed-part-rows">
+			{maccms:vod num="'.($vfedcc['home']['class']['value']==6?4:8).'" type="'.$vfed['type_id'].'" order="desc" by="time"}
+			<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3{if$vfedcc['home']['class']['value']=='6'&&$key>3} fed-hide-sm fed-show-md-block{elseif$vfedcc['home']['class']['value']=='12'&&$key>6} fed-hide-sm fed-show-md-block{/if}">
+			{include file="basics/images"}
+			</li>
+			{/maccms:vod}
+		</ul>
+		{else}
+		<ul class="fed-list-info fed-part-rows">
+			{include file="basics/advert"}
+			{maccms:vod num="'.($vfedcc['home']['class']['value']-$advert).'" type="'.$vfed['type_id'].'" order="desc" by="time"}
+			<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['class']['value']=='6'&&$key>(4-$advert)} fed-hide-sm fed-show-md-block{/if}">
+			{include file="basics/listing"}
+			</li>
+			{/maccms:vod}
+		</ul>
+		{/if}
+	</div>
+	{/if}
+</div>
+{/maccms:type}
+{/if}

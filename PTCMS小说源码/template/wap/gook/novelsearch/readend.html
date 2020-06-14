@@ -1,0 +1,26 @@
+
+		<div class="idx-div">
+            {if $sort=='asc'}
+			<h2>
+				<span>{$novel.name}</span>
+				<i class="icon icon-odr">正序</i>
+			</h2>
+			<ul class="ul-odr">
+                {block method="chapterlist" name=list novelid=$novel.id sort=desc}
+                {section loop="list"}			
+                <li><a data-href="{$loop.url_read}"><span>{$loop.name}</span><i class="icon icon-free">阅读</i></a></li>
+               {/section}
+			</ul>
+            {else}
+			<h2>
+				<span>{$novel.name}</span>
+				<i class="icon icon-rvt">倒序</i>
+			</h2>
+			<ul class="ul-odr">
+                {block method="chapterlist" name=list novelid=$novel.id}
+                {section loop="list"}			
+                <li><a data-href="{$loop.url_read}"><span>{$loop.name}</span><i class="icon icon-free">阅读</i></a></li>
+               {/section}
+			</ul>
+            {/if}
+		</div>

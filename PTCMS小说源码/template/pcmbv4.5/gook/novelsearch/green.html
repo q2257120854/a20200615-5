@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="../common/head"}
+</head>
+<body id="chapter" article-id="{$novel.id}" info-id="{$url.info}" zz-id="{$author.url}" xs-id="__SELF__" chapter-id="{$chapter.id}" data-id="{$novel.cover}" ondragstart="return false;" oncopy="return false;" oncut="return false;" oncontextmenu="return false;">
+<div class="header">
+	<div class="layui-main">
+		<a class="logo" href="{$pt.config.siteurl}"><i class="iconfont icon-logo"></i>{$pt.config.sitename}</a>
+		<a class="history" href="{link=user.history.index}"><i class="layui-icon i_history"></i>阅读历史</a>
+		<ul class="nav">
+			<li ><a href="{$pt.config.siteurl}">首页</a></li>
+			<li ><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}">书库大全</a></li>
+			<li ><a href="{link='novelsearch.index.category'}">小说分类</a></li>
+			<li ><a href="{link=novelsearch.index.top}">排行榜</a></li>
+			<li ><a href="{link='novelsearch.list.over'}">完本</a></li>
+		</ul>
+		<form action="{link='novelsearch.search.result'}" class="search">
+			<input type="text" name="searchkey" placeholder="请输入搜索内容！" autocomplete="off">
+			<button type="submit" class="layui-icon i_search"></button>
+		</form>
+	</div>
+</div>
+<div class="main">
+	<div class="layui-main">
+		<div class="box">
+			<div class="path"><a href="{$pt.config.siteurl}" class="layui-icon i_home"></a><i>&gt;</i><a href="{$category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$category.name}</a><i>&gt;</i><a href="{$url.info}">{$novel.name}</a><i>&gt;</i><a href="{$url.dir}">最新章节列表</a></div>
+		</div>
+		<div class="area">
+		    <div class="nr_title" id="nr_title">
+	            <span class="xialas">换源:
+		            <select onchange="window.location=this.value;">
+			          {loop=$chapter.samelist}
+		               <option value="{$loop.url}" title="{$novel.name} {$loop.name} {$chapter.name}">{$loop.name}</option>
+			           {/loop}
+			        </select>
+		        </span>
+	        </div>
+			<h1>{$chapter.name}</h1>
+			<div class="light">作品：<a id="bookname" href="{$url.info}">{$novel.name}</a><i>|</i>作者：<a id="author" href="{$author.url}">{$author.name}</a><i>|</i>分类：<a href="{$category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$category.name}</a><i>|</i>更新：{$chapter.time|date="Y-m-d H:i:s"}<i>|</i>下载：<a href="{$url.down}" title="{{$novel.name} TXT下载">{$novel.name}TXT下载</a></div>
+			<div id="content">{$chapter.content}</div>
+			<div class="page"><a href="{$chapter.preinfo.url}">上一章【快捷键：←】</a> <a href="{$url.dir}">目 录【快捷键：Enter】</a> <a id="page2" href="{$chapter.nextinfo.url}">下一章【快捷键：→】</a></div>
+		</div>
+	</div>
+</div>
+{include file="../common/footer"}
+<ul id="setting" class="hide" style="display: none;"><li class="theme"><p>主题模式：</p><a class="day on"></a><a class="night"></a><a class="pink"></a><a class="yellow"></a><a class="blue"></a><a class="green"></a><a class="gray"></a></li><li class="style"><p>字体样式：</p><a class="yahei on">雅黑</a><a class="songti">宋体</a><a class="kaishu">楷书</a></li><li class="size"><p>字体大小：</p><a class="iconfont icon-dec"></a><a class="num">18</a><a class="iconfont icon-inc"></a></li><li class="default"><p></p><a>恢复默认</a></li></ul>
+<ul class="bar left_bar">
+    <li><a class="iconfont icon-read" href="{$url.dir}">目录</a></li>
+	<li><a class="iconfont icon-setting" href="javascript:void(0)">设置</a></li>
+	<li><a class="iconfont icon-info" href="{$url.info}">详情</a></li>
+    <li><a class="iconfont icon-tingshu" href="javascript:void(0)">朗读</a></li>
+</ul>
+<ul class="bar right_bar">
+	<li><a class="layui-icon i_phone" href="javascript:void(0)" onclick="phone()">手机</a></li>
+	<li><a class="layui-icon i_mark" href="javascript:void(0)" onclick="mark({$novel.id})">收藏</a></li>
+	<li><a class="layui-icon i_prev" href="{$chapter.preinfo.url}"></a></li>
+	<li><a class="layui-icon i_next" href="{$chapter.nextinfo.url}"></a></li>
+    <li><a class="iconfont icon-top" href="#"></a></li>
+</ul>
+</body>
+</html>

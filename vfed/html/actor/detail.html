@@ -1,0 +1,36 @@
+{include file="public/header"}
+<div class="fed-part-layout fed-part-rows fed-back-whits">
+	<div class="fed-col-xs12 fed-col-sm8 fed-col-md9">
+		{include file="basics/actors"}
+	</div>
+	<div class="fed-hide-xs fed-col-sm4 fed-col-md3">
+		{include file="basics/qrcode"}
+	</div>
+</div>
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">参演作品</h2>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod actor="'.$obj['actor_name'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+			{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+</div>
+<div class="fed-conv-info fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">
+			<a class="fed-conv-btn" href="javascript:;">明星简介</a>
+		</h2>
+	</div>
+	<div class="fed-conv-deta">
+		<div class="fed-conv-boxs fed-conv-cont">
+			<p class="fed-conv-text fed-padding fed-text-muted">
+				{$obj.actor_content|mac_filter_html|mac_default='暂无明星简介'}
+			</p>
+		</div>
+	</div>
+</div>
+{include file="public/footer"}

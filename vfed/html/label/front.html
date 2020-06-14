@@ -1,0 +1,18 @@
+{include file="public/header"}
+<title>影院热映 - {$maccms.site_name}</title>
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">影院热映</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{maccms:type num="1" ids="parent" order="asc" by="sort" flag="vod"}{:mac_url_type($vo,[],'show')}{/maccms:type}">筛选</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod num="96" order="desc" by="time" level="3"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+</div>
+{include file="public/footer"}

@@ -1,0 +1,17 @@
+<div class="fed-part-layout{if$maccms.aid==15} fed-marg-top{/if} fed-back-whits">
+	<form class="fed-comm-fork fed-comm-form fed-event" data-role="{$GLOBALS['config']['gbook']['login']}" autocomplete="off" onkeydown="if(event.keyCode==13){return false}">
+		<ul class="fed-part-rows">
+			<li class="fed-padding fed-col-xs12"><textarea class="fed-form-info fed-rims-info fed-form-area fed-comm-text fed-event" name="gbook_content" cols="40" rows="4" placeholder="输入留言内容">{if$maccms.aid==13}请管理员添加《{$param.wd}》，谢谢！{elseif$maccms.aid==4}{else}【ID:{$obj.vod_id}-名称:{$obj.vod_name|mac_filter_html}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}-{$obj['vod_play_list'][$param['sid']]['player_info']['show']|mac_default='云播放器'}】无法观看请检查修复。{:chr(13)}{:chr(10)}页面地址：{$maccms.http_type}{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}{/if}</textarea></li>
+			<li class="fed-padding{if$GLOBALS['config']['gbook']['verify']} fed-col-xs12 fed-col-md4{else} fed-col-xs9 fed-col-md10{/if}">
+				<p class="fed-form-info fed-rims-info fed-text-muted">提示：<span class="fed-comm-tips">还可以输入255字</span></p>
+			</li>
+			{if$GLOBALS['config']['gbook']['verify']}
+			<li class="fed-padding fed-col-xs6 fed-col-md4"><input class="fed-form-info fed-rims-info fed-comm-veri" type="tel" name="verify" placeholder="验证码" /></li>
+			<li class="fed-padding fed-col-xs3 fed-col-md2"><img class="fed-rims-info fed-comm-code" height="40" src="{:mac_url('verify/index')}" data-role="{:mac_url('verify/index')}" title="看不清楚? 换一张！" onClick="this.src=this.src+'?v={:time()}'" /></li>
+			{/if}
+			<li class="fed-padding fed-col-xs3 fed-col-md2">
+				<a class="fed-form-info fed-rims-info fed-btns-info fed-btns-green fed-comm-gbooks">提交</a>
+			</li>
+		</ul>
+	</form>
+</div>

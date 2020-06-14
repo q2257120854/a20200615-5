@@ -1,0 +1,11 @@
+<a class="fed-list-pics fed-lazy fed-part-2by3" href="{$vo|mac_url_actor_detail}" data-original="{$vo.actor_pic|mac_url_img}">
+	<span class="fed-list-play fed-hide-xs"></span>
+	{if$vo.actor_score>0}
+	<span class="fed-list-score fed-font-xii fed-back-green">{$vo.actor_score}</span>
+	{/if}
+	<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$vo.actor_remarks|mac_default=$vo.actor_hits.'浏览'}</span>
+</a>
+<a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href="{$vo|mac_url_actor_detail}" {if$vo.actor_color} style="color:#{$vo.actor_color}!important" {/if}>{$vo.actor_name}</a>
+<span class="fed-list-desc fed-font-xii fed-visible fed-part-eone fed-text-muted fed-hide-xs fed-show-sm-block">
+{$vo.actor_area|mac_default='内详'}
+</span>

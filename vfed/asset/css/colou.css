@@ -1,0 +1,42 @@
+a:hover {
+	color: #feac5e;
+}
+
+.fed-list-head h2,
+.fed-list-arti h3 a,
+.fed-list-info .fed-list-title,
+.fed-list-rank .fed-list-head,
+.fed-head-info .fed-pops-navbar .fed-this a,
+.fed-text-green {
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8 100%)!important;
+	-webkit-background-clip: text!important;
+	color: transparent!important;
+}
+
+.fed-head-info .fed-pops-navbar .fed-this a:before,
+.fed-swip-this,
+.fed-back-green {
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8 100%)!important;
+}
+
+.fed-head-info .fed-pops-user a:hover {
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8 100%)!important;
+}
+
+.fed-list-info .fed-list-score:before {
+	border-top: 0.25rem solid #feac5e;
+}
+
+.fed-rims-reds,
+.fed-head-info .fed-navs-search .fed-navs-input:hover,
+.fed-head-info .fed-navs-search .fed-navs-input:focus {
+	border-color: #feac5e!important;
+}
+
+.fed-page-info a:hover,
+.fed-page-info span,
+.fed-btns-green,
+.fed-btns-info:hover {
+	background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8 100%)!important;
+	border-color: #feac5e!important;
+}

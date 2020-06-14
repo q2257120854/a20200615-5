@@ -1,0 +1,29 @@
+{include file="public/header"}
+{include file="module/filter"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">
+			<a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}"{if$param.by==''||$param.by=='time'} class="fed-text-bold fed-text-green"{/if}>按时间</a>
+        	<a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}"{if$param.by=='hits'} class="fed-text-bold fed-text-green"{/if}>按人气</a>
+        	<a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'score' ],'show')}"{if$param.by=='score'} class="fed-text-bold fed-text-green"{/if}>按评分</a>
+		</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more"><span class="fed-hide-xs">当前第&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">1</span>&nbsp;页，</span>共&nbsp;<span id="fed-count" class="fed-text-green fed-text-bold">0</span>&nbsp;个影片</span></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod num="48" pageurl="vod/show" paging="yes" half="3" type="current" order="desc" by="time"}
+		{if stristr($obj['type_name'],'直播')==true||stristr($obj['parent']['type_name|mac_filter_html'],'直播')==true}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm3">
+		{include file="basics/images"}
+		</li>
+		{else}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+		{include file="basics/listing"}
+		</li>
+		{/if}
+		{/maccms:vod}
+	</ul>
+	{include file="module/paging"}
+</div>
+{include file="public/footer"}

@@ -1,0 +1,1 @@
+<?php echo $novel['name'];?>最新章节目录 - <?php echo $novel['name'];?> <?php echo $sitename;?> - <?php echo $this->pt->config->get("sitename");?>

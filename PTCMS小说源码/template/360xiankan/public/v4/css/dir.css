@@ -1,0 +1,8 @@
+.fenye{ float:left; margin-top:10px;}
+.fenye ul{ float:left; margin-left:32px; }
+.fenye ul li{ float:left; margin-left:5px;padding: 4px 6px; border:1px solid #ccc;  font-weight:bold; cursor:pointer; color:#999;}
+.fenye ul li a{ color:#999;}
+.fenye ul li.xifenye{ width:38px; text-align:center; float:left; position:relative;cursor: pointer;}
+.fenye ul li .xab{ float:left; position:absolute; width:39px; border:1px solid #ccc; height:123px; overflow-y: auto;overflow-x: hidden;top:-125px; background-color: #fff; display:inline;left:-1px; width:50px;}
+.fenye ul li .xab ul{ margin-left:0; padding-bottom:0;}
+.fenye ul li .xab ul li{ border:0; padding:4px 0px; color:#999; width:34px; margin-left:0px; text-align:center;}

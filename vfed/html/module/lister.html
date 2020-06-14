@@ -1,0 +1,138 @@
+{$vfedcc['advs']['play']['list']}
+<div class="fed-tabs-info  fed-rage-foot fed-part-rows fed-part-layout fed-back-whits fed-play-data" data-name="{$obj.vod_name|mac_filter_html}" data-nums="{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}" data-show="{$obj['vod_play_list'][$param['sid']]['player_info']['show']}">
+	<ul class="fed-list-head fed-part-rows fed-padding">
+		{if$obj.vod_play_list}
+		<li class="fed-tabs-btns fed-part-curs fed-font-xvi fed-mart-v{if$maccms.aid!=16} fed-text-green{/if}" href="javascript:;">播放列表</li>
+		{/if}
+		<li class="fed-tabs-btns fed-part-curs fed-font-xvi fed-mart-v{if!$obj.vod_play_list&&!$obj.vod_down_list} fed-text-green{/if}" href="javascript:;">剧情简介</li>
+		{if$GLOBALS['config']['comment']['status']}
+		<li class="fed-tabs-btns fed-part-curs fed-font-xvi fed-mart-v" href="javascript:;">发表评论</li>
+		{/if}{if$obj.vod_down_list}
+		<li class="fed-tabs-btns fed-part-curs fed-font-xvi fed-mart-v{if$maccms.aid==16||!$obj.vod_play_list} fed-text-green{/if}" href="javascript:;">下载列表</li>
+		{/if}
+		<li class="fed-part-tips fed-padding"><a class="fed-tabs-errs fed-event fed-more" href="javascript:;" data-href="{:mac_url('gbook/report')}">报错</a></li>
+	</ul>
+	<div class="fed-tabs-boxs">
+		{if$obj.vod_play_list}
+		<div class="fed-tabs-item fed-drop-info{if$maccms.aid!=16} fed-visible{else} fed-hidden{/if}">
+			<div class="fed-drop-boxs fed-drop-tops fed-matp-v">
+				<ul class="fed-part-rows">
+					{php}$count=1;{/php}{maccms:foreach name="obj.vod_play_list"}
+					<li class="{if$vo.player_info.from==$obj['vod_play_list'][$param['sid']]['player_info']['from']||$param.nid gt $obj['vod_play_list'][$vo['sid']]['url_count']}fed-play-btns {/if}fed-drop-btns fed-padding fed-col-xs3 fed-col-md2">
+						<a class="fed-btns-info fed-rims-info fed-part-eone{if$maccms.aid==15&&$vo.player_info.from==$obj['vod_play_list'][$param['sid']]['player_info']['from']} fed-back-green{elseif$maccms.aid!=15&&$count==1} fed-back-green{/if}" href="{if$vo.player_info.from==$obj['vod_play_list'][$param['sid']]['player_info']['from']||$param.nid gt $obj['vod_play_list'][$vo['sid']]['url_count']}javascript:;{else}{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$param.nid])}{/if}">{$vo.player_info.show|mac_default='云播放器'}</a>
+					</li>
+					{php}$count++;{/php}{/maccms:foreach}
+				</ul>
+			</div>
+			<div class="fed-drop-boxs fed-drop-btms fed-matp-v">
+				{php}$count=1;{/php}{maccms:foreach name="obj.vod_play_list"}
+				<div class="fed-play-item fed-drop-item{if$maccms.aid==15&&$vo.player_info.from==$obj['vod_play_list'][$param['sid']]['player_info']['from']} fed-visible{elseif$maccms.aid!=15&&$count==1} fed-visible{else} fed-hidden{/if}">
+					<ul class="fed-drop-head fed-padding fed-part-rows">
+						<li class="fed-padding fed-col-xs4 fed-part-eone fed-font-xvi">播放集数</li>
+						<li class="fed-padding fed-col-xs8 fed-part-eone fed-font-xvi fed-text-right">
+							<a class="fed-drop-sort fed-back-green" href="javascript:;">视频排序：正序</a>
+						</li>
+					</ul>
+					<ul class="fed-part-rows">
+						{maccms:foreach name="vo.urls" id="sub"}
+						<li class="fed-padding{if$obj.type_1.type_name=='电影'||$obj.type.type_name=='电影'||$obj.type_1.type_name=='综艺'||$obj.type.type_name=='综艺'} fed-col-xs6 fed-col-sm4 fed-col-md3 fed-col-lg2{else} fed-col-xs3 fed-col-md2 fed-col-lg1{/if}">
+							<a class="fed-btns-info fed-rims-info fed-part-eone{if$key==$param.nid&&$vo.player_info.from==$obj['vod_play_list'][$param['sid']]['player_info']['from']} fed-btns-green{/if}" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$sub.nid])}">{$sub.name}</a>
+						</li>
+						{/maccms:foreach}
+					</ul>
+				</div>
+				{php}$count++;{/php}{/maccms:foreach}
+			</div>
+		</div>
+		{/if}
+		<div class="fed-tabs-item{if!$obj.vod_play_list&&!$obj.vod_down_list} fed-visible{else} fed-hidden{/if}">
+			{if$maccms.aid==15}
+			<div class="fed-col-xs12 fed-col-sm8 fed-col-md9">
+				{include file="basics/detail"}
+			</div>
+			<div class="fed-hide-xs fed-col-sm4 fed-col-md3">
+				{include file="basics/qrcode"}
+			</div>
+			{/if}
+			<p class="fed-padding fed-part-both fed-text-muted">
+				{$obj.vod_content|mac_filter_html|mac_default='暂无剧情简介'}
+			</p>
+		</div>
+		{if$GLOBALS['config']['comment']['status']}
+		<div class="fed-tabs-item fed-hidden">
+			<div class="fed-comm-info" data-id="{$obj.vod_id}" data-mid="{$maccms.mid}"></div>
+		</div>
+		{/if}
+		{if$obj.vod_down_list}
+		<div class="fed-tabs-item fed-drop-info{if$maccms.aid==16||!$obj.vod_play_list} fed-visible{else} fed-hidden{/if}">
+			<div class="fed-drop-boxs fed-drop-tops fed-matp-v">
+				<ul class="fed-part-rows">
+					{php}$count=1;{/php}{maccms:foreach name="obj.vod_down_list"}
+					<li class="fed-down-btns fed-drop-btns fed-padding fed-col-xs3 fed-col-md2">
+						<a class="fed-btns-info fed-rims-info fed-part-eone{if$maccms.aid==16&&$vo.player_info.from==$obj['vod_down_list'][$param['sid']]['player_info']['from']} fed-back-green{elseif$maccms.aid!=16&&$count==1} fed-back-green{/if}" href="javascript:;">{$vo.player_info.show|mac_default='云播放器'}</a>
+					</li>
+					{php}$count++;{/php}{/maccms:foreach}
+				</ul>
+			</div>
+			<div class="fed-drop-boxs fed-drop-btms fed-matp-v">
+				{php}$count=1;{/php}{maccms:foreach name="obj.vod_down_list"}
+				<div class="fed-down-item fed-drop-item{if$maccms.aid==16&&$vo.player_info.from==$obj['vod_down_list'][$param['sid']]['player_info']['from']} fed-visible{elseif$maccms.aid!=16&&$count==1} fed-visible{else} fed-hidden{/if}">
+					<ul class="fed-drop-head fed-padding fed-part-rows">
+						<li class="fed-padding fed-col-xs4 fed-part-eone fed-font-xvi">下载集数</li>
+						<li class="fed-padding fed-col-xs8 fed-part-eone fed-font-xvi fed-text-right">
+							<a class="fed-drop-sort" href="javascript:;">视频排序：正序</a>
+						</li>
+					</ul>
+					{if$maccms.aid==16&&$obj.vod_points_down==0}
+					<ul class="fed-part-rows">
+						{maccms:foreach name="vo.urls" id="sub"}
+						<li class="fed-part-rows fed-col-xs12">
+							<div class="fed-tabs-input fed-padding fed-col-xs8 fed-col-sm9 fed-col-md10">
+								<input class="fed-form-info fed-rims-info fed-part-eone" type="text" value="{$sub.url}" />
+							</div>
+							<div class="fed-tabs-submit fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+								<a target="_blank" class="fed-form-info fed-btns-info fed-rims-info fed-part-eone" href="{$sub.url}">下载{$sub.name}</a>
+							</div>
+						</li>
+						{/maccms:foreach}
+					</ul>
+					{else}
+					{if$maccms.aid==16&&$obj.vod_points_down!=0&&$vo.player_info.from==$obj['vod_down_list'][$param['sid']]['player_info']['from']}
+					<ul class="fed-part-rows">
+						<li class="fed-part-rows">
+							{if$popedom.code==1}
+							<div class="fed-padding fed-col-xs8 fed-col-sm9">
+								<input class="fed-form-info fed-rims-info fed-part-eone" type="text" value="{$obj['vod_down_list'][$param['sid']]['urls'][$param['nid']]['url']}" />
+							</div>
+							<div class="fed-padding fed-col-xs4 fed-col-sm3">
+								<a target="_blank" class="fed-form-info fed-btns-info fed-rims-info fed-part-eone" href="{$obj['vod_down_list'][$param['sid']]['urls'][$param['nid']]['url']}">下载{$obj['vod_down_list'][$param['sid']]['urls'][$param['nid']]['name']}</a>
+							</div>
+							{else}
+							<div class="fed-padding fed-col-xs12 fed-col-sm8">
+								<input class="fed-form-info fed-rims-info fed-part-eone" type="text" value="{$popedom.msg}" />
+							</div>
+							<div class="fed-padding fed-col-xs6 fed-col-sm2">
+								<a class="fed-form-info fed-btns-info fed-rims-info fed-part-eone" href="{:mac_url('user/buy')}" target="_blank">马上充值</a>
+							</div>
+							<div class="fed-padding fed-col-xs6 fed-col-sm2">
+								<a class="fed-form-info fed-btns-info fed-rims-info fed-part-eone fed-back-green" href="javascript:;" onclick="fed.myuser.power(this,'{if$obj.player_info.flag=="play"}播放{else}下载{/if}')" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}" data-type="{if$obj.player_info.flag=='play'}4{else}5{/if}">确认购买</a>
+							</div>
+							{/if}
+						</li>
+					</ul>
+					{/if}
+					<ul class="fed-part-rows">
+						{maccms:foreach name="vo.urls" id="sub"}
+						<li class="fed-padding{if$obj.type_1.type_name=='电影'||$obj.type.type_name=='电影'||$obj.type_1.type_name=='综艺'||$obj.type.type_name=='综艺'} fed-col-xs4 fed-col-md2{else} fed-col-xs3 fed-col-md2{/if}">
+							<a class="fed-btns-info fed-rims-info fed-part-eone{if$maccms.aid==16&&$key==$param.nid&&$vo.player_info.from==$obj['vod_down_list'][$param['sid']]['player_info']['from']} fed-btns-green{/if}" href="{:mac_url_vod_down($obj,['sid'=>$vo.sid,'nid'=>$sub.nid])}">{$sub.name}</a>
+						</li>
+						{/maccms:foreach}
+					</ul>
+					{/if}
+				</div>
+				{php}$count++;{/php}{/maccms:foreach}
+			</div>
+		</div>
+		{/if}
+	</div>
+</div>

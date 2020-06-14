@@ -1,0 +1,197 @@
+{extend name='../../../application/dai/view/layout/base' /}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+<style>
+    .amount-box {
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 5px 0px;
+    }
+
+    .amount-box li {
+        display: inline-block;
+        width: 15%;
+        min-width: 70px;
+        text-align: center;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ebeef5;
+    }
+
+    .amount-box li span {
+        display: block;
+        padding: 0 15px;
+        line-height: 42px;
+    }
+
+    .amount-box li .amount-title {
+        border-bottom: 1px solid #ebeef5;
+    }
+</style>
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{url('agent/index')}">代理管理</a></li>
+                <li class="active">代理列表</li>
+                <li class="active">代理列表</li>
+            </ul>
+            <p style="padding: 10px 0;font-size: 20px;background: #fff;padding-left: 5px;text-align: center"><b
+                    style="color: #00b7ee"></b> 总览数据</p>
+            <!--breadcrumbs end -->
+            <ul class="amount-box">
+                <li>
+                    <span class="amount-title">总会员数</span>
+                    <span class="amount-count">{$data.zhys}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总订单数</span>
+                    <span class="amount-count">{$data.zdds}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总支付订单数</span>
+                    <span class="amount-count">{$data.zzfdds}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总支付成功数</span>
+                    <span class="amount-count">{$data.zzfcgs}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总充值数</span>
+                    <span class="amount-count">{$data.zczs}</span>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+  	
+  	<div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+           
+            <p style="padding: 10px 0;font-size: 20px;background: #fff;padding-left: 5px;text-align: center"><b
+                    style="color: #00b7ee"></b> 今日数据</p>
+            <!--breadcrumbs end -->
+          	
+          	<header class="panel-heading col-xs-12">
+        <form class="form-inline" action="">
+            <div class="form-group">
+                <input type="text" name="time" class="form-control" value="" id="start" placeholder="时间范围">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </header>
+          
+            <ul class="amount-box">
+                <li>
+                    <span class="amount-title">今日注册</span>
+                    <span class="amount-count">{$data.jrzc}</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日登陆</span>
+                    <span class="amount-count">{$data.jrdl}</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日订单总数</span>
+                    <span class="amount-count">{$data.jrddzs}</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日成功订单</span>
+                    <span class="amount-count">{$data.jrcgdd}</span>
+                </li>
+                <li>
+                    <span class="amount-title">订单成交率</span>
+                    <span class="amount-count">{$data.ddcjl}</span>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+  	<div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <tr>
+                    <th>通道</th>
+                    <th>提交订单</th>
+                    <th>支付订单</th>
+                    <th>成功率</th>
+                    
+                </tr>
+                {foreach $type as $key => $vo}
+                    <tr>
+                        <td >{$vo.name}</td>
+                        <td >{$vo.tjdd}</td>
+                        <td >{$vo.zfdd}</td>
+                        <td >{$vo.cjl}</td>
+                       
+                    </tr>
+                    {/foreach}
+            </table>
+            <div class="page">
+            </div>
+        </div>
+
+    </div>
+  	<div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+           
+            <p style="padding: 10px 0;font-size: 20px;background: #fff;padding-left: 5px;text-align: center"><b
+                    style="color: #00b7ee"></b> 推广排行</p>
+             </div>
+        </div>
+    <header class="panel-heading col-xs-12">
+        <form class="form-inline" action="">
+            <div class="form-group">
+                
+                <input type="text" name="start" class="form-control" value="" id="start" placeholder="时间范围">
+                <select name="group_id" class="form-control">
+                      <option value="">全部</option>
+                  	{volist name="group_lists" id="group"}
+                
+                  	 <option value="{$group.group_id}">{$group.group_name}</option>
+
+{/volist}
+                </select>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </header>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <tr>
+                    
+                    <th>代理账号</th>
+                    <th>会员组</th>
+                    <th>总注册</th>
+                    <th>总充值</th>
+                    <th>总佣金</th>
+                    
+                    
+                </tr>
+                {foreach $list as $key => $vo}
+                    <tr>
+                       
+                        <td >{$vo.user_name}</td>
+                        <td >{$group_list[$vo.group_id]['group_name']}</td>
+                        <td >{$vo.zzc}</td>
+                        <td >{$vo.zcz}</td>
+                        <td >{$vo.zyj}</td>
+                        
+                    </tr>
+                    {/foreach}
+            </table>
+            <div class="page">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--body wrapper end-->
+{/block}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {$tkd.title|parseTPL}手机版
+        </title>
+        <meta name="keywords" content="{$tkd.keywords|parseTPL}" />
+        <meta name="description" content="{$tkd.description|parsetpl}" />
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-touch-fullscreen" content="yes" />
+        <meta name="applicable-device" content="pc,mobile" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        />
+        <link rel="stylesheet" href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/theme.css?v={$pt.config.tplconfig.runtime}02"
+        />
+        <meta property="og:type" content="novel" />
+        <meta property="og:title" content="{$novel.name}" />
+        <meta property="og:description" content="{$novel.intro|nl2br}" />
+        <meta property="og:image" content="{if strpos($novel.cover,'http://')===0}{$novel.cover}{else}{$novel.cover}{/if}"
+        />
+        <meta property="og:novel:category" content="{$category.name}" />
+        <meta property="og:novel:author" content="{$author.name}" />
+        <meta property="og:novel:book_name" content="{$novel.name}" />
+        <meta property="og:novel:read_url" content="{$pt.config.siteurl}{$url.info}"
+        />
+        <meta property="og:url" content="{$pt.config.siteurl}{$url.first}" />
+        <meta property="og:novel:status" content="{$novel.isover|default="连载中","已完结"}"/>
+        <meta property="og:novel:update_time" content="{$last.time|date='Y-m-d H:i:s'}"
+        />
+        <meta property="og:novel:latest_chapter_name" content="{$last.name}" />
+        <meta property="og:novel:latest_chapter_url" content="{$pt.config.siteurl}{$last.url}"
+        />
+        <link rel="canonical" href="{$pt.config.siteurl}" />
+        {include file="../a/mip"}
+    </head>
+    
+    <body>
+        <div class="content page-book-detail">
+            <div class="header book-detail-header">
+                <a href="javascript:history.go(-1)" class="header-back jsBack">
+                    <svg class="icon icon-arrow-l">
+                        <use xlink:href="#icon-arrow-l">
+                        </use>
+                    </svg>
+                    返回
+                </a>
+                <div class="header-operate">
+                    <a href="{if IS_LOGIN}{link=user.index.index}{else}{link=user.public.login}{/if}"
+                    class="icon icon-person" title="用户登录">
+                        <svg class="jsGuestWrapper">
+                            <use xlink:href="#icon-person">
+                            </use>
+                        </svg>
+                    </a>
+                    <a href="javascript:" id="toggle-search" class="icon icon-search" title="搜索">
+                        <svg>
+                            <use xlink:href="#icon-search">
+                            </use>
+                        </svg>
+                    </a>
+                    <a id="toggle-nav" href="javascript:;" class="icon icon-more" title="分类"></a>
+                </div>
+            </div>
+            <div class="nav" id="nav-switch" style="display: none;">
+                <ul>
+                    {block method="categorylist" name="list" pid=0} {section loop="list" skip=1
+                    limit=12}
+                    <li>
+                        <a href="/sort/{$loop.key}_0_0_0_1.html" title="{$loop.name}">
+                            {$loop.name}
+                        </a>
+                    </li>
+                    {/section}
+                </ul>
+            </div>
+            <div class="search-container" id="search-block" style="display: none">
+                <form action="{link='novelsearch.search.result'}" class="search-guide"
+                method="post">
+                    <input type="search" placeholder="输入关键字搜索" name="searchkey" id="">
+                    <button type="submit">
+                    </button>
+                </form>
+            </div>
+            <div class="novel novel-merge book-detail-x">
+                <img src="{$novel.cover}" alt="{$novel.name}" class="book-cover-blur">
+                <div class="book-detail-info">
+                    <div class="book-layout">
+                        <img src="{$novel.cover}" alt="{$novel.name}" class="book-cover" />
+                        <div class="book-cell">
+                            <h1 class="book-title" id="book-detail" data-bid="79213" data-cid="17"
+                            data-bookname="{$novel.name}">
+                                {$novel.name}
+                            </h1>
+                            <p class="book-meta">
+                                <svg class="icon icon-human">
+                                    <use xlink:href="#icon-author">
+                                    </use>
+                                </svg>
+                                <a href="{$author.url}" title="{$author.name} 作品集">
+                                    {$author.name}
+                                </a>
+                            </p>
+                            <p class="book-meta">
+                                分类：
+                                <a href="{$category.url|mb_substr=0,11,'utf-8'}0_0_lastupdate_1.html" title="{$category.name}">
+                                    {$category.name}
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-jump">
+                                        </use>
+                                    </svg>
+                                </a>
+                            </p>
+                            <p class="book-meta">
+                                时间：{$last.time|date="Y-m-d H:i:s"}
+                            </p>
+                            <p class="book-meta">
+                                最新：
+                                <a href="{$last.url}" title="{$novel.name} {$last.name}">
+                                    {$last.name}
+                                </a>
+                            </p>
+                            <span class="novel_{$novel.isover|default="success1","success2"}"></span>
+                        </div>
+                    </div>
+                    <div class="book-detail-btn">
+                        <ul class="btn-group">
+                            {if $marked}
+                            <li class="btn-group-cell">
+                                <a href="{$lasturl}" id="continue-reading" class="btn-normal" title="继续阅读{$novel.name}">
+                                    继续阅读
+                                </a>
+                            </li>
+                            <li class="btn-group-cell">
+                                <a href="{$url.info}" onclick="toggleChapter(1);" class="btn-normal white" title="{$novel.name}书页">
+                                    书本简介
+                                </a>
+                            </li>
+                            <li class="btn-group-cell">
+                                <a href="{$url.dir}" class="btn-normal white" title="{$novel.name}章节目录">
+                                    章节目录
+                                </a>
+                            </li>
+                            {else}
+                            <li class="btn-group-cell">
+                                <a href="{$url.first}" id="continue-reading" class="btn-normal" title="在线阅读{$novel.name}">
+                                    在线阅读
+                                </a>
+                            </li>
+                            <li class="btn-group-cell">
+                                <a href="{$url.info}" onclick="toggleChapter(1);" class="btn-normal white" title="{$novel.name}书页">
+                                    书本简介
+                                </a>
+                            </li>
+                            <li class="btn-group-cell">
+                                <a href="{$url.dir}" class="btn-normal white" title="{$novel.name}章节目录">
+                                    章节目录
+                                </a>
+                            </li>
+                            {/if}
+                        </ul>
+                    </div>
+                    <div id="last-read">
+                    </div>
+                </div>
+            </div>
+            <div class="novel">
+                <div class="novel-header">
+                    <div class="novel-header-l">
+                        <h3 class="novel-title">
+                            ZIP下载列表
+                        </h3>
+                        <span class="novel-title-desc">
+                            点击下方“打包下载”下载该书。
+                        </span>
+                    </div>
+                </div>
+                <div class="down-link" style="background-color: rgb(242, 250, 242);">
+                    <span>
+                        <div class="downtype"><font color="#969ba3">格式</font></div>
+                        <div class="downsize" title="此为文件的大小。">大小</div>
+                        <div class="downfrom" title="下载来源">下载来源</div>
+                        <div class="uptime">打包时间</div>
+                        <div class="zip-download">
+                            <font color="#969ba3">ZIP下载</font>
+                        </div>
+                    </span>
+                </div>
+                {block method="downlist" name=list novelid=$novel.id type=2}
+                {if $list}
+                {section loop="list"}
+                <div class="down-link">
+                    <span>
+                        <div class="downtype">ZIP</div>
+                        <div class="downsize" title="此为文件的大小。">{$loop.size|file_size_format}</div>
+                        <div class="downfrom" title="下载来源">{$loop.sitename}</div>
+                        <div class="uptime">{$loop.time|date="Y-m-d"}</div>
+                        <div class="zip-download">
+                            <a href="{$loop.url_down}" title="{$novel.name}.ZIP下载" rel="nofollow" target="_blank">打包下载</a>
+                        </div>
+                    </span>
+                </div>
+                {/section}
+                {else}
+                <p class="error1">很抱歉！ZIP下载资源已失效或缺失,请选择<a href="{$url.first}" title="在线阅读{$novel.name}">在线阅读</a>。</p>
+                {/if}
+            </div>
+            <div class="novel">
+                <div class="novel-header">
+                    <div class="novel-header-l">
+                        <h3 class="novel-title">
+                            TXT下载列表
+                        </h3>
+                        <span class="novel-title-desc">
+                            点击下方“全本下载”下载该书。
+                        </span>
+                    </div>
+                </div>
+                <div class="down-link" style="background-color: rgb(242, 250, 242);">
+                    <span>
+                        <div class="downtype"><font color="#969ba3">格式</font></div>
+                        <div class="downsize" title="此为文件的大小。">大小</div>
+                        <div class="downfrom" title="下载来源">下载来源</div>
+                        <div class="uptime">打包时间</div>
+                        <div class="zip-download">
+                            <font color="#969ba3">TXT下载</font>
+                        </div>
+                    </span>
+                </div>
+                {block method="downlist" name=list novelid=$novel.id type=1} 
+                {if $list}
+                {section loop="list"}
+                <div class="down-link">
+                    <span>
+                        <div class="downtype">TXT</div>
+                        <div class="downsize" title="此为文件的大小。">{$loop.size|file_size_format}</div>
+                        <div class="downfrom" title="下载来源">{$loop.sitename}</div>
+                        <div class="uptime">{$loop.time|date="Y-m-d"}</div>
+                        <div class="zip-download">
+                            <a href="{$loop.url_down}" title="{$novel.name}.txt下载" rel="nofollow" target="_blank">全本下载</a>
+                        </div>
+                    </span>
+                </div>
+                {/section}
+                {else}
+                <p class="error1">很抱歉！TXT下载资源已失效或缺失,请选择<a href="{$url.first}" title="在线阅读{$novel.name}">在线阅读</a>。</p>
+                {/if}
+            </div>
+            <div class="novel">
+                <div class="novel-header">
+                    <div class="novel-header-l">
+                        <h3 class="novel-title">
+                            下载排行榜
+                        </h3>
+                        <a name="txt">
+                        </a>
+                    </div>
+                </div>
+                <div class="novel-slide">
+                    <ol class="novel-slide-ol">
+                        {block method="novellist" name="list" sort="downnum" category=$category.id
+                        num=8} {section loop=$list}
+                        <li class="novel-slide-li">
+                            <a href="{$loop.url.down}" class="novel-slide-a" title="{$loop.novel.name}">
+                                <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}" class="novel-slide-img" alt="{$loop.novel.name}">
+                                <div class="novel-slide-caption">
+                                    {$loop.novel.name|mb_substr=0,5,'utf-8'}
+                                </div>
+                                <p class="novel-slide-author">
+                                    <span class="gray">
+                                        {$loop.author.name}
+                                    </span>
+                                </p>
+                            </a>
+                        </li>
+                        {/section}
+                    </ol>
+                </div>
+            </div>
+        </div>
+        {include file="../common/footer1"}
+    </body>
+
+</html>

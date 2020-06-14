@@ -1,0 +1,1 @@
+<?php echo $searchkey;?>搜索,搜小说,搜作者,小说搜索,<?php echo $this->pt->config->get("sitename");?>

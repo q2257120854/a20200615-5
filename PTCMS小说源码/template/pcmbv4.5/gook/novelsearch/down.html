@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="../common/head"}
+</head>
+<body article-id="{$novel.id}">
+<div class="header">
+	<div class="layui-main">
+		<a class="logo" href="{$pt.config.siteurl}"><i class="iconfont icon-logo"></i>{$pt.config.sitename}</a>
+		<a class="history" href="{link=user.history.index}"><i class="layui-icon i_history"></i>阅读历史</a>
+		<ul class="nav">
+			<li ><a href="{$pt.config.siteurl}">首页</a></li>
+			<li ><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}">书库大全</a></li>
+			<li ><a href="{link='novelsearch.index.category'}">小说分类</a></li>
+			<li ><a href="{link=novelsearch.index.top}">排行榜</a></li>
+			<li ><a href="{link='novelsearch.list.over'}">完本</a></li>
+		</ul>
+		<form action="{link='novelsearch.search.result'}" class="search">
+			<input type="text" name="searchkey" placeholder="请输入搜索内容！" autocomplete="off">
+			<button type="submit" class="layui-icon i_search"></button>
+		</form>
+	</div>
+</div>
+<div class="main">
+	<div class="layui-main">
+		<div class="box">
+			<div class="path"><a href="{$pt.config.siteurl}" class="layui-icon i_home"></a><i>&gt;</i><a href="{$category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$category.name}</a><i>&gt;</i><a href="{$url.info}">{$novel.name}</a><i>&gt;</i><b>{$novel.name}TXT下载</b></div>
+		</div>
+		<div class="left w_860">
+			<div class="box">
+				<div class="detail">
+					<a class="{$novel.isover|default="bookimg","bookimg finish"}" href="{$url.info}"><img src="{$novel.cover}" alt="{$novel.name}"></a>
+					<h1>{$novel.name}</h1>
+					<p>作者：<a href="{$author.url}">{$author.name}</a>分类：<a href="{$category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$category.name}</a> 下载：<span class="layui-badge-rim layui-icon i_vote"> {$data.downnum}</span>　　更新：<span class="layui-badge-rim layui-icon i_history"> {$last.time|cntime}</span></p>
+					<div class="mod">
+						<p class="intro">{$novel.intro|showintro}</p>
+						<p id="expand">[+展开]</p>
+						<p class="action">{if $marked}<a href="{$lasturl}">继续阅读</a>{else}<a href="{$url.first}">开始阅读</a>{/if}<a href="{$url.info}">书籍详情</a>{if $marked}<a href="{link=user.mark.del novelid=$novel.id}">移除书架</a>{else}<a href="{$url.addmark}">加入书架</a>{/if}<a href="{$url.dir}">查看目录</a></p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="box">
+				<div class="title lite">
+					<p>{$novel.name}TXT下载</p>
+				</div>
+				<div class="content">
+					<p>免责声明：</p>
+					<p>① <strong>{$novel.name}</strong>TXT全集下载，由<strong><a href="{$pt.config.siteurl}">{$pt.config.sitename}</a></strong>书友收集整理自网络，版权归原作者<strong><a href="{$author.url}">{$author.name}</a></strong>所有，仅作学习交流使用，不可用于任何商业途径。</p>
+					<p>② 如非免费资源，请在试用之后24小时内立即删除。如果喜欢该资源，请购买正版谢谢合作！</p>
+					<p>③ 如不慎该资源侵犯了您的权益，请麻烦通知我们及时删除，谢谢！</p>
+				</div>
+				<ul class="list bg">
+				    {block method="downlist" name=list novelid=$novel.id  type=2}
+					{if $list}
+					{section loop="list"}
+					<li><span class="light_down">压缩格式</span><pp>（来源：{$loop.sitename}）</pp><a class="down_url" href="{$loop.url_down}">ZIP打包下载</a></li>
+					{/section}
+					{else}
+					<li><span class="light_down_1">本书暂无ZIP下载资源，站长正在寻找资源添加中......</span></li>
+					{/if}
+					{block method="downlist" name=list novelid=$novel.id  type=1}
+					{if $list}
+					{section loop="list"}
+					<li><span class="light_down">文本格式</span><pp>（来源：{$loop.sitename}）</pp><a class="down_url" href="{$loop.url_down}">TXT全集下载</a></li>
+					{/section}
+					{else}
+					<li><span class="light_down_1">本书暂无TXT下载资源，站长正在寻找资源添加中......</span></li>
+					{/if}
+				</ul>
+			</div>
+		</div>
+		<div class="right w_280">
+			<div class="box">
+				<div class="title lite">
+					<p>作者作品</p>
+					<a class="more" href="{$author.url}">更多</a>
+				</div>
+				<div class="layui-carousel" id="carousel">
+					<ul class="rest" height="250" carousel-item>
+					    {block method="authorlist" name="list" author=$author.name}
+                        {section loop=$list}
+						<li><a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}">{$loop.novel.name}</a></li>
+						{/section}
+					</ul>
+				</div>
+			</div>
+			<div class="box right w_260">
+			    <div class="title caption">
+				    <p>下载排行</p>
+			    </div>
+			    <ul class="list xs rank tab">
+			        {block method="novellist" name="list" sort="downnum" category=$category.id num=4}
+                    {section loop=$list limit=1}
+				    <li class="on">
+				    	<a href="{$loop.url.down}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+				    	<i class="layui-bg-red">1</i>
+				    	<p class="bookname"><a href="{$loop.url.down}">{$loop.novel.name}</a></p>
+				    	<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+				    	<p class="author">作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+				    	<p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+			    	</li>
+				    {/section}
+			    	{section loop=$list skip=1 limit=1}
+			    	<li >
+				    	<a href="{$loop.url.down}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+				    	<i class="layui-bg-orange">2</i>
+				    	<p class="bookname"><a href="{$loop.url.down}">{$loop.novel.name}</a></p>
+				    	<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+				    	<p class="author">作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+				    	<p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+				    </li>
+				    {/section}
+				    {section loop=$list skip=2 limit=1}
+				    <li >
+				    	<a href="{$loop.url.down}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+				    	<i class="layui-bg-blue">3</i>
+				    	<p class="bookname"><a href="{$loop.url.down}">{$loop.novel.name}</a></p>
+				    	<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+				    	<p class="author">作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+				    	<p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+			    	</li>
+				    {/section}
+			    	{section loop=$list skip=3}
+			    	<li >
+			    		<a href="{$loop.url.down}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+			    		<i class="layui-bg-cyan">{php}echo $i['order']+3;{/php}</i>
+			    		<p class="bookname"><a href="{$loop.url.down}">{$loop.novel.name}</a></p>
+			    		<p class="intro">{$loop.novel.intro|mb_substr=0,24,'utf-8'}</p>
+			    		<p class="author">作者：<a href="{$loop.author.url}">{$loop.author.name}</a></p>
+			    		<p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a></p>
+			    	</li>
+                    {/section}
+			    </ul>
+		    </div>
+		</div>
+		<div class="clear"></div>
+		<div class="box">
+			<div class="title lite">
+				<p>其他人正在看</p>
+			</div>
+			<ul class="vote">
+				{block method="novellist" name="list" sort="marknum" category=$category.id num=8}
+                {section loop=$list}
+				<li>
+					<a class="bookimg" href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+					<a href="{$loop.url.info}">{$loop.novel.name}</a>
+					<a class="light" href="{$loop.author.url}">{$loop.author.name}</a>
+				</li>
+				{/section}
+			</ul>
+		</div>
+	</div>
+</div>
+{include file="../common/footer"}
+</body>
+</html>

@@ -1,0 +1,1 @@
+<?php echo $this->pt->config->get("sitename");?>,在线听书,阅读搜索网,txt全集下载,小说下载

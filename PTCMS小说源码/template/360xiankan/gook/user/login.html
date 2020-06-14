@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>会员登录_{$pt.config.sitename}</title>
+    <link href="//cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/user.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="wrapper">
+    <!--header-->
+    <div class="header user-head">
+        <div class="site-logo"><a href="/"></a></div>
+        <div class="member-login"><a class="islogin" href="{link=user.public.login}">登录</a></div>
+    </div>
+    <!--header-->
+            <!--main-block-->
+    <div class="main-block">
+        <form name="form1" method="post" action="__SELF__" onsubmit="return checkedForm();">
+        <div class="weui-cells__title">用户登录</div>
+        <div class="userlogin">
+            <input type=hidden name=ecmsfrom value="">
+            <input type=hidden name=enews value=login>
+            <input name="comeurl" type="hidden" id="tobind" value="{$comeurl}">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                <div class="weui-cell__bd">
+				    <input type="text" name="username" class="weui-input" placeholder="请输入登陆用户名">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">密 &nbsp; 码</label></div>
+                <div class="weui-cell__bd">
+					<input type="password" name="password" class="weui-input" placeholder="请输入登陆密码">
+                </div>
+            </div>
+        </div>
+        <label for="weuiAgree" class="weui-agree">
+            <input id="weuiAgree" type="checkbox" name="lifetime" checked="checked" value="315360000" class="weui-agree__checkbox">
+            <span class="weui-agree__text">记住密码下次自动登录</span>
+            <span class="to-signup"> <a href="{link=user.public.thirdlogin type=qq}" style="color:#d9534f">QQ登录</a> - <a href="{link=user.public.register}">注册账号</a></span>
+        </label>
+        <div class="weui-btn-area">
+            <button type="submit" class="weui-btn weui-btn_warn" id="showTooltips">登 录</button>
+        </div>
+        </form>
+    </div>
+    <!--main-block end-->
+    <script type="text/javascript">
+        function checkedForm() {
+            var username = document.getElementById('username'),
+                password = document.getElementById('password'),
+                key = document.getElementById('key');
+
+            if (username.value.length < 4){
+                alert('请输入正确的用户名');
+                return false;
+            }
+            if (password.value.length < 6){
+                alert('请输入正确的登录密码');
+                return false;
+            }
+            return true;
+        }
+    </script>
+<!-- footer -->
+<div class="footer">
+    <div class="copyright">&copy; {$pt.config.tplconfig.banquan}</div>
+</div>
+<!-- footer end -->
+</div>
+<script type="text/javascript" src="{$pt.config.resurl}__TMPL__/script/svg.js"></script>
+<script>var cnzz_s_tag =document.createElement('script');cnzz_s_tag.type ='text/javascript';cnzz_s_tag.async =true;cnzz_s_tag.charset ='utf-8';cnzz_s_tag.src ='//w.cnzz.com/c.php?id={$pt.config.tplconfig.tongji}&async=1';var root_s =document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);</script>
+</body>
+</html>

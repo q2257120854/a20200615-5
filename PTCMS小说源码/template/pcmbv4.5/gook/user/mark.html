@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>我的书架_{$pt.config.sitename}</title>
+    <meta name="keywords" content="{$pt.config.sitename}" />
+    <meta name="description" content="{$pt.config.sitename}" />
+    <meta name="applicable-device" content="pc">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="mobile-agent" content="format=html5; url={$pt.config.wapurl}__SELF__" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/common.css">
+    <script type="text/javascript" src="{$pt.config.resurl}__TMPL__/js/common.js"></script>
+</head>
+<body>
+<div class="header">
+	<div class="layui-main">
+		<a class="logo" href="{$pt.config.siteurl}"><i class="iconfont icon-logo"></i>{$pt.config.sitename}</a>
+		<a class="history" href="{link=user.history.index}"><i class="layui-icon i_history"></i>阅读历史</a>
+		<ul class="nav">
+			<li ><a href="{$pt.config.siteurl}">首页</a></li>
+			<li ><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}">书库大全</a></li>
+			<li ><a href="{link='novelsearch.index.category'}">小说分类</a></li>
+			<li ><a href="{link=novelsearch.index.top}">排行榜</a></li>
+			<li ><a href="{link='novelsearch.list.over'}">完本</a></li>
+		</ul>
+		<form action="{link='novelsearch.search.result'}" class="search">
+			<input type="text" name="searchkey" placeholder="请输入搜索内容！" autocomplete="off">
+			<button type="submit" class="layui-icon i_search"></button>
+		</form>
+	</div>
+</div>
+<div class="main">
+	<div class="layui-main">
+		<div class="box left w_260">
+			<div class="title part">
+				<h2>用户中心</h2>
+			</div>
+			<ul class="top">
+				<li><a href="{link=user.history.index}">阅读记录</a></li>
+				<li class="on"><a href="{link=user.mark.index}">用户书架</a></li>
+				<li><a href="{link='user.public.logout'}">退出登录</a></li>
+			</ul>
+		</div>
+		<div class="box right w_840">
+			<div class="title lite">
+				<h1>书架共有 <span id="mark_num">{$marklist|count}</span> 本收藏</h1>
+			</div>
+			<ul id="mark_list" class="list zoom">
+			    {loop=marklist}
+				<li class="on" article-id="{$loop.novel.id}">
+					<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+					<a href="{$loop.url.info}">{$loop.novel.name}</a>
+					<span class="layui-badge layui-bg-blue">{$loop.novel.isover|default="连载中","已完结"}</span>
+					<p class="action"><a href="{$loop.nexturl}">继续阅读</a><a class="mark_del" href="{link=user.mark.del novelid=$loop.novel.id}">移除书架</a></p>
+					<p>作者：<a href="{$loop.author.url}">{$loop.author.name}</a><em>|</em>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a><em>|</em>热度：{$loop.data.allvisit}</p>
+					<p class="intro" style="height:40px">{$loop.novel.intro|mb_substr=0,140,'utf-8'}...</p>
+					<p class="chapter">最新：<a href="{$loop.last.url}">{$loop.last.name}</a><em>|</em>{$loop.last.time|date="Y-m-d H:i:s"}</p>
+					<p id="last">进度：{if $loop.hasnew}已读到第 {$loop.hnew} 章{else}全部读完{/if}</p>
+				</li>
+				{/loop}
+			</ul>
+		</div>
+	</div>
+</div>
+{include file="../common/footer"}
+</body>
+</html>

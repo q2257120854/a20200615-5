@@ -1,0 +1,17 @@
+<div class="fed-swip-container fed-part-rows">
+	<ul class="fed-swip-wrapper fed-font-size">
+		{maccms:vod num="5" type="'.$vfed['type_id'].'" order="desc" by="time" level="4"}
+		<li class="fed-swip-slide">
+			<a class="fed-list-pics fed-part-3by2 fed-swip-lazy" href="{:mac_url_vod_detail($vo)}" data-background="{$vo.vod_pic_slide|mac_default=$vo.vod_pic|mac_url_img}">
+				<div class="fed-swip-title fed-text-white fed-part-eone">
+					<span class="fed-part-eone fed-font-xviii fed-swip-head">{$vo.vod_name|mac_filter_html}</span>
+					<span class="fed-part-eone fed-font-xii">{$vo.vod_remarks|mac_default=$vo.vod_hits.'播放'}</span>
+				</div>
+			</a>
+		</li>
+		{/maccms:vod}
+	</ul>
+	<div class="fed-swip-pagin fed-font-size fed-text-right"></div>
+	<a class="fed-swip-next fed-text-white fed-text-center fed-hide-xs fed-icon-font fed-icon-you" href="javascript:;"></a>
+	<a class="fed-swip-prev fed-text-white fed-text-center fed-hide-xs fed-icon-font fed-icon-zuo" href="javascript:;"></a>
+</div>

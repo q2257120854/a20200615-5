@@ -1,0 +1,12 @@
+<dl class="fed-list-arti fed-deta-info fed-deta-padding fed-line-top fed-margin fed-part-rows fed-part-over">
+	<dt class="fed-deta-images fed-list-info fed-col-xs3">
+		<a class="fed-list-pics fed-lazy fed-part-16by9" href="{:mac_url_art_detail($vo)}" data-original="{$vo.art_pic|mac_url_img}">
+			<span class="fed-list-play fed-list-arts fed-hide-xs"></span>
+		</a>
+	</dt>
+	<dd class="fed-deta-content fed-col-xs7 fed-col-sm8 fed-col-lg9">
+		<h3 class="fed-visible"><a class="fed-part-etwo fed-visible" href="{:mac_url_art_detail($vo)}"{if$vo.art_color} style="color:#{$vo.art_color}!important"{/if}>{:str_replace($param['wd'],'<span class="fed-text-green fed-text-bold">'.$param['wd'].'</span>',mac_filter_html($vo['art_name']))}</a></h3>
+		<div class="fed-hide-xs fed-text-muted"><p class="fed-part-etwo">{$vo.art_content|mac_filter_html|mac_substring=120}</p></div>
+		<span class="fed-visible fed-text-muted">{$vo.art_time|mac_friend_date}　{$vo.art_hits}阅读</span>
+	</dd>
+</dl>

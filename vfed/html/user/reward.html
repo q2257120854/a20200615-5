@@ -1,0 +1,34 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">
+			<a class="fed-more{if$param.level==''} fed-text-green{/if}" href="{:url('user/reward')}">一级下线</a>&nbsp;&nbsp;
+			<a class="fed-more{if$param.level==2} fed-text-green{/if}" href="{:url('user/reward')}?level=2">二级下线</a>&nbsp;&nbsp;
+			<a class="fed-more{if$param.level==3} fed-text-green{/if}" href="{:url('user/reward')}?level=3">三级下线</a>
+		</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<ul class="fed-user-list fed-part-rows fed-back-whits">
+		<li class="fed-padding-x fed-part-rows">
+			<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+				<span class="fed-col-xs2 fed-col-sm1 fed-part-eone">编号</span>
+				<span class="fed-col-xs4 fed-col-sm5 fed-part-eone">会员</span>
+				<span class="fed-col-xs6 fed-col-sm6 fed-part-eone fed-text-right">时间</span>
+			</div>
+		</li>
+		{volist name="list" id="vo"}
+		<li class="fed-padding-x fed-part-rows fed-line-top">
+			<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+				<span class="fed-col-xs2 fed-col-sm1 fed-part-eone">{$vo.user_id}</span>
+				<span class="fed-col-xs4 fed-col-sm5 fed-part-eone">{$vo.user_name}</span>
+				<span class="fed-col-xs6 fed-col-sm6 fed-part-eone fed-text-right">{$vo.user_reg_time|mac_day}</span>
+			</div>
+		</li>
+		{/volist} {include file="module/paging"}
+	</ul>
+</div>
+{include file="public/footer"}

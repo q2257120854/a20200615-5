@@ -1,0 +1,22 @@
+{if stristr($vfed['type_name'],'直播')==false}
+<div class="fed-list-info fed-list-rank fed-part-rows fed-hide-xs fed-hide-sm fed-show-md-block">
+	<h2 class="fed-list-head fed-part-rows fed-font-xvi">本周热门<a class="fed-part-tips fed-font-xiv" href="{:mac_url('label/rank')}">更多</a></h2>
+	<div class="fed-col-md4 fed-list-ones">
+		{maccms:vod num="1" type="'.$vfed['type_id'].'" order="desc" by="hits_week"}
+		<a class="fed-list-pics fed-lazy fed-part-2by3" href="{:mac_url_vod_detail($vo)}" data-original="{$vo.vod_pic|mac_url_img}">
+			<span class="fed-list-play fed-hide-xs"></span>
+			<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$vo.vod_remarks|mac_default=$vo.vod_hits.'播放'}</span>
+		</a>
+		{/maccms:vod}
+	</div>
+	<div class="fed-col-md8">
+		<ul class="fed-part-rows">
+			{maccms:vod num="7" type="'.$vfed['type_id'].'" order="desc" by="hits_week"}
+			<li class="fed-part-eone{if$key>6} fed-hide-md fed-show-lg-block{/if}">
+				<a href="{:mac_url_vod_detail($vo)}"><span class="fed-part-nums fed-part-num{$key}">{$key}</span>{$vo.vod_name|mac_filter_html}<span class="fed-part-tips fed-text-green">{$vo.vod_hits_week}</span></a>
+			</li>
+			{/maccms:vod}
+		</ul>
+	</div>
+</div>
+{/if}

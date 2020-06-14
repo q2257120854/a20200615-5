@@ -1,0 +1,50 @@
+button::-moz-focus-inner{ border:0; padding:0; margin:0; }
+.easyDialog_wrapper{ color:#444; border:3px solid rgba(0,0,0,0); -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4); -moz-box-shadow:0 0 10px rgba(0,0,0,0.4); box-shadow:0 0 10px rgba(0,0,0,0.4); display:none; font-family:"Microsoft yahei", Arial; }
+.easyDialog_border3 { border:3px solid #686868 !important;}
+.easyDialog_wrapper .easyDialog_content{ -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; background:#fff; border:1px solid #e5e5e5; }
+.easyDialog_wrapper .easyDialog_title{ height:30px;text-align:left; line-height:30px; overflow:hidden; color:#666; padding:0 10px; font-size:14px; border-bottom:1px solid #d5d5d5;background:#f7f7f7 url(bg.png); border-radius:4px 4px 0 0; }
+.easyDialog_wrapper .close_btn{ font-family:arial; font-size:22px; _font-size:12px; font-weight:700; color:#999; text-decoration:none; float:right; }
+.easyDialog_wrapper .close_btn:hover{ color:#FF9900; }
+.easyDialog_wrapper .easyDialog_text{ padding:25px 10px; font-size:14px; line-height:22px;text-align:center;}
+.easyDialog_wrapper .easyDialog_footer{ padding:0; *zoom:1;text-align:center;}
+.easyDialog_wrapper .easyDialog_footer:after{ content:''; display:block; height:0; overflow:hidden; visibility:hidden; clear:both; }
+.easyDialog_wrapper .btn_nav {margin-left:26px;}
+.easyDialog_wrapper button.btn_highlight,
+.easyDialog_wrapper button.btn_normal{
+	cursor:pointer; font-family:"Microsoft Yahei", Arial;
+	margin-bottom:10px;
+	display: inline-block;
+	border-radius: 4px 4px 4px 4px;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 13px;
+	line-height: 20px !important;
+	height:auto !important;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.easyDialog_wrapper button.btn_highlight {
+	padding: 3px 16px;
+	color: #FFFFFF;
+	background-color: #fa852e;
+	background-image: linear-gradient(to bottom, #FFAC47, #F56C06);
+	background-repeat: repeat-x;
+	border-color: #f25204;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.easyDialog_wrapper button.btn_highlight:hover {
+	background-color: #f56b05;
+	background-image: linear-gradient(to bottom, #fb8731, #FFAC47);
+}
+.easyDialog_wrapper button.btn_normal {
+	padding: 3px 8px;
+	color: #333333;
+	background-color: #c5c5c5;
+    background-image: linear-gradient(to bottom, #eeeeee, #b0b0b0);
+	background-repeat: repeat-x;
+	border-color: #9b9b9b;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.35);
+}
+.easyDialog_wrapper button.btn_normal:hover {
+	background-color: #acacac;
+	background-image: linear-gradient(to bottom, #c6c6c6, #eeeeee);
+}

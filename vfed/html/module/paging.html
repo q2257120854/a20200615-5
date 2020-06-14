@@ -1,0 +1,46 @@
+{if$__PAGING__.page_total>1}
+<div class="fed-page-info fed-text-center">
+	{if$maccms.aid==5}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline{if$__PAGING__['page_current']==1} fed-btns-disad{/if}" href="javascript:;" onclick="fed.comment.show(1)">首页</a>
+	<a class="fed-btns-info fed-rims-info{if$__PAGING__['page_current']==1} fed-btns-disad{/if}" href="javascript:;" onclick="fed.comment.show('{$__PAGING__.page_prev}')">上页</a>
+	{if$__PAGING__.page_current>3}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline{if$__PAGING__['page_current']==$num} fed-btns-green{/if}" href="javascript:;"{if$__PAGING__[ 'page_current']!=$num} onclick="fed.comment.show(1)"{/if}>1</a>
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline fed-btns-disad" href="javascript:;">...</a>
+	{/if}
+	{maccms:foreach name="$__PAGING__.page_num" id="num"}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline{if$__PAGING__['page_current']==$num} fed-btns-green{/if}" href="javascript:;"{if$__PAGING__[ 'page_current']!=$num} onclick="fed.comment.show('{$num}')"{/if}>{$num}</a>
+	{/maccms:foreach}
+	{if$__PAGING__.page_current<($__PAGING__.page_total-2)}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline fed-btns-disad" href="javascript:;">...</a>
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline{if$__PAGING__['page_current']==$num} fed-btns-green{/if}" href="javascript:;"{if$__PAGING__[ 'page_current']!=$num} onclick="fed.comment.show('{$__PAGING__.page_total}')"{/if}>{$__PAGING__.page_total}</a>
+	{/if}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline" href="javascript:;">{$__PAGING__.page_current}/{$__PAGING__.page_total}</a>
+	<a class="fed-btns-info fed-rims-info{if$__PAGING__['page_current']==$__PAGING__.page_total} fed-btns-disad{/if}" href="javascript:;" onclick="fed.comment.show('{$__PAGING__.page_next}')">下页</a>
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline{if$__PAGING__['page_current']==$__PAGING__.page_total} fed-btns-disad{/if}" href="javascript:;" onclick="fed.comment.show('{$__PAGING__.page_total}')">尾页</a>
+	{else}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline{if$__PAGING__['page_current']==1} fed-btns-disad{/if}" href="{$__PAGING__.page_url|mac_url_page=1}">首页</a>
+	<a class="fed-btns-info fed-rims-info{if$__PAGING__['page_current']==1} fed-btns-disad{/if}" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_prev}">上页</a>
+	{if$__PAGING__.page_current>3&&$maccms.aid!=6}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline" href="{$__PAGING__.page_url|mac_url_page=1}">1</a>
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline fed-btns-disad" href="javascript:;">...</a>
+	{/if}
+	{maccms:foreach name="$__PAGING__.page_num" id="num"}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline{if$__PAGING__['page_current']==$num} fed-btns-green{/if}" href="{if$__PAGING__['page_current']==$num}javascript:;{else}{$__PAGING__.page_url|mac_url_page=$num}{/if}">{$num}</a>
+	{/maccms:foreach}
+	{if$__PAGING__.page_current<($__PAGING__.page_total-2)&&$maccms.aid!=6}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline fed-btns-disad" href="javascript:;">...</a>
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-sm-inline" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_total}">{$__PAGING__.page_total}</a>
+	{/if}
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline" href="javascript:;">{$__PAGING__.page_current}/{$__PAGING__.page_total}</a>
+	<a class="fed-btns-info fed-rims-info{if$__PAGING__['page_current']==$__PAGING__.page_total} fed-btns-disad{/if}" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_next}">下页</a>
+	<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline{if$__PAGING__['page_current']==$__PAGING__.page_total} fed-btns-disad{/if}" href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_total}">尾页</a>
+	{/if}
+	<input class="fed-rims-info" type="text" placeholder="输入页码" autocomplete="off">
+    <a class="fed-btns-info fed-rims-info fed-page-jump" data-url="{$__PAGING__.page_url}" data-total="{$__PAGING__.page_total}" data-sp="{$__PAGING__.page_sp}" >跳转</a>
+</div>
+{/if}{if$__PAGING__.record_total!=0}
+<script type="text/javascript">
+if(document.getElementById('fed-now')) document.getElementById('fed-now').innerHTML='{$__PAGING__.page_current}';
+if(document.getElementById('fed-count')) document.getElementById('fed-count').innerHTML='{$__PAGING__.record_total}';
+</script>
+{/if}

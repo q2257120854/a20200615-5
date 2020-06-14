@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        />
+        <title>
+            {$tkd.title|parseTpl}手机版
+        </title>
+        <meta name="keywords" content="{$tkd.keywords|parseTpl}">
+        <meta name="description" content="{$tkd.description|parseTpl}">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="applicable-device" content="pc,mobile" />
+        <link rel="stylesheet" href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/theme.css?v={$pt.config.tplconfig.runtime}02"
+        />
+    </head>
+    <body>
+        <div class="content">
+            <div class="header">
+                <a href="/" class="header-back jsBack">
+                    <svg class="icon icon-arrow-l">
+                        <use xlink:href="#icon-arrow-l">
+                        </use>
+                    </svg>
+                    主页
+                </a>
+                <div class="header-operate">
+                    <a href="{if IS_LOGIN}{link=user.index.index}{else}{link=user.public.login}{/if}"
+                    class="icon icon-person" title="用户登录">
+                        <svg class="jsGuestWrapper">
+                            <use xlink:href="#icon-person">
+                            </use>
+                        </svg>
+                    </a>
+                    <a href="javascript:" id="toggle-search" class="icon icon-search" title="搜索">
+                        <svg>
+                            <use xlink:href="#icon-search">
+                            </use>
+                        </svg>
+                    </a>
+                    <a id="toggle-nav" href="javascript:;" class="icon icon-more" title="栏目"></a>
+                </div>
+            </div>
+            <div class="nav" id="nav-switch" style="display: none;">
+                <ul>
+                    {block method="categorylist" name="list" pid=0} {section loop="list" skip=1
+                    limit=12}
+                    <li>
+                        <a href="/sort/{$loop.key}_0_0_0_1.html" title="{$loop.name}">
+                            {$loop.name}
+                        </a>
+                    </li>
+                    {/section}
+                </ul>
+            </div>
+            <div class="search-container" id="search-block" style="display: none">
+                <form action="{link='novelsearch.search.result'}" class="search-guide"
+                method="post">
+                    <input type="search" placeholder="输入关键字搜索" name="searchkey" id="">
+                    <button type="submit">
+                    </button>
+                </form>
+            </div>
+            <div class="novel">
+                <div class="novel-header">
+                    <div class="novel-header-l">
+                        <h3 class="novel-title">
+                            {if $order=='allvisit'}总点击{else if $order=='monthvisit'}月点击{else if $order=='weekvisit'}周点击{else if $order=='dayvisit'}日点击{else if $order=='votenum'}总推荐{else if $order=='marknum'}总收藏{else if $order=='downnum'}总下载{else if $order=='lastupdate'}更新{else if $order=='postdate'}新书{/if}小说榜
+                        </h3>
+						<span>
+                            TOP 30
+                        </span>
+                    </div>
+                </div>
+                <ol class="book-ol book-ol-normal">
+                    {loop="toplist"}
+                    <li class="book-li">
+                        <a href="{$loop.url.info}" class="book-layout">
+                            <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                            class="book-cover" alt="{$loop.novel.name}">
+                            <div class="book-cell">
+                                <h4 class="book-title">
+                                    {$loop.novel.name}
+                                </h4>
+                                <p class="book-desc">
+                                    {$loop.novel.intro}
+                                </p>
+                                <div class="book-meta">
+                                    <div class="book-meta-l">
+                                        <span class="book-author">
+                                            <svg class="icon icon-human">
+                                                <use xlink:href="#icon-human">
+                                                </use>
+                                            </svg>
+                                            {$loop.author.name}
+                                        </span>
+                                    </div>
+                                    <div class="book-meta-r">
+                                        <span class="tag-small-group origin-right">
+                                            <em class="tag-small yellow">
+                                                {$loop.category.name}
+                                            </em>
+                                            <em class="tag-small red">
+                                                {$loop.novel.isover|default="连载中","已完结"}
+                                            </em>
+                                            <em class="tag-small blue">
+                                                {$loop.data.allvisit|wan}人看过
+                                            </em>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {/loop}
+                    <ol>
+            </div>
+            <!--div class="novel">
+                {block method="page" name="pagelist" totalnum=$totalnum page=$page pagesize=$pagesize
+                maxpage=0 section=3}
+                <div class="page">
+                    <span class="left">
+                        <a href="{$pageurl|str_replace='__PAGE__',$pagelist.first.num,@}">
+                            首页
+                        </a>
+                        <a href="{$pageurl|str_replace='__PAGE__',$pagelist.prev.num,@}">
+                            上一页
+                        </a>
+                    </span>
+                    <span class="main">
+                        {$pagelist.page}/{$pagelist.last.num}
+                    </span>
+                    <span class="right">
+                        <a href="{$pageurl|str_replace='__PAGE__',$pagelist.next.num,@}">
+                            下一页
+                        </a>
+                        <a href="{$pageurl|str_replace='__PAGE__',$pagelist.last.num,@}">
+                            尾页
+                        </a>
+                    </span>
+                </div>
+            </div-->
+            {include file="../common/footer1"}
+    </body>
+
+</html>

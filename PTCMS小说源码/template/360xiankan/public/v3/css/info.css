@@ -1,0 +1,40 @@
+
+/* 内容 */
+.module {
+    margin: .75rem 0;
+    background-color: #fff;
+}
+.module-merge {
+    margin: 0;
+}
+.book-summary.enabled {
+    height: 2.92rem;
+    max-height: none;
+}
+.book-summary content {
+    display: block;
+    margin-top: -.68rem;
+}
+.book-summary-more {
+    position: absolute;
+    right: .5rem;
+    bottom: 0;
+    visibility: hidden;
+    width: 1.5rem;
+    height: 1rem;
+    text-align: right;
+    background: -webkit-linear-gradient(left,rgba(255,255,255,0),#fff .65rem);
+    background: linear-gradient(to right,rgba(255,255,255,0),#fff .65rem);
+}
+.enabled>.book-summary-more {
+    visibility: visible;
+}
+.book-summary-more>.icon-arrow-r {
+    float: right;
+    margin-top: .5em;
+    -webkit-transition: -webkit-transform .25s;
+    transition: transform .25s;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: #969ba3;
+}

@@ -1,0 +1,115 @@
+<div class="module">
+    <div class="module-header">
+        <div class="module-header-l">
+            <h3 class="module-title">
+                排行榜单
+            </h3>
+        </div>
+    </div>
+    <ol class="book-ol book-ol-normal booklist-ol">
+        <li class="booklist-li-msg">
+            <a href="/top/downnum.html" class="booklist-sort booklist1">
+                <span class="booklist-title">
+                    下载免流看，你值得拥有
+                </span>
+                <ul class="book-list-container-roundabout">
+                    {block method="novellist" name="list" sort="downnum" num=3} {section loop=$list
+                    limit=1}
+                    <li class="booklist-cover book1">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=1 limit=1}
+                    <li class="booklist-cover book2">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=2}
+                    <li class="booklist-cover book3">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section}
+                </ul>
+            </a>
+        </li>
+        <li class="booklist-li-msg">
+            <a href="/top/allvisit.html" class="booklist-sort booklist2">
+                <span class="booklist-title">
+                    秋日里送温暖的美文
+                </span>
+                <ul class="book-list-container-roundabout">
+                    {block method="novellist" name="list" sort="allvisit" num=3} {section
+                    loop=$list limit=1}
+                    <li class="booklist-cover book1">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=1 limit=1}
+                    <li class="booklist-cover book2">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=2}
+                    <li class="booklist-cover book3">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section}
+                </ul>
+            </a>
+        </li>
+        <li class="booklist-li-msg">
+            <a href="/top/marknum.html" class="booklist-sort booklist3">
+                <span class="booklist-title">
+                    宠物女主萌化你的心田
+                </span>
+                <ul class="book-list-container-roundabout">
+                    {block method="novellist" name="list" sort="marknum" num=3} {section loop=$list
+                    limit=1}
+                    <li class="booklist-cover book1">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=1 limit=1}
+                    <li class="booklist-cover book2">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=2}
+                    <li class="booklist-cover book3">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section}
+                </ul>
+            </a>
+        </li>
+        <li class="booklist-li-msg">
+            <a href="/top/votenum.html" class="booklist-sort booklist4">
+                <span class="booklist-title">
+                    深情腹黑有魅力的总裁文
+                </span>
+                <ul class="book-list-container-roundabout">
+                    {block method="novellist" name="list" sort="votenum" num=3} {section loop=$list
+                    limit=1}
+                    <li class="booklist-cover book1">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=1 limit=1}
+                    <li class="booklist-cover book2">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section} {section loop=$list skip=2}
+                    <li class="booklist-cover book3">
+                        <img src="{$pt.config.tplconfig.pic}" data-echo="{$loop.novel.cover}"
+                        class="book-cover" alt="{$loop.novel.name}">
+                    </li>
+                    {/section}
+                </ul>
+            </a>
+        </li>
+    </ol>
+</div>

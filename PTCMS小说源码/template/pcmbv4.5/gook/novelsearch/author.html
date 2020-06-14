@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="../common/head"}
+</head>
+<body>
+<div class="header">
+	<div class="layui-main">
+		<a class="logo" href="{$pt.config.siteurl}"><i class="iconfont icon-logo"></i>{$pt.config.sitename}</a>
+		<a class="history" href="{link=user.history.index}"><i class="layui-icon i_history"></i>阅读历史</a>
+		<ul class="nav">
+			<li class="on"><a href="{$pt.config.siteurl}">首页</a></li>
+			<li ><a href="{link='novelsearch.list.category' key=0 chapternum=0 isover=0 order=lastupdate page=1}">书库大全</a></li>
+			<li ><a href="{link='novelsearch.index.category'}">小说分类</a></li>
+			<li ><a href="{link=novelsearch.index.top}">排行榜</a></li>
+			<li ><a href="{link='novelsearch.list.over'}">完本</a></li>
+		</ul>
+		<form action="{link='novelsearch.search.result'}" class="search">
+			<input type="text" name="searchkey" placeholder="请输入搜索内容！" autocomplete="off">
+			<button type="submit" class="layui-icon i_search"></button>
+		</form>
+	</div>
+</div>
+<div class="main">
+	<div class="layui-main">
+		<div class="box left w_840">
+			<div class="title lite">
+				<h1>{$author.name} 作品集</h1>
+			</div>
+			<ul class="list">
+			    {block method="authorlist" name="list" author=$author.name}
+                {loop=list}
+				<li class="on">
+					<a href="{$loop.url.info}"><img src="{$loop.novel.cover}" alt="{$loop.novel.name}"></a>
+					<a href="{$loop.url.info}">{$loop.novel.name}</a>
+					<span class="layui-badge layui-bg-blue">{$loop.novel.isover|default="连载中","已完结"}</span>
+					<p class="action"><a href="{if $marked}{$loop.lasturl}{else}{$loop.url.first}{/if}">点击阅读</a><a href="{if $marked}{link=user.mark.del novelid=$novel.id}{else}{$loop.url.addmark}{/if}">加入书架</a></p>
+					<p>分类：<a href="{$loop.category.url|mb_substr=0,10,'utf-8'}_0_0_lastupdate_1.html">{$loop.category.name}</a><em>|</em><span class="layui-badge-rim layui-icon i_visit"> {$loop.data.allvisit}</span></p>
+					<p class="intro">{$loop.novel.intro|mb_substr=0,94,'utf-8'}</p>
+					<p class="chapter">最新章节：<a href="{$loop.last.url}">{$loop.last.name}</a><em>|</em>{$loop.last.time|date="Y-m-d H:i:s"}</p>
+				</li>
+				{/loop}
+			</ul>
+		</div>
+		<div class="box right w_260">
+			<div class="title lite">
+				<p>热门作家</p>
+			</div>
+			<ul class="list">
+				<ul>
+				    {block method="novellist" name="list" sort="dayvisit" num=15}
+                    {section loop=$list}
+					<li><div class="right"><span class="layui-badge-rim">作品集</span></div><a href="{$loop.author.url}">{$loop.author.name}</a></li>
+					{/section}
+				</ul>
+			</ul>
+		</div>
+	</div>
+</div>
+{include file="../common/footer"}
+</body>
+</html>
+

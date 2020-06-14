@@ -1,0 +1,19 @@
+{if$vfedcc['home']['link']['state']}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfedcc['home']['link']['title']|mac_default='友情链接'}</h2>
+		{if$GLOBALS['config']['gbook']['status']}
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url('gbook/index')}">申请</a></li>
+		</ul>
+		{/if}
+	</div>
+	<ul class="fed-part-rows">
+		{maccms:link num="'.$vfedcc['home']['link']['value'].'" order="asc" by="sort" type="font"}
+		<li class="fed-width-x fed-padding fed-col-xs3 fed-col-sm2">
+			<a class="fed-part-eone fed-text-line" href="{$vo.link_url}" target="_blank">{$vo.link_name}</a>
+		</li>
+		{/maccms:link}
+	</ul>
+</div>
+{/if}

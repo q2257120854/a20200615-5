@@ -1,0 +1,82 @@
+{extend name='../../../application/dai/view/layout/base' /}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+<style>
+    .amount-box {
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 5px 0px;
+    }
+
+    .amount-box li {
+        display: inline-block;
+        width: 15%;
+        min-width: 70px;
+        text-align: center;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ebeef5;
+    }
+
+    .amount-box li span {
+        display: block;
+        padding: 0 15px;
+        line-height: 42px;
+    }
+
+    .amount-box li .amount-title {
+        border-bottom: 1px solid #ebeef5;
+    }
+</style>
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{url('statistic/index')}">数据统计</a></li>
+                <li class="active">代理发展转化</li>
+            </ul>
+            <!--breadcrumbs end -->
+        </div>
+    </div>
+    <header class="panel-heading col-xs-12">
+        <form class="form-inline" action="">
+            <div class="form-group">
+                <input type="text" name="time" class="form-control" value="" id="start" placeholder="时间范围">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </header>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="home">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <tr>
+                    <th>时间</th>
+                    <th>代理发展用户总</th>
+                    <th>代理发展充值人数总</th>
+                    <th>转化率</th>
+                </tr>
+                {foreach $list as $key => $vo}
+                    <tr>
+                        <td >{:date('Y-m-d', $vo.time)}</td>
+                        
+                        <td >{$vo.dlyhz}</td>
+                        <td >{$vo.dlczz}</td>
+                        <td >{$vo.dlzhl}%</td>
+                        
+                        
+
+                    </tr>
+                    {/foreach}
+            </table>
+            {$list->render()}
+        </div>
+
+    </div>
+</div>
+
+<!--body wrapper end-->
+{/block}

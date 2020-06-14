@@ -1,0 +1,44 @@
+{include file="public/header"}
+<div class="fed-part-rows fed-part-layout fed-back-whits">
+	<div class="fed-padding fed-col-xs12 fed-col-md6">
+		<div class="fed-list-pics fed-lazy fed-part-2by1 fed-part-rows" data-original="{$obj.topic_pic|mac_url_img}"></div>
+	</div>
+	<div class="fed-padding fed-col-xs12 fed-col-md6">
+		<h3 class="fed-topi-head fed-font-xviii fed-part-rows fed-line-bottom">{$obj.topic_name}</h3>
+		<p>{$obj.topic_content|mac_filter_html}</p>
+	</div>
+</div>
+{if$obj.art_list|count!=0}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">文章</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more">共&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">{$obj.art_list|count}</span>&nbsp;篇文章</span></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:foreach name="$obj.art_list" id="vo"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3">
+			{include file="basics/picture"}
+		</li>
+		{/maccms:foreach}
+	</ul>
+</div>
+{/if}{if$obj.vod_list|count!=0}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">视频</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more">共&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">{$obj.vod_list|count}</span>&nbsp;个影片</span></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:foreach name="$obj.vod_list" id="vo"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:foreach}
+	</ul>
+</div>
+{/if}
+{include file="public/footer"}

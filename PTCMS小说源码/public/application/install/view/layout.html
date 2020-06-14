@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="zh-CN">
+    <meta charset="UTF-8" />
+    <title>{$pt.proname} 安装程序</title>
+    <link rel="stylesheet" type="text/css" href="__TMPL__/css/global.css" />
+</head>
+<body>
+<div class="ptcms-install-patch">
+    <h1>{$pt.proname}</h1>
+    <ol class="path">
+        {section loop=$steplist}
+        {if $step==$i.index}
+        <li class="current"><span>{$i.order}</span>{$loop}</li>
+        {else}
+        <li><span>{$i.order}</span>{$loop}</li>
+        {/if}
+        {/section}
+    </ol>
+</div>
+<div class="container">
+    <div class="colgroup">
+        <div class="col-mb-12 col-tb-8 col-tb-offset-2">
+            <div class="column-14 start-06 ptcms-install">
+                __CONTENT__
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ptcms-foot" role="contentinfo">
+    <div class="copyright">
+        <a href="http://www.677a.cn" class="i-logo-s">XIUXINQI</a>
+        <p>由 PT Framework 强力驱动, 程序版本 {$pt.proversion}</p>
+    </div>
+</div>
+</body>
+</html>

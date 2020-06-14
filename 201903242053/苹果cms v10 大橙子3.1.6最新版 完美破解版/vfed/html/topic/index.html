@@ -1,0 +1,24 @@
+{include file="public/header"}
+<div class="fed-topi-info fed-part-layout fed-back-whits fed-part-rows">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfedcc['home']['topic']['title']|mac_default='专题'}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more"><span class="fed-hide-xs">当前第&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">1</span>&nbsp;页，</span>共&nbsp;<span id="fed-count" class="fed-text-green fed-text-bold">0</span>&nbsp;个专题</span></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:topic num="24" paging="yes" half="3" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs12 fed-col-sm6 fed-col-md4{if$key>2} fed-hide-sm fed-show-md-block{/if}">
+		<a class="fed-list-pics fed-lazy fed-part-2by1" href="{:mac_url_topic_detail($vo)}" data-original="{$vo.topic_pic|mac_url_img}">
+			<div class="fed-topi-back">
+				<span class="fed-list-title fed-visible fed-font-xvi fed-text-white fed-text-center"><i class="fed-icon-font fed-icon-zhuanti"></i>专题</span>
+				<span class="fed-list-name fed-visible fed-font-xvi fed-text-white fed-text-center">—— {if$vo.topic_rel_vod|count!=0}{$vo.topic_rel_vod|explode=',',###|count}个影片{else}{$vo.topic_rel_art|explode=',',###|count}篇文章{/if} ——</span>
+				<span class="fed-list-count fed-visible fed-font-xvi fed-text-white fed-text-center">{$vo.topic_name}</span>
+			</div>
+		</a>
+		</li>
+		{/maccms:topic}
+	</ul>
+	{include file="module/paging"}
+</div>
+{include file="public/footer"}

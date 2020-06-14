@@ -1,0 +1,36 @@
+a:hover {
+	color: #2196F3;
+}
+
+.fed-head-info .fed-pops-navbar .fed-this a,
+.fed-text-green {
+	color: #2196F3!important;
+}
+
+.fed-head-info .fed-pops-navbar .fed-this a:before,
+.fed-swip-this,
+.fed-back-green {
+	background-color: #2196F3!important;
+}
+
+.fed-head-info .fed-pops-user a:hover {
+	background-color: #2196F3;
+}
+
+.fed-list-info .fed-list-score:before {
+	border-top: 0.25rem solid #2196F3;
+}
+
+.fed-rims-reds,
+.fed-head-info .fed-navs-search .fed-navs-input:hover,
+.fed-head-info .fed-navs-search .fed-navs-input:focus {
+	border-color: #2196F3!important;
+}
+
+.fed-page-info a:hover,
+.fed-page-info span,
+.fed-btns-green,
+.fed-btns-info:hover {
+	background-color: #2196F3!important;
+	border-color: #2196F3!important;
+}

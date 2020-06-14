@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>银行安全复制 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="57.0158453%" y1="89.721172%" x2="50%" y2="10.278828%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="银行安全复制-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-4" transform="translate(4.000000, 5.000000)">
+            <path d="M5,33 C6.65685425,33 8,31.6568542 8,30 L8,21 C8,19.3431458 6.65685425,18 5,18 L5,7 C5,5.8954305 5.8954305,5 7,5 L49,5 C50.1045695,5 51,5.8954305 51,7 L51,44 C51,45.1045695 50.1045695,46 49,46 L7,46 C5.8954305,46 5,45.1045695 5,44 L5,33 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+            <rect id="矩形" stroke="#FFFFFF" stroke-width="2" x="1" y="1" width="54" height="50" rx="2"></rect>
+            <path d="M11.5,52.5 L14.5,52.5" id="直线复制-13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" transform="translate(13.000000, 52.500000) rotate(-270.000000) translate(-13.000000, -52.500000) "></path>
+            <path d="M42,52.5 L45,52.5" id="直线复制-14" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" transform="translate(43.500000, 52.500000) rotate(-270.000000) translate(-43.500000, -52.500000) "></path>
+            <path d="M28,28.4268177 L24,28.4268177 L28,28.4268177 L28,25.5 L28,28.4268177 Z M28,28.4268177 L32,28.4268177 L28,28.4268177 L28,33.5 L28,28.4268177 Z M24,25.5 L32,25.5 L24,25.5 Z M24.3234492,21.1986416 L27.9587746,25.160885 L24.3234492,21.1986416 Z M31.5941001,21.2442309 L27.9587746,25.2064743 L31.5941001,21.2442309 Z" id="形状结合" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <g id="编组-3" transform="translate(17.000000, 13.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
+                <path d="M11,4.26325641e-14 C12.8333333,1.50724638 16.5,3.01449275 22,4.52173913 C22,11.8147274 22,24.3043478 11,26 C0,24.3043478 4.31624043e-14,11.8147274 0,4.52173913 C5.5,3.01449275 9.16666667,1.50724638 11,4.26325641e-14 Z" id="形状结合"></path>
+            </g>
+        </g>
+    </g>
+</svg>

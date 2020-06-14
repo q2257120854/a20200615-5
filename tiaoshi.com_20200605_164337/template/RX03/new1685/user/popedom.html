@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta http-equiv="Cache-Control" content="max-age=60" /> 
+  <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+  <meta http-equiv="Cache-Control" content="no-transform" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+  <meta name="renderer" content="webkit" /> 
+  <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /> 
+  <meta name="apple-mobile-web-app-title" content="{$maccms.site_name}" /> 
+  <title>充值中心 - 个人中心 - {$maccms.site_name}</title> 
+  <meta name="keywords" content="个人中心,{$maccms.site_keywords}" /> 
+  <meta name="description" content="{$maccms.site_description}" />
+  <!-- Favicon Icon --> 
+  <link rel="icon" type="image/png" href="{$maccms.path_tpl}html/style/images/favicon.png" /> 
+  <!-- Bootstrap core CSS--> 
+  <link href="{$maccms.path_tpl}html/style/css/bootstrap.min.css" rel="stylesheet" /> 
+  <!-- Custom fonts for this template--> 
+  <link href="{$maccms.path_tpl}html/style/css/all.min.css" rel="stylesheet" type="text/css" /> 
+  <!-- Custom styles for this template--> 
+  <link href="{$maccms.path_tpl}html/style/css/osahan.css" rel="stylesheet" /> 
+  <!-- Owl Carousel --> 
+  <link rel="stylesheet" href="{$maccms.path_tpl}html/style/css/owl.carousel.css" /> 
+  <link rel="stylesheet" href="{$maccms.path_tpl}html/style/css/owl.theme.css" /> 
+  <link href="{$maccms.path_tpl}html/style/css/sweetalert.css" rel="stylesheet" type="text/css" /> 
+  <script src="{$maccms.path_tpl}html/style/js/sweetalert.min.js" type="text/javascript"></script> 
+  <script src="{$maccms.path_tpl}html/style/js/jquery.min.js"></script> 
+  <script src="{$maccms.path_tpl}html/style/js/jquery.lazyload.min.js"></script> 
+  {include file="user/include"}  
+   <style>
+        .sidebar .nav-item .dropdown-menu{
+            top: -100%!important;
+        }
+        .shadow_border{border: 1px solid #000;padding: 60px; width:100px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            -webkit-box-shadow: #666 0px 0px 10px;
+            -moz-box-shadow: #666 0px 0px 10px;
+            box-shadow: #666 0px 0px 10px;}
+
+
+        .shadow_font{text-shadow: #f00 3px 3px 3px;}
+
+        .nav_new{
+            position: fixed;
+
+            z-index: 99;
+            width: 100%;
+        }
+        .ui-fix-top{
+            position: fixed;
+            left:0;
+            right:0;
+            top:0
+        }
+        .ui-wrapper{
+            margin-top: 58px;
+        }
+        .ui-slide-block-pc,.ui-slide-block-pc-down2{
+            background: linear-gradient(123deg, #ff516b 0%,#8876ea 100%);
+            display: none;
+            /*position: sticky;*/
+            position: fixed;
+            z-index: 100;
+            margin-left: 14.1rem;
+            border-bottom:5px solid #ffbfef;
+            border-right:5px solid #ffbfef;
+            /*border-left:5px solid #ffbfef;*/
+        }
+
+
+         .ui-slide-block-pc td,.ui-slide-block-pc-down2 td{
+             width: 120px;
+             font-size: 14px;
+             line-height: 25px !important;
+         }
+
+        .ui-slide-block-pc-down{
+            background: linear-gradient(123deg, #69dccc 0%,#5b4baf 100%);
+            display: none;
+            /*position: sticky;*/
+            position: fixed;
+            z-index: 100;
+            margin-left: 14.1rem;
+            border-bottom:5px solid #a8f7ee;
+            border-right:5px solid #a8f7ee;
+            /*border-left:5px solid #ffbfef;*/
+        }
+
+        .ui-slide-block-pc-down td{
+            width: 120px;
+            font-size: 14px;
+            line-height: 25px !important;
+        }
+
+        .ui-slide-block{
+            background: linear-gradient(123deg, #ff516b 0%,#8876ea 100%);
+            display: none;
+            position: sticky;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .no-border{
+            border-top: 0px solid #dee2e6 !important;
+        }
+
+
+    </style>   
+ </head>
+ <body id="page-top" class="fed-min-width">
+  {include file="user/head"}
+  <div class="fed-main-info fed-min-width"> 
+   <div class="fed-part-case"> 
+    <div class="fed-user-head fed-margin-top fed-back-whits"> 
+     <div class="fed-list-pics fed-lazy fed-part-5by2 fed-part-rows" style="background:url({$maccms.path_tpl}html/style/images/user.jpg);"> 
+      <div class="fed-part-core fed-text-center"> 
+       <div class="fed-user-image" data-role="{:mac_url('user/portrait')}"> 
+        <img class="face fed-user-avat fed-part-roun" src="{$obj.user_portrait|mac_default='static/images/touxiang.png'|mac_url_img}?v={:time()}" /> 
+       </div> 
+       <span class="fed-visible fed-text-white fed-padding">{$obj.user_name}</span> 
+      </div> 
+     </div> 
+     <div class="fed-padding fed-part-rows fed-back-whits fed-hide-md"> 
+      <ul class="fed-user-brief fed-part-rows fed-back-whits"> 
+       <li class="fed-padding-x fed-text-center fed-col-xs4"> <span class="fed-visible fed-text-gules">{$obj.user_points}</span> <span class="fed-visible">我的积分</span> </li> 
+       <li class="fed-padding-x fed-text-center fed-line-left fed-col-xs4"> <span class="fed-visible fed-text-gules">{$obj.group.group_name}</span> <span class="fed-visible">我的等级</span> </li> 
+       <li class="fed-padding-x fed-text-center fed-line-left fed-col-xs4"> <span class="fed-visible fed-text-gules">{$obj.user_extend}</span> <span class="fed-visible">推广次数</span> </li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="fed-part-rows"> 
+     <div class="fed-main-left fed-col-xs12 fed-col-md4 fed-col-lg3 fed-hide-xs fed-hide-sm fed-show-md-block">
+       {include file="user/menu"} 
+     </div> 
+     <div class="fed-main-right fed-col-xs12 fed-col-md8 fed-col-lg9"> 
+      <div class="fed-part-layout fed-back-whits"> 
+       <div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom"> 
+        <h2 class="fed-font-xvi fed-padding">充值中心</h2> 
+        <ul class="fed-part-tips fed-padding"> 
+         <li class="fed-padding"> <a class="fed-more" href="{:mac_url('user/index')}">返回</a> </li> 
+        </ul> 
+       </div> 
+       <ul class="fed-user-list fed-part-rows fed-back-whits">
+	   <li class="fed-padding-x fed-part-rows"> 
+         <div class="fed-user-input fed-visible fed-font-xvi fed-part-rows"> 
+          <div class="leagueTable_Box">
+          <p><input type="text" name="card_no" class="form-control" maxlength="40" placeholder="请在此输入充值卡密"></p>
+          <p><input type="button" id="btn_submit_card" value="确认激活VIP会员" class="btn btn-danger btn-lg"></p>
+          </div>
+         </div> </li>
+		
+		<div class="donation_intro">
+<p class="titleBig"><strong>请在下方选择套餐并购买相应的卡密，购买卡密后在上方输入框激活VIP会员！</strong></p>
+<div class="abox">
+    <a href="/index.php/user/upgrade.html" class="a1">不会充值?请查看教程</a>
+    <a href="http://www.hcfaka.com/orderquery" target="_blank">没收到卡密?点击查询</a>
+</div>
+
+ <div class="featureContent">
+  <div class="featureList"> <a href="http://suo.im/4zt8jc" target="_blank">
+    <div class="youhui"> <span class="youhui-msg1">Vip体验/天</span> <span class="youhui-msg2">￥20</span> <span class="youhui-msg3">24小时试用体验</span> <i>购买卡密</i> </div>
+    </a> </div>
+  <div class="featureList"> <a href="http://suo.im/4zt8jc" target="_blank">
+    <div class="youhui"> <span class="youhui-msg1">Vip会员/月</span> <span class="youhui-msg2">￥1.2</span> <span class="youhui-msg3">一个月无限观看</span> <i>去充值</i> </div>
+    </a> </div>
+  <div class="featureList"> <a href="http://suo.im/4zt8jc" target="_blank">
+    <div class="youhui"> <span class="youhui-msg1">Vip会员/季度</span> <span class="youhui-msg2">￥1.3</span> <span class="youhui-msg3">季度套餐小试牛刀</span> <i>去充值</i> </div>
+    </a> </div>
+</div>
+<div class="featureContent">
+<div class="featureList"> <a href="http://suo.im/4zt8jc" target="_blank">
+  <div class="youhui"> <span class="youhui-msg1">Vip会员/半年</span> <span class="youhui-msg2">￥1.4</span> <span class="youhui-msg3">半年无限视频冲浪</span> <i>去充值</i> </div>
+  </a> </div>
+<div class="featureList"> <a href="http://suo.im/4zt8jc" target="_blank">
+  <div class="youhui"> <span class="youhui-msg1">Vip会员/年</span> <span class="youhui-msg2">￥268</span> <span class="youhui-msg3">年度会员更超值</span> <i>去充值</i> </div>
+  </a> </div>
+<div class="featureList"> <a href="http://t.cn/AiQxwbao" target="_blank">
+  <div class="youhui"> <span class="youhui-msg1">Vip会员/终身</span> <span class="youhui-msg2">￥668</span> <span class="youhui-msg3">终身会员应有尽有</span> <i>购买卡密</i> </div>
+  </a> </div>         
+          
+</div>
+</div>
+        <li class="fed-padding-x fed-part-rows fed-line-bottom">
+              <div class="fed-user-input fed-visible fed-font-xvi fed-part-rows"> <span class="fed-col-xs12 fed-part-eone">
+                <center>
+                  每日50-100部与日本同步最新视频<br/>
+                  手机以及电脑皆可观看<br/>
+                  24小时不间断更新<br/>
+                </center>
+				<div class="abox"> <a href="/index.php/art/detail/id/7.html" class="a1">充值后未到账点这里！</a> <a href="/index.php/art/detail/id/7.html" target="_blank">充值后未到账点这里！</a> </div>
+                </span> </div>
+            </li>
+            <li class="fed-padding-x fed-part-rows fed-line-top fed-line-bottom">
+              <div class="fed-user-input fed-visible fed-font-xvi fed-part-rows"> <span class="fed-col-xs4 fed-col-sm3 fed-part-eone">联系QQ客服:</span> <span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><a href="https://wpa.qq.com/msgrd?v=3&uin={$maccms.site_qq}&site=qq&menu=yes" target="_blank">{$maccms.site_qq}</a></span> <span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you"></i></span> </div>
+            </li>
+            <div class="donation_thumbnail">
+              <p class="secTitle">升级VIP会员 精彩影片看到爽</p>
+              <div class="thumbRow left">
+                <div class="nakedGirl"></div>
+                <p>每天更新，大大满足</p>
+              </div>
+              <div class="thumbRow middle">
+                <div class="nakedGirl"></div>
+                <p>精品直送，当日同步</p>
+              </div>
+              <div class="thumbRow right">
+                <div class="nakedGirl"></div>
+                <p>各类视频，极度畅享</p>
+              </div>
+            </div>
+         <div class="donation_info">
+        <p class="titlebox">贴心说明</p>
+        <p>* 升级VIP会员流程由系统自动完成，升级成功后即可立即享有VIP会员资格，无需人工验证；</p>
+        <p>*「VIP会员」虽拥有以上观影资格，但您与普通会员一样必须遵守本站规定；</p>
+        <p>*「VIP会员」相关方案除「有效期」外，到期后会自动转为普通会员的权限继续使用；</p>
+       </div>
+            </ul>
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  {include file="public/foot"}
+  <script>
+	$('#btn_submit_card').click(function(){
+		var that=$(this);
+		var no = $('input[name="card_no"]').val();
+		if(no==''){
+			alert('请输入充值卡');
+			return;
+		}
+		if(confirm('确定要使用充值卡充值吗')) {
+			$.ajax({
+				url: "{:mac_url('user/buy')}",
+				type: "post",
+				dataType: "json",
+				data: {card_no: no,flag:'card'},
+				beforeSend: function () {
+					$("#btn_submit_card").val("loading...");
+				},
+				success: function (r) {
+					alert(r.msg);
+					if(r.code==1){
+						location.href="{:mac_url('user/index')}";
+					}
+					
+				},
+				complete: function () {
+					$("#btn_submit_card").val("提交");
+				}
+			});
+		}
+	});
+
+	$(".face").imageUpload({
+		formAction: "{:url('user/portrait')}",
+		inputFileName:'file',
+		browseButtonValue: '',
+		browseButtonClass:'btn btn-default btn-xs fed-user-alter fed-part-roun fed-icon-font fed-icon-xiugai',
+		automaticUpload: true,
+		hideDeleteButton: true,
+		hover:true
+	})
+	$(".jQuery-image-upload-controls").mouseenter(function(){
+    $(".jQuery-image-upload-controls").css("display","block");
+	});
+	$(".jQuery-image-upload-controls").mouseleave(function(){
+    $(".jQuery-image-upload-controls").css("display","none");
+	});
+	$(".face").on("imageUpload.uploadFailed", function (ev, err) {
+		alert(err);
+	});
+</script> 
+  <script src="{$maccms.path_tpl}html/style/js/bootstrap.bundle.min.js"></script> 
+  <!-- Core plugin JavaScript--> 
+  <script src="{$maccms.path_tpl}html/style/js/jquery.easing.min.js"></script> 
+  <!-- Owl Carousel --> 
+  <script src="{$maccms.path_tpl}html/style/js/owl.carousel.js"></script> 
+  <!-- Custom scripts for all pages--> 
+  <script src="{$maccms.path_tpl}html/style/js/custom.js"></script> 
+  <script>
+    $(document).on('click','#sidebarTogglePc',function (e) {
+        e.preventDefault();
+        $("#block-slide-pc").slideToggle("fast")
+        if($("#block-slide-pc-down").is(":visible")){
+            $("#block-slide-pc-down").slideToggle("fast")
+        }
+
+
+        // $("#block-slide-pc-down").slideToggle("fast")
+    });
+    $(document).on('click','#sidebarTogglePcDown',function (e) {
+        e.preventDefault();
+        $("#block-slide-pc-down").slideToggle("fast")
+        if($("#block-slide-pc").is(":visible")){
+            $("#block-slide-pc").slideToggle("fast")
+        }
+
+
+        // $("#block-slide-pc").slideToggle("fast")
+    });
+    $(document).on('click','#sidebarTogglePcLeft',function (e) {
+        e.preventDefault();
+        $("#block-slide-pc").slideToggle("fast")
+        if($("#block-slide-pc-down").is(":visible")){
+            $("#block-slide-pc-down").slideToggle("fast")
+        }
+
+    });
+    $(document).on('click','#sidebarTogglePcLeftDown',function (e) {
+        e.preventDefault();
+        $("#block-slide-pc-down").slideToggle("fast")
+        if($("#block-slide-pc").is(":visible")){
+            $("#block-slide-pc").slideToggle("fast")
+        }
+
+    });
+
+
+    $(document).ready(function() {
+        $("img.lazy").lazyload({
+            effect : "fadeIn",
+            threshold : 500
+        });
+        $("img.lazy1").lazyload({
+            effect : "fadeIn",
+            threshold : 500
+        });
+
+    });
+</script>  
+ </body>
+</html>

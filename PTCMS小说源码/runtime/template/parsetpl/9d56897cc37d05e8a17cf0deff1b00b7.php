@@ -1,0 +1,1 @@
+<?php echo $this->pt->config->get("sitename");?>提供《<?php echo $novel['name'];?>》在“<?php echo $sitename;?>”的最新章节目录的索引，更新超级快，无病毒无木马，页面干净清爽，希望大家收藏!

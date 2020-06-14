@@ -1,0 +1,13 @@
+---------------------------------------------------------------
+[ 2020-06-01T23:59:02+08:00 ] 163.44.167.135 GET 163.44.167.135:7788/dai.php/statistic/up.html
+[运行时间：0.446082s] [吞吐率：2.24req/s] [内存消耗：5,343.30kb] [文件加载：77]
+[ error ] [8]未定义数组索引: info[/www/wwwroot/tiaoshi.com/application/dai/controller/Base.php:20]
+[ error ] [8]未定义数组索引: info[/www/wwwroot/tiaoshi.com/application/dai/controller/Base.php:24]
+[ error ] [8]未定义数组索引: info[/www/wwwroot/tiaoshi.com/application/dai/controller/Base.php:26]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:248]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:478]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:478]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:478]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:478]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:248]
+[ error ] [2]Division by zero[/www/wwwroot/tiaoshi.com/application/dai/controller/Statistic.php:478]

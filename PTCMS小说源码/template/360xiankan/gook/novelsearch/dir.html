@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        />
+        <title>
+            {$tkd.title|parseTpl}手机版
+        </title>
+        <meta name="keywords" content="{$tkd.keywords|parseTpl}">
+        <meta name="description" content="{$tkd.description|parseTpl}">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="applicable-device" content="pc,mobile" />
+        <link rel="stylesheet" href="{$pt.config.resurl}__TMPL__/v{$pt.config.tplconfig.demo}/css/theme.css?v={$pt.config.tplconfig.runtime}05"
+        />
+    </head>
+    
+<body>
+    <div class="content">
+        <div class="header">	
+            <a href="/" class="header-back jsBack" title="主页">
+                <svg class="icon icon-arrow-l">
+                    <use xlink:href="#icon-arrow-l"></use>
+                </svg>
+                主页
+            </a>
+            <div class="header-operate">
+                <a href="{if IS_LOGIN}{link=user.index.index}{else}{link=user.public.login}{/if}" class="icon icon-person" title="用户登录">
+                    <svg class="jsGuestWrapper"><use xlink:href="#icon-person"></use></svg>
+                </a>
+                <a href="javascript:" id="toggle-search" class="icon icon-search" title="搜索">
+                    <svg><use xlink:href="#icon-search"></use></svg>
+                </a>
+                <a id="toggle-nav" href="javascript:;" class="icon icon-more" title="分类"></a>
+            </div>
+        </div>
+        <div class="nav" id="nav-switch" style="display: none;">
+            <ul>
+                {block method="categorylist" name="list" pid=0}
+                {section loop="list" skip=1 limit=12}
+                <li><a href="/sort/{$loop.key}_0_0_0_1.html" title="{$loop.name}">{$loop.name}</a></li>
+                {/section}
+            </ul>
+        </div>
+        <div class="search-container" id="search-block" style="display: none">
+            <form action="{link='novelsearch.search.result'}" class="search-guide" method="post">
+                <input type="search" placeholder="输入关键字搜索" name="searchkey" id=""><button type="submit"></button>
+            </form>	
+        </div>	
+            <div class="novel">
+                <div class="novel-header">
+                    <div class="novel-header-l">
+                        <h3 class="novel-title">
+                            <a href="{$url.info}" title="{$novel.name}">
+                                {$novel.name}
+                            </a>  目录
+                        </h3>
+                        <span>共{$last.id}章</span>
+                    </div>
+                    {if $sort=='asc'}
+                    <div class="novel-header-r">
+                        <a href="{$sorturl}" title="{$novel.name}目录正序">
+                            正序
+                        </a>
+                    </div>
+                </div>
+                <ol class="novel-text-list"> 
+                    {block method="chapterlist" name=list novelid=$novel.id}
+                    {section loop="list"}
+                    <li>
+                        <a href="{$loop.url_read}" title="{$loop.name}">
+                            {$loop.name}
+                            <svg class="icon icon-arrow-r">
+                                <use xlink:href="#icon-arrow-r">
+                                </use>
+                            </svg>
+                        </a>
+                    </li>
+                    {/section}
+                </ol>
+            </div>
+            {else}
+                    <div class="novel-header-r">
+                        <a href="{$sorturl}" title="{$novel.name}目录倒序">
+                            倒序
+                        </a>
+                    </div>
+                </div>
+                <ol class="novel-text-list"> 
+                    {block method="chapterlist" name=list novelid=$novel.id sort=desc}
+                    {section loop="list"}
+                    <li>
+                        <a href="{$loop.url_read}" title="{$loop.name}">
+                            {$loop.name}
+                            <svg class="icon icon-arrow-r">
+                                <use xlink:href="#icon-arrow-r">
+                                </use>
+                            </svg>
+                        </a>
+                    </li>
+                   {/section}
+                </ol>
+            </div>
+            {/if}
+            {include file="../common/footer1"}
+            </script>
+    </body>
+
+</html>

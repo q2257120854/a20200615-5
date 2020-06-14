@@ -1,0 +1,27 @@
+<script type="text/javascript"> var vfed = { 'path': '{$maccms.path}', 'tips': '{include file="basics/caches"}', 'ver': '{$version}', 'tpl': '{$maccms.path_tpl}', 'mid': '{$maccms.mid}', 'aid': '{$maccms.aid}', 'did': '{$obj.vod_id}{$obj.art_id}', 'sid': '{$param.sid}', 'nid': '{$param.nid}', 'wap': '{$maccms.site_wapurl}', 'mob': '{$maccms.mob_status}', 'not': '{$vfedcc['rest']['note']['value']}' }; </script>
+<script src="{$maccms.path_tpl}asset/js/jquery.js?v={$version}" type="text/javascript" charset="utf-8"></script>
+<script src="{$maccms.path_tpl}asset/js/global.js?v={$version}" type="text/javascript" charset="utf-8"></script>
+{if$vfedcc['rest']['font']}
+<script src="{$maccms.path_tpl}asset/js/complex.js?v={$version}" type="text/javascript" charset="utf-8" />
+{/if}{if$msg}
+<script src="{$maccms.path_tpl}asset/js/attach.js?v={$version}" type="text/javascript" charset="utf-8"></script>
+{/if}{if$maccms.aid==6}
+<script src="{$maccms.path_tpl}asset/js/upload.js?v={$version}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">fed.myuser.upload('.fed-user-avat', '.fed-user-image');</script>
+{/if}{if isset($sidebar)}
+<script src="{$maccms.path_tpl}asset/js/sidebar.js?v={$version}" type="text/javascript" charset="utf-8"></script>
+{if!$vfedcc['main']['code']&&$maccms.aid!=6}
+<script type="text/javascript">if(!fed.global.mobile()) fed.module.qrcode(location.href);</script>
+{else}
+<script type="text/javascript">fed.module.qrcode($('.fed-user-visit').val());</script>
+{/if}{/if}{if$vfedcc['rest']['coll']['state']}
+<script type="text/javascript">fed.global.ajax(vfed.path + 'api.php/timming/index');</script>
+{/if}{if$maccms.aid==15&&$vfedcc['play']['danmu']}
+<script type="text/javascript">if(!fed.cookie.get('fed_danmu'))fed.player.getdan();</script>
+{/if}{if$vfedcc['home']['taoke']['state']&&$maccms.aid==15||$vfedcc['home']['taoke']['state']&&$maccms.aid==1}
+<script type="text/javascript">fed.module.taoke();</script>
+{/if}{if$vfedcc['rest']['note']['state']}
+<script type="text/javascript">fed.module.notice();</script>
+{/if}{if$vfedcc['navs']['node']}
+<script type="text/javascript">fed.module.trace();</script>
+{/if}

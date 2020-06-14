@@ -1,0 +1,104 @@
+{extend name='../../../application/dai/view/layout/base' /}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+<!--body wrapper start-->
+<style>
+    .amount-box {
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 5px 0px;
+        text-align: center;
+    }
+
+    .amount-box li {
+        display: inline-block;
+        width: 30%;
+        min-width: 70px;
+        text-align: center;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ebeef5;
+    }
+    .amount-box li span{
+        display: block;
+        padding: 0 15px;
+        line-height: 42px;
+    }
+    .amount-box li .amount-title{
+        border-bottom: 1px solid #ebeef5;
+    }
+</style>
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <!--breadcrumbs start -->
+            <ul class="breadcrumb panel">
+                <li><a href="{url('index/home')}">我的主页</a></li>
+                <li class="active">
+                    代理数据详情
+                </li>
+            </ul>
+            <!--breadcrumbs end -->
+            <ul class="amount-box">
+                <li style="width: 80%">
+                    <span class="amount-title">当前分佣比例</span>
+                    <span class="amount-count">{$user.user_tc}</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日注册量</span>
+                    <span class="amount-count">{$data.jrzcl}</span>
+                </li>
+                <li>
+                    <span class="amount-title">当月注册量</span>
+                    <span class="amount-count">{$data.dyzcl}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总注册量</span>
+                    <span class="amount-count">{$data.zzcl}</span>
+                </li>
+                <li>
+                    <span class="amount-title">今日充值订单数</span>
+                    <span class="amount-count">{$data.jrczdds}</span>
+                </li>
+                <li>
+                    <span class="amount-title">当月充值订单数</span>
+                    <span class="amount-count">{$data.dyczdds}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总充值订单数</span>
+                    <span class="amount-count">{$data.zczdds}</span>
+                </li>
+
+                <li>
+                    <span class="amount-title">今日充值额</span>
+                    <span class="amount-count">{$data.jrcze}</span>
+                </li>
+                <li>
+                    <span class="amount-title">当月充值额</span>
+                    <span class="amount-count">{$data.dycze}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总充值额</span>
+                    <span class="amount-count">{$data.zcze}</span>
+                </li>
+
+                <li>
+                    <span class="amount-title">今日提成</span>
+                    <span class="amount-count">{$data.jrtc}</span>
+                </li>
+                <li>
+                    <span class="amount-title">当月提成</span>
+                    <span class="amount-count">{$data.dytc}</span>
+                </li>
+                <li>
+                    <span class="amount-title">总提成</span>
+                    <span class="amount-count">{$data.ztc}</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+{/block}

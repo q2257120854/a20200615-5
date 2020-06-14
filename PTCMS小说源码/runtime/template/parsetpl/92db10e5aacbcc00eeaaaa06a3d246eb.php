@@ -1,0 +1,1 @@
+<?php echo $novel['name'];?>最新章节列表,<?php echo $novel['name'];?>TXT下载,<?php echo $novel['name'];?>章节目录,<?php echo $author['name'];?>作品,<?php echo $category['name'];?>,<?php echo $this->pt->config->get("sitename");?>

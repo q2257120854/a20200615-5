@@ -1,0 +1,22 @@
+{include file="public/header"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">
+			搜索到与&nbsp;“<span class="fed-text-green fed-text-bold">{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</span>”&nbsp;相关的&nbsp;“<span id="fed-count" class="fed-text-green fed-text-bold">0</span>”&nbsp;条结果
+		</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-more fed-hide-xs">当前第&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">1</span>&nbsp;页</span></li>
+		</ul>
+	</div>
+	{maccms:actor num="10" paging="yes" half="3" pageurl="actor/search" order="desc" by="time" id="obj"}
+	{include file="basics/actors"}
+	{/maccms:actor}
+	{include file="module/paging"}
+	{empty name="$__PAGING__.record_total"}
+	<div class="fed-padding">很抱歉，暂无相关文章！</div>
+	{/empty}
+</div>
+{empty name="$__PAGING__.record_total"}
+{include file="module/actors"}
+{/empty}
+{include file="public/footer"}

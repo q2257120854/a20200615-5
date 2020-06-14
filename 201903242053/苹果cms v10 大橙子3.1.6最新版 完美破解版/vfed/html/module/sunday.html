@@ -1,0 +1,24 @@
+{if$vfedcc['home']['week']['state']}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfedcc['home']['week']['title']|mac_default='本周更新'}</h2>
+		<ul class="fed-week-href fed-part-tips fed-padding" data-week="{:mac_url('vod/index')}" data-nums="{$vfedcc['home']['week']['value']}">
+			<li><a class="fed-week-brns{if date('w')==1} fed-text-green{/if}" href="javascript:;">{if date('w')==1}今天{else}周一{/if}</a> /</li>
+			<li><a class="fed-week-brns{if date('w')==2} fed-text-green{/if}" href="javascript:;">{if date('w')==2}今天{else}周二{/if}</a> /</li>
+			<li><a class="fed-week-brns{if date('w')==3} fed-text-green{/if}" href="javascript:;">{if date('w')==3}今天{else}周三{/if}</a> /</li>
+			<li><a class="fed-week-brns{if date('w')==4} fed-text-green{/if}" href="javascript:;">{if date('w')==4}今天{else}周四{/if}</a> /</li>
+			<li><a class="fed-week-brns{if date('w')==5} fed-text-green{/if}" href="javascript:;">{if date('w')==5}今天{else}周五{/if}</a> /</li>
+			<li><a class="fed-week-brns{if date('w')==6} fed-text-green{/if}" href="javascript:;">{if date('w')==6}今天{else}周六{/if}</a> /</li>
+			<li><a class="fed-week-brns{if date('w')==0} fed-text-green{/if} fed-more" href="javascript:;">{if date('w')==0}今天{else}周日{/if}</a></li>
+		</ul>
+	</div>
+	<ul class="fed-week-boxs fed-list-info fed-part-rows">
+		{include file="basics/advert"}{php}$week=array('日','一','二','三','四','五','六');{/php}
+		{maccms:vod weekday="'.$week[date('w')].'" num="'.($vfedcc['home']['week']['value']-$advert).'" type="current" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['week']['value']=='6'&&$key>(4-$advert)} fed-hide-sm fed-show-md-block{/if}">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+</div>
+{/if}

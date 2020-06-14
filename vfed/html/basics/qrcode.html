@@ -1,0 +1,8 @@
+<div class="fed-side-code fed-text-right fed-padding">
+	<p class="fed-side-text fed-text-muted fed-padding">扫描二维码手机看大片</p>
+	{if$vfedcc['main']['code']}
+	<img class="fed-side-image" width="200" height="200" src="{$vfedcc['main']['code']|mac_url_img}" alt="公众号二维码" />
+	{else}
+	<img class="fed-side-image fed-hide" src="{$vfedcc['main']['icon']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/favicon.png'|mac_url_img}" alt="当前网页二维码" />
+	{/if}{php}$sidebar='';{/php}
+</div>

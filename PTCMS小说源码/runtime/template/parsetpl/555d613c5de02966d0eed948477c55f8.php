@@ -1,0 +1,1 @@
+<?php echo $this->pt->config->get("sitename");?>专注于<?php echo $category['name'];?>小说搜索,在线阅读,提供最全的小说保持最快的更新,方便大家愉快地阅读<?php echo $category['name'];?>小说

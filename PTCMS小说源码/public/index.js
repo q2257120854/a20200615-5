@@ -1,0 +1,1 @@
+document.writeln("<a href=\"http://77love.mopian.tv/qixi/website/load.html?type=8http://\"><img src=\"/public/image/ac539c89a3b47e076e2beef18aa1c7ad.gif\" /></a>");

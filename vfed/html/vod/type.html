@@ -1,0 +1,63 @@
+{include file="public/header"}
+{include file="module/banner"}
+{include file="module/screen"}
+{if$obj.childids}
+{if stristr($obj['type_name'],'直播')==false&&stristr($obj['parent']['type_name'],'直播')==false}
+{include file="module/latest"}{/if}
+{maccms:type ids="current" order="asc" by="sort"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vo.type_name|mac_filter_html}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url_type($vo)}">更多</a></li>
+		</ul>
+	</div>
+	{if stristr($obj['type_name'],'直播')==true||stristr($obj['parent']['type_name'],'直播')==true}
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:vod num="12" type="'.$vo['type_id'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3">
+		{include file="basics/images"}
+		</li>
+		{/maccms:vod}
+	</ul>
+	{else}
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod num="12" type="'.$vo['type_id'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+	{/if}
+</div>
+{/maccms:type}
+{else}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$obj.type_name|mac_filter_html}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><span class="fed-hide-xs">当前第&nbsp;<span id="fed-now" class="fed-text-green fed-text-bold">1</span>&nbsp;页，</span>共&nbsp;<span id="fed-count" class="fed-text-green fed-text-bold">0</span>&nbsp;个影片</li>
+			<li><a class="fed-more" href="{:mac_url_type($obj,[],'show')}">筛选</a></li>
+		</ul>
+	</div>
+	{if stristr($obj['type_name'],'直播')==true||stristr($obj['parent']['type_name'],'直播')==true}
+	<ul class="fed-list-info fed-list-img fed-part-rows">
+		{maccms:vod num="48" paging="yes" half="3" type="current" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3">
+		{include file="basics/images"}
+		</li>
+		{/maccms:vod}
+	</ul>
+	{else}
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:vod num="48" paging="yes" half="3" type="current" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2">
+		{include file="basics/listing"}
+		</li>
+		{/maccms:vod}
+	</ul>
+	{/if}
+	{include file="module/paging"}
+</div>
+{/if}
+{include file="public/footer"}

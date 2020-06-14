@@ -1,0 +1,9 @@
+{include file="public/include"}
+{include file="basics/navbar"}
+{include file="basics/tabbar"}
+<div class="fed-main-info fed-min-width">
+<div class="fed-part-case">
+{include file="basics/search"}
+{if$vfedcc['advs']['fits']['state']==1||$vfedcc['advs']['fits']['state']==2&&$user.user_id==0}
+{$vfedcc['advs']['home']['head']}
+{/if}

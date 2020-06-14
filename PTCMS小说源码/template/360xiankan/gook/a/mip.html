@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+"@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+"@id": "{$pt.config.wapurl}{$url.info}",
+"appid": "{$pt.config.tplconfig.xzhid}",
+"title": "{$tkd.title|parseTPL}",
+"images": [
+"{$pt.config.wapurl}{$loop.novel.cover}"
+], 
+"description": "{$novel.intro}",
+"pubDate": "{$last.time|date='Y-m-d'}T{$last.time|date='H:i:s'}",
+"isOriginal": "0"
+}
+</script>

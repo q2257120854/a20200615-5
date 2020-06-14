@@ -1,0 +1,6 @@
+<a class="fed-list-pics fed-lazy fed-part-5by3" href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}" data-original="{$vo.vod_pic|mac_url_img}">
+	<span class="fed-list-play fed-hide-xs"></span>
+	<span class="fed-list-score fed-font-xii fed-text-white fed-back-green">{$vo.vod_remarks|mac_default=$vo.vod_hits.'播放'}</span>
+	<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$vo.vod_hits}播放</span>
+</a>
+<a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href="{:mac_url_vod_detail($vo)}"{if$vo.vod_color} style="color:#{$vo.vod_color}!important"{/if}>{$vo.vod_name|mac_filter_html}</a>

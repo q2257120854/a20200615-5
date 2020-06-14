@@ -1,0 +1,83 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">修改资料</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<form class="fed-user-form fed-user-info fed-part-rows" action="{:mac_url('user/info')}" data-role="{:mac_url('user/unbind')}">
+		<ul class="fed-user-list fed-part-rows fed-back-whits">
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">用户名</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone">{$obj.user_name}</span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">原密码</span>
+					<span class="fed-col-xs4 fed-col-sm6 fed-part-eone"><input type="password" name="user_pwd" placeholder="不改请留空" maxlength="20" /></span>
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">新密码</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><input type="password" name="user_pwd1" placeholder="新密码" maxlength="20" /></span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">重复密码</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><input type="password" name="user_pwd2" placeholder="重复密码" maxlength="20" /></span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">QQ号码</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><input type="tel" name="user_qq" value="{$obj.user_qq}" placeholder="QQ号码" /></span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">邮件地址</span>
+					<span class="fed-col-xs6 fed-col-sm6 fed-part-eone"><input type="email" name="user_email" value="{$obj.user_email}" placeholder="邮件地址" /></span>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right">{if$obj.user_email==''}<a href="{:mac_url('user/bind')}?ac=email">绑定</a>{else}<a class="fed-user-unnd" data-role="email" href="javascript:;">解绑</a>{/if}</span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">手机号码</span>
+					<span class="fed-col-xs6 fed-col-sm6 fed-part-eone"><input type="tel" name="user_phone" value="{$obj.user_phone}" placeholder="手机号码" /></span>
+					<span class="fed-col-xs2 fed-col-sm3 fed-part-eone fed-text-right">{if$obj.user_phone==''}<a href="{:mac_url('user/bind')}?ac=phone">绑定</a>{else}<a class="fed-user-unnd" data-role="phone" href="javascript:;">解绑</a>{/if}</span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">密保问题</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><input type="text" name="user_question" value="{$obj.user_question}" placeholder="密保问题" /></span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone">密保答案</span>
+					<span class="fed-col-xs7 fed-col-sm6 fed-part-eone"><input type="text" name="user_answer" value="{$obj.user_answer}" placeholder="密保答案" size="40" /></span>
+					<span class="fed-col-xs1 fed-col-sm3 fed-part-eone fed-text-right"><i class="fed-icon-font fed-icon-you fed-visible"></i></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows">
+				<span class="fed-col-xs4 fed-col-sm3 fed-part-eone fed-hide-xs">&nbsp;</span>
+				<a class="fed-subm-infos fed-col-xs7 fed-col-sm6 fed-rims-info fed-btns-info fed-btns-green fed-col-xs12">保存</a>
+			</li>
+		</ul>
+	</form>
+</div>
+{include file="public/footer"}

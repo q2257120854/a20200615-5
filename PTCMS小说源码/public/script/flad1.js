@@ -1,0 +1,1 @@
+document.writeln("<a href=\"https://www.2uxs.com/\"><img src=\"https://img.2uxs.com/image/250x250.png\" /></a>");

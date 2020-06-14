@@ -1,0 +1,17 @@
+{if$vfedcc['home']['actor']['state']}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-list-head fed-part-rows fed-padding">
+		<h2 class="fed-font-xvi">{$vfedcc['home']['actor']['title']|mac_default='明星'}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li><a class="fed-more" href="{:mac_url_actor_index()}">更多</a></li>
+		</ul>
+	</div>
+	<ul class="fed-list-info fed-part-rows">
+		{maccms:actor num="'.$vfedcc['home']['actor']['value'].'" name="'.$obj['vod_actor'].'" order="desc" by="time"}
+		<li class="fed-list-item fed-padding fed-col-xs4 fed-col-sm3 fed-col-md2{if$vfedcc['home']['actor']['value']=='6'&&$key>4} fed-hide-sm fed-show-md-block{/if}">
+			{include file="basics/lucida"}
+		</li>
+		{/maccms:actor}
+	</ul>
+</div>
+{/if}

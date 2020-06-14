@@ -1,0 +1,166 @@
+body {
+	background-color: #2b2a2a;
+}
+
+a {
+	color: #ffe28a;
+}
+
+a:hover {
+	color: #ffdd7b;
+}
+
+.layui-layer-title {
+	color: #ffe28a!important;
+	background-color: #333!important;
+	border-bottom: 1px solid #444!important;
+}
+
+.layui-layer,
+.fed-user-input input,
+.fed-back-whits {
+	background-color: #333!important;
+	color: #ffe28a!important;
+}
+
+.fed-btns-green {
+	background-color: #ffe28a!important;
+	color: #000!important;
+	border-color: #ffe28a!important;
+}
+
+.fed-drop-info .fed-drop-tops {
+	border-color: #2b2a2a;
+}
+
+.fed-head-info .fed-pops-navbar .fed-this a,
+.fed-text-green {
+	color: #ffdd7b !important;
+}
+
+.fed-head-info .fed-pops-navbar .fed-this a:before {
+	background-color: #ffdd7b !important;
+}
+
+.fed-btns-info:hover {
+	background-color: #ffdd7b !important;
+	border-color: #ffdd7b !important;
+	color: #000 !important;
+}
+
+.fed-text-black {
+	color: #ffe28a !important;
+}
+
+.fed-list-info .fed-list-score:before {
+	border-top: 0.25rem solid #ffe28a;
+}
+
+.fed-swip-this,
+.fed-back-green {
+	background-color: #ffe28a !important;
+	color: #000 !important;
+}
+
+.fed-back-ashen {
+	background-color: #444 !important;
+	color: #ffe28a !important;
+}
+
+.fed-head-info .fed-pops-navbar .fed-pops-list li a,
+.fed-tabs-info .fed-tabs-btm a,
+.fed-rims-info {
+	border-color: #2b2a2a;
+}
+
+.fed-form-info,
+.fed-btns-info,
+.fed-tabs-info .fed-tabs-btm a {
+	background-color: #444;
+	color: #ffe28a;
+}
+
+.fed-tabs-info .fed-tabs-btm a:visited {
+	background-color: #ffe28a;
+	border-color: #333;
+	color: #666;
+}
+
+.fed-btns-disad,
+.fed-btns-disad:hover {
+	background-color: #444!important;
+	border-color: #2b2a2a!important;
+	color: #666!important;
+}
+
+.fed-casc-list dl,
+.fed-scre-list dl,
+.fed-tabs-info .fed-tabs-foot {
+	border-top: 1px dashed #2b2a2a;
+}
+
+.fed-play-info .fed-play-boxs {
+	border-top: 1px solid #2b2a2a;
+}
+
+.fed-drop-info .fed-drop-head {
+	border-top: 1px solid #2b2a2a;
+	border-bottom: .0625rem dashed #2b2a2a;
+}
+
+.fed-pops-search .fed-pops-case,
+.fed-line-bottom:after {
+	background-color: #222;
+}
+
+.fed-line-top:before {
+	border-top: 1px solid #2b2a2a;
+}
+
+.fed-line-right:after {
+	border-right: 1px solid #2b2a2a;
+}
+
+hr,
+.fed-head-info .fed-pops-user li a,
+.fed-casc-head a {
+	border-bottom: 0.0625rem solid #2b2a2a;
+}
+
+.fed-line-left:before {
+	border-left: 1px solid #2b2a2a;
+}
+
+.fed-head-info .fed-pops-title,
+.fed-head-info .fed-pops-list,
+.fed-casc-head .fed-this {
+	background-color: #333;
+}
+
+.fed-page-info a,
+.fed-page-info em,
+.fed-page-info span,
+.fed-head-info .fed-navs-search .fed-navs-input {
+	color: #ffe28a;
+	background-color: #444;
+	border: 1px solid #2b2a2a !important;
+}
+
+.fed-casc-head {
+	background-color: #444;
+}
+
+.fed-part-nums {
+	background-color: #666;
+}
+
+@media (min-width: 48rem) {
+	.fed-head-info .fed-pops-navbar .fed-pops-list li a {
+		border-right: 0.03125rem solid #2b2a2a;
+		border-bottom: 0.03125rem solid #2b2a2a;
+	}
+	.fed-scre-list dl {
+		border-top: 0;
+		border-left: 1px solid #2b2a2a;
+	}
+}

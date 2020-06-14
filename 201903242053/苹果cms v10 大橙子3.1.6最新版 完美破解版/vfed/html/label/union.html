@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>vfed采集资源</title>
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__STATIC__/layui/css/layui.css" rel="stylesheet" type="text/css" />
+<?php $vfedx = file_exists('application/extra/vfedcc.php') ? require('application/extra/vfedcc.php') : require(substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/fed/vfedcc.php'); ?>
+<script type="text/javascript">var vfed = {'tpls':'{$maccms.path_tpl}','name':'{$_COOKIE["admin_name"]}'};</script>
+<script src="__STATIC__/js/jquery.js?v={:time()}" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/layui/layui.js?v={:time()}" type="text/javascript" charset="utf-8"></script>
+<script src="{if$vfedx['rest']['coll']['href']}{$vfedx['rest']['coll']['href']}{else}{$maccms.path_tpl}asset/js/collect.js{/if}?v={:time()}" class="collect"></script>
+</head>
+<body>
+<form class="layui-form layui-form-pane">
+	<div class="layui-tab layui-form-item">
+		<label class="layui-form-label">全网资源</label>
+		<div class="layui-input-inline">
+			<select name="collect" lay-verify="required">
+				<option value="m3u8" selected>切片资源专区</option>
+				<option value="bigs">视频网站专区</option>
+				<option value="news">资讯资源专区</option>
+				<option value="star">明星资源专区</option>
+				<option value="down">下载资源专区</option>
+				<option value="disk">网盘资源专区</option>
+				<option value="fuck">叉站资源专区</option>
+				<option value="tops">推荐资源专区</option>
+				<option value="offi">视频独立采集</option>
+				<option value="comp">综合资源专区</option>
+				<option value="play">云播资源专区</option>
+				<option value="live">直播资源专区</option>
+			</select>
+		</div>
+		<div class="layui-input-inline">
+			<input type="text" required lay-verify="required" placeholder="请输入关键字" autocomplete="off" class="layui-input layui-input-search">
+		</div>
+		<div class="layui-input-inline">
+			<button type="button" class="layui-btn searchs">立即搜索</button>
+			<input type="text" required lay-verify="required" placeholder="搜索间隔" autocomplete="off" class="layui-input interval" value="3" style="width:38px;display:inline-block">
+			<span>秒间隔</span>
+		</div>
+	</div>
+</form>
+<div class="layui-tab layui-collect"></div>
+</body>
+</html>

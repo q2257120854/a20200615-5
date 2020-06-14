@@ -1,0 +1,26 @@
+<div class="fed-user-head fed-marg-top fed-back-whits">
+	<div class="fed-list-pics fed-lazy fed-part-5by2 fed-part-rows" data-original="{$maccms.path_tpl}asset/img/user.jpg">
+		<div class="fed-part-core fed-text-center">
+			<div class="fed-user-image fed-user-ring" data-role="{:mac_url('user/portrait')}">
+				<img class="fed-user-avat fed-user-ring fed-part-roun" src="{php} echo mac_get_user_portrait($obj['user_id']); {/php}?v={:time()}" />
+			</div>
+			<span class="fed-visible fed-text-white fed-padding">{$obj.user_name}</span>
+		</div>
+	</div>
+	<div class="fed-padding fed-part-rows fed-back-whits">
+		<ul class="fed-user-brief fed-part-rows fed-back-whits">
+			<li class="fed-padding-x fed-text-center fed-col-xs4">
+				<span class="fed-visible fed-text-gules">{$obj.user_points}</span>
+				<span class="fed-visible">我的积分</span>
+			</li>
+			<li class="fed-padding-x fed-text-center fed-line-left fed-col-xs4">
+				<span class="fed-visible fed-text-gules">{$obj.group.group_name}</span>
+				<span class="fed-visible">我的等级</span>
+			</li>
+			<li class="fed-padding-x fed-text-center fed-line-left fed-col-xs4">
+				<span class="fed-visible fed-text-gules">{$obj.user_extend}</span>
+				<span class="fed-visible">推广注册</span>
+			</li>
+		</ul>
+	</div>
+</div>

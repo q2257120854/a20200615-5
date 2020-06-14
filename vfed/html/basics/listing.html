@@ -1,0 +1,11 @@
+<a class="fed-list-pics fed-lazy fed-part-2by3" href="{:mac_url_vod_detail($vo)}" data-original="{$vo.vod_pic|mac_url_img}"{if$maccms.aid==10} style="background-image: url({$vo.vod_pic|mac_url_img});"{/if}>
+	<span class="fed-list-play fed-hide-xs"></span>
+	{if$vo.vod_score>0}
+	<span class="fed-list-score fed-font-xii fed-back-green">{$vo.vod_score}</span>
+	{/if}
+	<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$vo.vod_remarks|mac_default=$vo.vod_hits.'播放'}</span>
+</a>
+<a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href="{:mac_url_vod_detail($vo)}" {if$vo.vod_color} style="color:#{$vo.vod_color}!important" {/if}>{$vo.vod_name|mac_filter_html}</a>
+<span class="fed-list-desc fed-font-xii fed-visible fed-part-eone fed-text-muted fed-hide-xs fed-show-sm-block">
+{$vo.vod_actor|mac_default=$vo.vod_area.$vo.type.type_name|mac_filter_html}
+</span>

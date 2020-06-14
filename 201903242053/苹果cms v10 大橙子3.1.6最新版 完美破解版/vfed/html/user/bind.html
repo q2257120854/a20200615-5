@@ -1,0 +1,36 @@
+{include file="public/header"}{include file="user/banner"}
+<div class="fed-part-layout fed-back-whits">
+	<div class="fed-user-title fed-list-head fed-part-rows fed-padding fed-line-bottom">
+		<h2 class="fed-font-xvi fed-padding">绑定{if$ac=='phone'}手机{else}邮箱{/if}</h2>
+		<ul class="fed-part-tips fed-padding">
+			<li class="fed-padding">
+				<a class="fed-more" href="{:mac_url('user/index')}">返回</a>
+			</li>
+		</ul>
+	</div>
+	<form class="fed-user-form fed-user-info fed-part-rows" action="{:mac_url('user/bind')}" data-role="{:mac_url('user/bindmsg')}" data-jump="{:mac_url('user/info')}">
+		<input type="hidden" name="ac" value="{$ac}">
+		<ul class="fed-user-list fed-part-rows fed-back-whits">
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs3 fed-col-sm3 fed-part-eone">{if$ac=='phone'}手机{else}邮箱{/if}</span>
+					<span class="fed-col-xs5 fed-col-sm6 fed-part-eone"><input type="text" name="to" placeholder="{if$ac=='phone'}手机号码{else}邮箱地址{/if}" /></span>
+					<span class="fed-col-xs4 fed-col-sm3 fed-part-eone fed-text-right"><a class="fed-user-bind" href="javascript:;">获取验证码</a></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows fed-line-bottom">
+				<div class="fed-user-input fed-visible fed-font-xvi fed-part-rows">
+					<span class="fed-col-xs3 fed-col-sm3 fed-part-eone">验证码</span>
+					<span class="fed-col-xs3 fed-col-sm6 fed-part-eone"><input type="text" name="code" placeholder="验证码" /></span>
+					<span class="fed-col-xs6 fed-col-sm3 fed-part-eone fed-text-right"><span class="fed-user-tips fed-text-gules">＊</span></span>
+				</div>
+			</li>
+			<li class="fed-padding-x fed-part-rows">
+				<span class="fed-col-xs4 fed-col-sm3 fed-part-eone fed-hide-xs">&nbsp;</span>
+				<a class="fed-subm-binds fed-col-xs7 fed-col-sm6 fed-rims-info fed-btns-info fed-btns-green fed-col-xs12">确认绑定</a>
+			</li>
+		</ul>
+		{include file="module/paging"}
+	</form>
+</div>
+{include file="public/footer"}

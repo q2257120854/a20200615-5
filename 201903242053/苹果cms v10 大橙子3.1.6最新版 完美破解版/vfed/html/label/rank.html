@@ -1,0 +1,19 @@
+{include file="public/header"}
+<title>本周热门 - {$maccms.site_name}</title>
+<div class="fed-part-case fed-part-rows">
+	{maccms:type num="24" order="asc" by="sort" flag="vod" id="vfed"}
+	<div class="fed-rank-info fed-part-layout fed-part-rows fed-back-whits fed-col-sm6 fed-col-md4">
+		<div class="fed-list-info fed-list-rank fed-part-rows fed-padding">
+			<h2 class="fed-list-head fed-part-rows fed-font-xvi">{$vfed.type_name}<a class="fed-part-tips fed-font-xiv" href="{:mac_url_type($vfed)}">更多</a></h2>
+			<ul class="fed-part-rows">
+				{maccms:vod num="9" type="'.$vfed['type_id'].'" order="desc" by="hits_week"}
+				<li class="fed-part-eone">
+					<a href="{:mac_url_vod_detail($vo)}"><span class="fed-part-nums fed-part-num{$key}">{$key}</span>{$vo.vod_name|mac_filter_html}<span class="fed-part-tips fed-text-green">{$vo.vod_hits_week}</span></a>
+				</li>
+				{/maccms:vod}
+			</ul>
+		</div>
+	</div>
+	{/maccms:type}
+</div>
+{include file="public/footer"}

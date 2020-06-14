@@ -1,0 +1,120 @@
+#welive_online{
+	display: inline-block;
+	position:fixed;
+	right:20px;
+	bottom:0;
+	width:80px;
+	height:80px;
+    border-radius: 40px;
+	z-index: 99991;
+	background-size: 100% 100%;
+	overflow:hidden;
+}
+
+.welive_style1{
+	background: url(img/welive1.png) center center no-repeat;
+}
+.welive_style2{
+	background: url(img/welive2.png) center center no-repeat;
+}
+.welive_style3{
+	background: url(img/welive3.png) center center no-repeat;
+}
+.welive_style4{
+	background: url(img/welive4.png) center center no-repeat;
+}
+.welive_style5{
+	background: url(img/welive5.png) center center no-repeat;
+}
+
+
+#welive_online_tips {
+	display:none;
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    line-height: 20px;
+    border-radius: 2px;
+    background: url(img/tips.png) center center no-repeat;
+	font-family: "\5FAE\8F6F\96C5\9ED1", "Microsoft YaHei";
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+	overflow:hidden;
+}
+
+#welive_wrap{
+	position:fixed;
+	z-index: 99998;
+	overflow:hidden;
+	border:0;
+	display:none;
+	right:10px;
+	bottom:0;
+	padding:0;
+	margin:0;
+	box-shadow: 0 0 10px #333333;
+	-moz-box-shadow: 0 0 10px #333333;
+	-webkit-box-shadow: 0 0 10px #333333;
+}
+
+#welive_close {
+    position: absolute;
+    top: -2px;
+    right: 4px;
+    height: 42px;
+    width: 42px;
+	overflow:hidden;
+    border-radius: 6px;
+    background: url(img/close.png) center center no-repeat;
+	background-size: 100% 100%;
+	float:right;
+}
+
+#welive_iframe {display:block;padding:0;margin:0;width:100%;height:100%;overflow:hidden;border:0;}
+
+.welive_zoomIn {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-name: welive_zoomIn;
+	-webkit-animation-name: welive_zoomIn;
+	-moz-animation-name: welive_zoomIn;
+	-o-animation-name: welive_zoomIn;
+}
+
+@keyframes welive_zoomIn {
+    0% {
+        display: inline-block;
+        opacity: 0;
+		height: 1%;
+        transform: scale3d(0.6, 0.6, 0.6)
+    }
+    50% {
+        opacity: 1;
+		height: 30%;
+    }
+}
+
+.welive_zoomOut {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+    animation-name: welive_zoomOut;
+	-webkit-animation-name: welive_zoomOut;
+	-moz-animation-name: welive_zoomOut;
+	-o-animation-name: welive_zoomOut;
+}
+
+@keyframes welive_zoomOut {
+    from {
+        opacity: 1;
+		height: 80%;
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(.3,.3,.3);
+		height: 10%;
+    }
+}

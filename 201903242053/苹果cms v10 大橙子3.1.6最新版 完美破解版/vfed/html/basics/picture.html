@@ -1,0 +1,6 @@
+<a class="fed-list-pics fed-lazy fed-part-16by9" href="{:mac_url_art_detail($vo)}" data-original="{$vo.art_pic|mac_url_img}">
+	<span class="fed-list-play fed-list-arts fed-hide-xs"></span>
+	<span class="fed-list-score fed-font-xii fed-back-green">{$vo.type.type_name|mac_filter_html}</span>
+	<span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">{$vo.art_hits}阅读</span>
+</a>
+<a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href="{:mac_url_art_detail($vo)}"{if$vo.art_color} style="color:#{$vo.art_color}!important"{/if}>{$vo.art_name|mac_filter_html}</a>

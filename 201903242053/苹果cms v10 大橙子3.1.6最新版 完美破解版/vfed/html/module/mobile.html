@@ -1,0 +1,23 @@
+{if$vfedcc['home']['menu']['state']}
+<div class="fed-back-whits fed-show-xs-block fed-hide-sm">
+	<ul class="fed-part-rows">
+		{if$maccms.aid==1}
+		{maccms:type num="'.$vfedcc['home']['menu']['value'].'" ids="parent" order="asc" by="sort" flag="vod" id="vfed"}
+		{maccms:type num="4" parent="'.$vfed['type_id'].'" order="asc" by="sort" flag="vod"}
+		<li class="fed-padding-x fed-col-xs3 fed-part-rows fed-text-center fed-line-top fed-line-right">
+			<a href="{:mac_url_type($vo)}">{$vo.type_name|mac_filter_html}</a>
+		</li>
+		{/maccms:type}
+		{/maccms:type}
+		{elseif$maccms.aid==20}
+		{maccms:type num="'.$vfedcc['home']['menu']['value'].'" ids="parent" order="asc" by="sort" flag="art" id="vfed"}
+		{maccms:type num="4" parent="'.$vfed['type_id'].'" order="asc" by="sort" flag="art"}
+		<li class="fed-padding-x fed-col-xs3 fed-part-rows fed-text-center fed-line-top fed-line-right">
+			<a href="{:mac_url_type($vo)}">{$vo.type_name|mac_filter_html}</a>
+		</li>
+		{/maccms:type}
+		{/maccms:type}
+		{/if}
+	</ul>
+</div>
+{/if}
